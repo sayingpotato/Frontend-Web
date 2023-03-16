@@ -3,7 +3,7 @@ name: Issue
 about: Default issue
 title: ''
 labels: ''
-assignees: ''
+assignees: JungYeonHwi
 
 ---
 
