@@ -1,7 +1,8 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 const RegisterDiv = styled.div`
-  background-color: yellow;
-`
+    background-color: yellow;
+    
+`;
 
-export { RegisterDiv }
+export { RegisterDiv };
