@@ -3,10 +3,10 @@ import { Map, MapMarker } from 'react-kakao-maps-sdk'
 
 const KaKaoMap = () => {
   return (
-    <div>
+    <div style={{ width: '100%', height: '100vh' }}>
       <Map
         center={{ lat: 33.5563, lng: 126.79581 }}
-        style={{ width: '100%', height: '360px' }}
+        style={{ width: '100%', height: '100%' }}
       ></Map>
     </div>
   )
