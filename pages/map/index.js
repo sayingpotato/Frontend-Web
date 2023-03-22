@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from 'react'
 import { Map, MapMarker } from 'react-kakao-maps-sdk'
+import { BiCurrentLocation } from 'react-icons/bi'
 
 import { StyledMapDiv, StyledMap, StyledMapButton } from './style'
 
@@ -41,7 +42,9 @@ const KaKaoMap = () => {
   return (
     <StyledMapDiv>
       <StyledMap center={state.center} ref={mapRef}>
-        <StyledMapButton onClick={refreshButtonClick}>Refresh</StyledMapButton>
+        <StyledMapButton onClick={refreshButtonClick}>
+          <BiCurrentLocation size={30} />
+        </StyledMapButton>
       </StyledMap>
     </StyledMapDiv>
   )
