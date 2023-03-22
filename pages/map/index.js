@@ -57,7 +57,12 @@ const KaKaoMap = () => {
   return (
     <StyledMapDiv>
       <StyledMap center={state.center} ref={mapRef}>
-        <MapMarker position={{ lat: 36.6283, lng: 127.4562 }}></MapMarker>
+        {data.map((d) => (
+          <MapMarker
+            key={`${d.key}`}
+            position={{ lat: `${d.lat}`, lng: `${d.lng}` }}
+          ></MapMarker>
+        ))}
         <StyledMapButton onClick={refreshButtonClick}>
           <BiCurrentLocation size={40} />
         </StyledMapButton>
