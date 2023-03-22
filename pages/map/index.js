@@ -43,7 +43,7 @@ const KaKaoMap = () => {
     <StyledMapDiv>
       <StyledMap center={state.center} ref={mapRef}>
         <StyledMapButton onClick={refreshButtonClick}>
-          <BiCurrentLocation size={30} />
+          <BiCurrentLocation size={40} />
         </StyledMapButton>
       </StyledMap>
     </StyledMapDiv>
