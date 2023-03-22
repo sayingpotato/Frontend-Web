@@ -1,6 +1,8 @@
 import { useEffect, useState, useRef } from 'react'
 import { Map, MapMarker } from 'react-kakao-maps-sdk'
 
+import { StyledMapDiv, StyledMap, StyledMapButton } from './style'
+
 import currentLocation from '../../utils/getCurrentLocation'
 
 const KaKaoMap = () => {
@@ -37,12 +39,11 @@ const KaKaoMap = () => {
   }
 
   return (
-    <div style={{ height: '100vh' }}>
-      <button onClick={refreshButtonClick}>Refresh</button>
-      <Map center={state.center} style={{ height: '100%' }} ref={mapRef}>
-        <button onClick={refreshButtonClick}>Refresh</button>
-      </Map>
-    </div>
+    <StyledMapDiv>
+      <StyledMap center={state.center} ref={mapRef}>
+        <StyledMapButton onClick={refreshButtonClick}>Refresh</StyledMapButton>
+      </StyledMap>
+    </StyledMapDiv>
   )
 }
 
