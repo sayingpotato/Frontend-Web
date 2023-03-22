@@ -13,50 +13,38 @@ const KaKaoMap = () => {
       lat: 36.6283,
       lng: 127.456,
       name: '우체국',
-      status: 1,
+      status: 'TODAY_DISCOUNT',
     },
     {
       id: 2,
-      lat: 36.628,
-      lng: 127.453,
+      lat: 36.6283,
+      lng: 127.436,
       name: '병원',
-      status: 0,
+      status: 'TODAY_DISCOUNT NONE',
     },
     {
       id: 3,
-      lat: 36.638,
-      lng: 127.456,
-      name: '우체국2',
-      status: 1,
+      lat: 36.6283,
+      lng: 127.486,
+      name: '우체국1',
+      status: 'TODAY_DISCOUNT',
     },
   ]
 
-  const result = data.map((d) => {
-    if (d.status === 1) {
+  const MapResult = data.map((oneData) => {
+    if (oneData.status === 'TODAY_DISCOUNT') {
       return (
         <MapMarker
-          key={`${d.key}`}
-          position={{ lat: `${d.lat}`, lng: `${d.lng}` }}
-          image={{
-            src: 'https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/marker_red.png',
-            size: {
-              width: 64,
-              height: 69,
-            },
-            options: {
-              offset: {
-                x: 27,
-                y: 69,
-              },
-            },
-          }}
+          key={`${oneData.id}`}
+          position={{ lat: `${oneData.lat}`, lng: `${oneData.lng}` }}
         ></MapMarker>
       )
     } else {
       return (
         <MapMarker
-          key={`${d.key}`}
-          position={{ lat: `${d.lat}`, lng: `${d.lng}` }}
+          key={`${oneData.id}`}
+          position={{ lat: `${oneData.lat}`, lng: `${oneData.lng}` }}
+          opacity={0.5}
         ></MapMarker>
       )
     }
@@ -97,7 +85,7 @@ const KaKaoMap = () => {
   return (
     <StyledMapDiv>
       <StyledMap center={state.center} ref={mapRef}>
-        {result}
+        {MapResult}
         <StyledMapButton onClick={refreshButtonClick}>
           <BiCurrentLocation size={40} />
         </StyledMapButton>
