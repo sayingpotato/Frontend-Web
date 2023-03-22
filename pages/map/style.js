@@ -12,10 +12,13 @@ const StyledMap = styled(Map)`
 
 const StyledMapButton = styled.button`
   position: absolute;
-  top: 3%;
-  border: none;
+  bottom: 3%;
+  border: 1px solid white;
   z-index: 2;
-  background-color: transparent;
+  border-radius: 50%;
+  background-color: white;
+  right: 0;
+  margin-right: 3%;
 `
 
 export { StyledMapDiv, StyledMap, StyledMapButton }
