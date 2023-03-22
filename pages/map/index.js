@@ -7,6 +7,21 @@ import { StyledMapDiv, StyledMap, StyledMapButton } from './style'
 import currentLocation from '../../utils/getCurrentLocation'
 
 const KaKaoMap = () => {
+  let data = [
+    {
+      id: 1,
+      lat: 36.6283,
+      lng: 127.456,
+      name: '우체국',
+    },
+    {
+      id: 2,
+      lat: 36.628,
+      lng: 127.453,
+      name: '병원',
+    },
+  ]
+
   const [lat, setLat] = useState(0)
   const [lng, setLng] = useState(0)
 
