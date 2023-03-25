@@ -14,6 +14,7 @@ const KaKaoMap = () => {
       lng: 127.456,
       name: '우체국',
       status: 'TODAY_DISCOUNT',
+      type: 'food',
     },
     {
       id: 2,
