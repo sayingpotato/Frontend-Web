@@ -21,15 +21,15 @@ const KaKaoMap = () => {
       lng: 127.456,
       name: '우체국',
       status: 'TODAY_DISCOUNT',
-      type: 'food',
+      category: 'food',
     },
     {
       id: 2,
       lat: 36.6283,
       lng: 127.436,
       name: '병원',
-      status: 'TODAY_DISCOUNT NONE',
-      type: 'cafe',
+      status: 'NONE',
+      category: 'cafe',
     },
     {
       id: 3,
@@ -37,13 +37,13 @@ const KaKaoMap = () => {
       lng: 127.486,
       name: '우체국1',
       status: 'TODAY_DISCOUNT',
-      type: 'food',
+      category: 'food',
     },
   ]
 
   const MapResult = data.map((oneData) => {
     if (oneData.status === 'TODAY_DISCOUNT') {
-      if (oneData.type === 'food') {
+      if (oneData.category === 'food') {
         return (
           <MapMarker
             key={`${oneData.id}`}
@@ -55,7 +55,7 @@ const KaKaoMap = () => {
           />
         )
       }
-      if (oneData.type === 'cafe') {
+      if (oneData.category === 'cafe') {
         return (
           <MapMarker
             key={`${oneData.id}`}
@@ -68,7 +68,7 @@ const KaKaoMap = () => {
         )
       }
     } else {
-      if (oneData.type === 'food') {
+      if (oneData.category === 'food') {
         return (
           <MapMarker
             key={`${oneData.id}`}
@@ -81,7 +81,7 @@ const KaKaoMap = () => {
           />
         )
       }
-      if (oneData.type === 'cafe') {
+      if (oneData.category === 'cafe') {
         return (
           <MapMarker
             key={`${oneData.id}`}
