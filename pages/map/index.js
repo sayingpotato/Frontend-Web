@@ -7,6 +7,13 @@ import { StyledMapDiv, StyledMap, StyledMapButton } from './style'
 import currentLocation from '../../utils/getCurrentLocation'
 
 const KaKaoMap = () => {
+  const foodSrc =
+    'https://cglink.com/files/attach/images/2291/635/661/a9a7ea055b072f7cf3e6e4d671e60c74.jpg'
+
+  const cafeSrc = 'https://img.lovepik.com/element/40050/4595.png_860.png'
+
+  const imageSize = { width: 22, height: 26 }
+
   let data = [
     {
       id: 1,
