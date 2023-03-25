@@ -29,6 +29,7 @@ const KaKaoMap = () => {
       lng: 127.436,
       name: '병원',
       status: 'TODAY_DISCOUNT NONE',
+      type: 'cafe',
     },
     {
       id: 3,
@@ -36,25 +37,63 @@ const KaKaoMap = () => {
       lng: 127.486,
       name: '우체국1',
       status: 'TODAY_DISCOUNT',
+      type: 'food',
     },
   ]
 
   const MapResult = data.map((oneData) => {
     if (oneData.status === 'TODAY_DISCOUNT') {
-      return (
-        <MapMarker
-          key={`${oneData.id}`}
-          position={{ lat: `${oneData.lat}`, lng: `${oneData.lng}` }}
-        ></MapMarker>
-      )
+      if (oneData.type === 'food') {
+        return (
+          <MapMarker
+            key={`${oneData.id}`}
+            position={{ lat: `${oneData.lat}`, lng: `${oneData.lng}` }}
+            image={{
+              src: foodSrc,
+              size: imageSize,
+            }}
+          />
+        )
+      }
+      if (oneData.type === 'cafe') {
+        return (
+          <MapMarker
+            key={`${oneData.id}`}
+            position={{ lat: `${oneData.lat}`, lng: `${oneData.lng}` }}
+            image={{
+              src: cafeSrc,
+              size: imageSize,
+            }}
+          />
+        )
+      }
     } else {
-      return (
-        <MapMarker
-          key={`${oneData.id}`}
-          position={{ lat: `${oneData.lat}`, lng: `${oneData.lng}` }}
-          opacity={0.5}
-        ></MapMarker>
-      )
+      if (oneData.type === 'food') {
+        return (
+          <MapMarker
+            key={`${oneData.id}`}
+            position={{ lat: `${oneData.lat}`, lng: `${oneData.lng}` }}
+            image={{
+              src: foodSrc,
+              size: imageSize,
+            }}
+            opacity={0.5}
+          />
+        )
+      }
+      if (oneData.type === 'cafe') {
+        return (
+          <MapMarker
+            key={`${oneData.id}`}
+            position={{ lat: `${oneData.lat}`, lng: `${oneData.lng}` }}
+            image={{
+              src: cafeSrc,
+              size: imageSize,
+            }}
+            opacity={0.5}
+          />
+        )
+      }
     }
   })
 
