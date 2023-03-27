@@ -74,7 +74,6 @@ const KaKaoMap = () => {
         setLat(result.latitude)
         setLng(result.longitude)
         setState({
-          center: { lat: result.latitude, lng: result.longitude },
         })
       })
       .catch((error) => {
