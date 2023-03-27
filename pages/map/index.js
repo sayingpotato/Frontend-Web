@@ -50,11 +50,14 @@ const KaKaoMap = () => {
     lng: 0,
   })
 
+  const [openPopUp, setOpenPopUp] = useState(false)
+
   const handleMarkerClick = (e) => {
     setCenter({
       lat: e.getPosition().getLat(),
       lng: e.getPosition().getLng(),
     })
+    setOpenPopUp(!openPopUp)
   }
 
   const MapResult = data.map((oneData) => {
