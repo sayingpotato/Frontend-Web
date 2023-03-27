@@ -1,5 +1,6 @@
 import { LevelComponent, LevelOne, LevelTwo, LevelThree, DetailLevelBlue, DetailLevelGray } from "./style"
-import {TOTAL} from '../../constants/register.js'
+import {DetailTOTALLevel} from '@constants/register.js'
+import { RegisterLevel } from "@utils/atom.js"
 
 export default function Level({level}){
     const firstDetailBlue = [3, 5, 5];
