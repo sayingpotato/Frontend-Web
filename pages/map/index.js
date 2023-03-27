@@ -41,6 +41,10 @@ const KaKaoMap = () => {
     },
   ]
 
+  const markerClick = () => {
+    console.log('markerClick')
+  }
+
   const MapResult = data.map((oneData) => {
     return (
       <MapMarker
@@ -51,6 +55,7 @@ const KaKaoMap = () => {
           size: imageSize,
         }}
         opacity={oneData.status === 'TODAY_DISCOUNT' ? 1 : 0.5}
+        onClick={markerClick}
       />
     )
   })
