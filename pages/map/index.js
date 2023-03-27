@@ -2,7 +2,7 @@ import { useEffect, useState, useRef } from 'react'
 import { Map, MapMarker } from 'react-kakao-maps-sdk'
 import { BiCurrentLocation } from 'react-icons/bi'
 
-import { StyledMapDiv, StyledMap, StyledMapButton } from './style'
+import { StyledMapDiv, StyledMap, StyledMapButton, Div, Hone } from './style'
 
 import currentLocation from '../../utils/getCurrentLocation'
 
@@ -110,6 +110,9 @@ const KaKaoMap = () => {
       <StyledMapButton onClick={refreshButtonClick}>
         <BiCurrentLocation size={40} />
       </StyledMapButton>
+      <Div state={openPopUp}>
+        <Hone state={openPopUp}>123</Hone>
+      </Div>
     </StyledMapDiv>
   )
 }
