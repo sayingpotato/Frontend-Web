@@ -79,8 +79,8 @@ const KaKaoMap = () => {
 
   const refreshButtonClick = () => {
     const map = mapRef.current
-    let currentLat = map.getCenter().getLat()
-    let currentLng = map.getCenter().getLng()
+    const currentLat = map.getCenter().getLat()
+    const currentLng = map.getCenter().getLng()
 
     setState({
       center: { lat: currentLat, lng: currentLng },
