@@ -41,8 +41,20 @@ const KaKaoMap = () => {
     },
   ]
 
-  const markerClick = () => {
-    console.log('markerClick')
+  const mapRef = useRef()
+
+  const [currentCenter, setCurrentCenter] = useState({ lat: 0, lng: 0 })
+
+  const [center, setCenter] = useState({
+    lat: 0,
+    lng: 0,
+  })
+
+  const handleMarkerClick = (e) => {
+    setCenter({
+      lat: e.getPosition().getLat(),
+      lng: e.getPosition().getLng(),
+    })
   }
 
   const MapResult = data.map((oneData) => {
@@ -55,50 +67,46 @@ const KaKaoMap = () => {
           size: imageSize,
         }}
         opacity={oneData.status === 'TODAY_DISCOUNT' ? 1 : 0.5}
-        onClick={markerClick}
+        onClick={handleMarkerClick}
       />
     )
   })
 
-  const [lat, setLat] = useState(0)
-  const [lng, setLng] = useState(0)
-
-  const [state, setState] = useState({
-    center: { lat: lat, lng: lng },
-  })
-  const mapRef = useRef()
-
   useEffect(() => {
     currentLocation()
       .then((result) => {
-        setLat(result.latitude)
-        setLng(result.longitude)
-        setState({
+        setCurrentCenter({
+          lat: result.latitude,
+          lng: result.longitude,
         })
       })
       .catch((error) => {
         console.error(error)
       })
-  }, [state])
+  }, [currentCenter])
+
+  useEffect(() => {
+    setCenter({
+      lat: currentCenter.lat,
+      lng: currentCenter.lng,
+    })
+  }, [currentCenter.lat, currentCenter.lng])
 
   const refreshButtonClick = () => {
-    const map = mapRef.current
-    const currentLat = map.getCenter().getLat()
-    const currentLng = map.getCenter().getLng()
-
-    setState({
-      center: { lat: currentLat, lng: currentLng },
+    setCurrentCenter({
+      lat: 0,
+      lng: 0,
     })
   }
 
   return (
     <StyledMapDiv>
-      <StyledMap center={state.center} ref={mapRef}>
+      <StyledMap center={center} ref={mapRef}>
         {MapResult}
-        <StyledMapButton onClick={refreshButtonClick}>
-          <BiCurrentLocation size={40} />
-        </StyledMapButton>
       </StyledMap>
+      <StyledMapButton onClick={refreshButtonClick}>
+        <BiCurrentLocation size={40} />
+      </StyledMapButton>
     </StyledMapDiv>
   )
 }
