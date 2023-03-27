@@ -42,59 +42,17 @@ const KaKaoMap = () => {
   ]
 
   const MapResult = data.map((oneData) => {
-    if (oneData.status === 'TODAY_DISCOUNT') {
-      if (oneData.category === 'food') {
-        return (
-          <MapMarker
-            key={`${oneData.id}`}
-            position={{ lat: `${oneData.lat}`, lng: `${oneData.lng}` }}
-            image={{
-              src: foodSrc,
-              size: imageSize,
-            }}
-          />
-        )
-      }
-      if (oneData.category === 'cafe') {
-        return (
-          <MapMarker
-            key={`${oneData.id}`}
-            position={{ lat: `${oneData.lat}`, lng: `${oneData.lng}` }}
-            image={{
-              src: cafeSrc,
-              size: imageSize,
-            }}
-          />
-        )
-      }
-    } else {
-      if (oneData.category === 'food') {
-        return (
-          <MapMarker
-            key={`${oneData.id}`}
-            position={{ lat: `${oneData.lat}`, lng: `${oneData.lng}` }}
-            image={{
-              src: foodSrc,
-              size: imageSize,
-            }}
-            opacity={0.5}
-          />
-        )
-      }
-      if (oneData.category === 'cafe') {
-        return (
-          <MapMarker
-            key={`${oneData.id}`}
-            position={{ lat: `${oneData.lat}`, lng: `${oneData.lng}` }}
-            image={{
-              src: cafeSrc,
-              size: imageSize,
-            }}
-            opacity={0.5}
-          />
-        )
-      }
-    }
+    return (
+      <MapMarker
+        key={`${oneData.id}`}
+        position={{ lat: `${oneData.lat}`, lng: `${oneData.lng}` }}
+        image={{
+          src: oneData.category === 'food' ? foodSrc : cafeSrc,
+          size: imageSize,
+        }}
+        opacity={oneData.status === 'TODAY_DISCOUNT' ? 1 : 0.5}
+      />
+    )
   })
 
   const [lat, setLat] = useState(0)
