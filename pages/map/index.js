@@ -138,6 +138,7 @@ const KaKaoMap = () => {
       lat: 0,
       lng: 0,
     })
+    setOpenPopUp(false)
   }
 
   return (
