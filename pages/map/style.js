@@ -31,7 +31,7 @@ const Div = styled.div`
   border-radius: 40px 40px 0px 0px;
   box-shadow: 0px -10px 10px grey;
   border: 1px solid black;
-  padding: 10px;
+  
 `
 
 export { StyledMapDiv, StyledMap, StyledMapButton, Div }
