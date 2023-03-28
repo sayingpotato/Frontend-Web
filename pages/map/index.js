@@ -83,6 +83,8 @@ const KaKaoMap = () => {
       lng: e.getPosition().getLng(),
     })
     setOpenPopUp(!openPopUp)
+    const info = JSON.parse(e.getTitle())
+    setMarkerInfo(info)
   }
 
   const MapResult = data.map((oneData) => {
