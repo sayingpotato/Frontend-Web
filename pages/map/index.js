@@ -93,11 +93,12 @@ const KaKaoMap = () => {
         key={`${oneData.id}`}
         position={{ lat: `${oneData.lat}`, lng: `${oneData.lng}` }}
         image={{
-          src: oneData.category === 'food' ? foodSrc : cafeSrc,
+          src: oneData.value['category'] === 'food' ? foodSrc : cafeSrc,
           size: imageSize,
         }}
-        opacity={oneData.status === 'TODAY_DISCOUNT' ? 1 : 0.5}
+        opacity={oneData.value['status'] === 'TODAY_DISCOUNT' ? 1 : 0.5}
         onClick={handleMarkerClick}
+        title={JSON.stringify(oneData.value)}
       />
     )
   })
