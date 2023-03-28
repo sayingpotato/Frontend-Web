@@ -12,13 +12,31 @@ const StyledMap = styled(Map)`
 
 const StyledMapButton = styled.button`
   position: absolute;
-  bottom: 3%;
+  bottom: ${(props) => (props.state === true ? '33%' : '3%')};
   border: 1px solid white;
   z-index: 2;
   border-radius: 50%;
   background-color: white;
-  right: 0;
-  margin-right: 3%;
+  right: 3%;
 `
 
-export { StyledMapDiv, StyledMap, StyledMapButton }
+const Div = styled.div`
+  position: absolute;
+  bottom: 0%;
+  background-color: white;
+  z-index: 2;
+  width: 100%;
+  height: 30%;
+  display: ${(props) => (props.state === true ? 'inline-block' : 'none')};
+  border-radius: 40px 40px 0px 0px;
+  box-shadow: 0px -10px 10px grey;
+  border: 1px solid black;
+`
+
+const Hone = styled.h1`
+  position: absolute;
+  z-index: 2;
+  display: ${(props) => (props.state === true ? 'inline-block' : 'none')};
+`
+
+export { StyledMapDiv, StyledMap, StyledMapButton, Div, Hone }
