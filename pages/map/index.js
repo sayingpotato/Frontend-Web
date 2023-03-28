@@ -19,46 +19,46 @@ const KaKaoMap = () => {
   let data = [
     {
       id: 1,
-      lat: 36.6283,
-      lng: 127.456,
+      latitude: 36.6283,
+      longitude: 127.456,
 
       value: {
         name: '좋은 원두',
-        adress: '충북 청주시',
+        address: '충북 청주시',
         time: '월요일',
         call: '041-271-1234',
-        today: 0,
-        category: 'food',
-        status: 'TODAY_DISCOUNT',
+        status: 'OPEN',
+        category: 'FOOD',
+        discountInfo: 'TODAY_DISCOUNT',
       },
     },
     {
       id: 2,
-      lat: 36.6283,
-      lng: 127.436,
+      latitude: 36.6283,
+      longitude: 127.436,
 
       value: {
         name: '좋은 원두111',
-        adress: '충북 청주시111',
+        address: '충북 청주시111',
         time: '월요일111',
         call: '041-271-12341111',
-        today: 1,
-        category: 'cafe',
-        status: 'NONE',
+        status: 'CLOSED',
+        category: 'CAFE',
+        discountInfo: 'NONE',
       },
     },
     {
       id: 3,
-      lat: 36.6283,
-      lng: 127.486,
+      latitude: 36.6283,
+      longitude: 127.486,
       value: {
         name: '좋은 원두222',
-        adress: '충북 청주시222',
+        address: '충북 청주시222',
         time: '월요일222',
         call: '041-271-122222222211',
-        today: 1,
-        category: 'food',
-        status: 'NONE',
+        status: 'OPEN',
+        category: 'FOOD',
+        discountInfo: 'NONE',
       },
     },
   ]
@@ -69,7 +69,7 @@ const KaKaoMap = () => {
   const [center, setCenter] = useState({ lat: 0, lng: 0 })
   const [markerInfo, setMarkerInfo] = useState({
     name: '',
-    adress: '',
+    address: '',
     time: '',
     call: '',
     today: 0,
@@ -93,12 +93,12 @@ const KaKaoMap = () => {
     return (
       <MapMarker
         key={`${oneData.id}`}
-        position={{ lat: `${oneData.lat}`, lng: `${oneData.lng}` }}
+        position={{ lat: `${oneData.latitude}`, lng: `${oneData.longitude}` }}
         image={{
-          src: oneData.value['category'] === 'food' ? foodSrc : cafeSrc,
+          src: oneData.value['category'] === 'FOOD' ? foodSrc : cafeSrc,
           size: imageSize,
         }}
-        opacity={oneData.value['status'] === 'TODAY_DISCOUNT' ? 1 : 0.5}
+        opacity={oneData.value['discountInfo'] === 'TODAY_DISCOUNT' ? 1 : 0.5}
         onClick={handleMarkerClick}
         title={JSON.stringify(oneData.value)}
       />
