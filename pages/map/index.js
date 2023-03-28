@@ -134,7 +134,13 @@ const KaKaoMap = () => {
 
   return (
     <StyledMapDiv>
-      <StyledMap center={center} ref={mapRef}>
+      <StyledMap
+        center={center}
+        ref={mapRef}
+        onClick={() => {
+          setOpenPopUp(false)
+        }}
+      >
         {MapResult}
       </StyledMap>
       <StyledMapButton onClick={refreshButtonClick} state={openPopUp}>
