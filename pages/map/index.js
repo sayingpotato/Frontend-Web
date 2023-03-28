@@ -19,35 +19,60 @@ const KaKaoMap = () => {
       id: 1,
       lat: 36.6283,
       lng: 127.456,
-      name: '우체국',
-      status: 'TODAY_DISCOUNT',
-      category: 'food',
+
+      value: {
+        name: '좋은 원두',
+        adress: '충북 청주시',
+        time: '월요일',
+        call: '041-271-1234',
+        today: 0,
+        category: 'food',
+        status: 'TODAY_DISCOUNT',
+      },
     },
     {
       id: 2,
       lat: 36.6283,
       lng: 127.436,
-      name: '병원',
-      status: 'NONE',
-      category: 'cafe',
+
+      value: {
+        name: '좋은 원두111',
+        adress: '충북 청주시111',
+        time: '월요일111',
+        call: '041-271-12341111',
+        today: 1,
+        category: 'cafe',
+        status: 'NONE',
+      },
     },
     {
       id: 3,
       lat: 36.6283,
       lng: 127.486,
-      name: '우체국1',
-      status: 'TODAY_DISCOUNT',
-      category: 'food',
+      value: {
+        name: '좋은 원두222',
+        adress: '충북 청주시222',
+        time: '월요일222',
+        call: '041-271-122222222211',
+        today: 1,
+        category: 'food',
+        status: 'NONE',
+      },
     },
   ]
 
   const mapRef = useRef()
 
   const [currentCenter, setCurrentCenter] = useState({ lat: 0, lng: 0 })
-
-  const [center, setCenter] = useState({
-    lat: 0,
-    lng: 0,
+  const [center, setCenter] = useState({ lat: 0, lng: 0 })
+  const [markerInfo, setMarkerInfo] = useState({
+    name: '',
+    adress: '',
+    time: '',
+    call: '',
+    today: 0,
+    category: '',
+    status: '',
   })
 
   const [openPopUp, setOpenPopUp] = useState(false)
