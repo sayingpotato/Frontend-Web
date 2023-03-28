@@ -139,7 +139,7 @@ const KaKaoMap = () => {
         <BiCurrentLocation size={40} />
       </StyledMapButton>
       <Div state={openPopUp}>
-        <Hone state={openPopUp}>123</Hone>
+        <MarkerInformation info={markerInfo} />
       </Div>
     </StyledMapDiv>
   )
