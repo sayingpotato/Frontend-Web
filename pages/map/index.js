@@ -80,11 +80,19 @@ const KaKaoMap = () => {
   const [openPopUp, setOpenPopUp] = useState(false)
 
   const handleMarkerClick = (e) => {
-    setCenter({
-      lat: e.getPosition().getLat(),
-      lng: e.getPosition().getLng(),
-    })
-    setOpenPopUp(!openPopUp)
+    if (
+      center.lat === e.getPosition().getLat() &&
+      center.lng === e.getPosition().getLng()
+    ) {
+      setOpenPopUp(true)
+    } else {
+      setOpenPopUp(true)
+      setCenter({
+        lat: e.getPosition().getLat(),
+        lng: e.getPosition().getLng(),
+      })
+    }
+
     const info = JSON.parse(e.getTitle())
     setMarkerInfo(info)
   }
