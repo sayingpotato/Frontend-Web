@@ -2,7 +2,9 @@ import { useEffect, useState, useRef } from 'react'
 import { Map, MapMarker } from 'react-kakao-maps-sdk'
 import { BiCurrentLocation } from 'react-icons/bi'
 
-import { StyledMapDiv, StyledMap, StyledMapButton, Div, Hone } from './style'
+import { StyledMapDiv, StyledMap, StyledMapButton, Div } from './style'
+
+import MarkerInformation from '../../components/markerInfo/index'
 
 import currentLocation from '../../utils/getCurrentLocation'
 
