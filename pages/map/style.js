@@ -3,11 +3,13 @@ import { Map } from 'react-kakao-maps-sdk'
 
 const StyledMapDiv = styled.div`
   height: 100vh;
+  width: 100vw;
 `
 
 const StyledMap = styled(Map)`
   z-index: 1;
   height: 100%;
+  width: inherit;
 `
 
 const StyledMapButton = styled.button`
@@ -25,7 +27,7 @@ const Div = styled.div`
   bottom: 0%;
   background-color: white;
   z-index: 2;
-  width: 100%;
+  width: inherit;
   height: 30%;
   display: ${(props) => (props.state === true ? 'inline-block' : 'none')};
   border-radius: 40px 40px 0px 0px;
