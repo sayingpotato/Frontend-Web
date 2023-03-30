@@ -24,6 +24,35 @@ const StyledMapButton = styled.button`
   height: 60px;
 `
 
+const StyledListButton = styled.button`
+  position: absolute;
+  bottom: ${(props) => (props.state === true ? '33%' : '11%')};
+  border: 1px solid white;
+  z-index: 2;
+  border-radius: 13%;
+  background-color: white;
+  right: 3%;
+  width: 120px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
+
+const ListName = styled.p`
+  font-size: 12px;
+  display: inline;
+  margin-left: 7%;
+  top: 50%;
+  left: 50%;
+  font-weight: 300;
+`
+
+const listIcon = styled.nav`
+  top: 50%;
+  left: 50%;
+`
+
 const Div = styled.div`
   position: absolute;
   bottom: 0%;
@@ -37,4 +66,12 @@ const Div = styled.div`
   border: 1px solid black;
 `
 
-export { StyledMapDiv, StyledMap, StyledMapButton, Div }
+export {
+  StyledMapDiv,
+  StyledMap,
+  StyledMapButton,
+  StyledListButton,
+  ListName,
+  Div,
+  listIcon,
+}
