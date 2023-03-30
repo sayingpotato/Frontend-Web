@@ -3,6 +3,8 @@ import { Map, MapMarker } from 'react-kakao-maps-sdk'
 import { BiCurrentLocation } from 'react-icons/bi'
 import { FaListUl } from 'react-icons/fa'
 
+import Router, { useRouter } from 'next/router'
+
 import {
   StyledMapDiv,
   StyledMap,
@@ -18,6 +20,8 @@ import MarkerInformation from '../../components/markerInfo/index'
 import currentLocation from '../../utils/getCurrentLocation'
 
 const KaKaoMap = () => {
+  const router = useRouter()
+
   const foodSrc =
     'https://user-images.githubusercontent.com/44117975/226111201-c9dc37f4-cd7a-49d3-8d18-303852bb996b.png'
 
@@ -151,7 +155,7 @@ const KaKaoMap = () => {
   }
 
   const markerInfoClick = () => {
-    console.log('123')
+    router.push('/storelist')
   }
 
   return (
