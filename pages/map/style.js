@@ -20,6 +20,8 @@ const StyledMapButton = styled.button`
   border-radius: 50%;
   background-color: white;
   right: 3%;
+  width: 60px;
+  height: 60px;
 `
 
 const Div = styled.div`
