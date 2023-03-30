@@ -8,7 +8,9 @@ import {
   StyledMap,
   StyledMapButton,
   StyledListButton,
+  ListName,
   Div,
+  listIcon,
 } from './style'
 
 import MarkerInformation from '../../components/markerInfo/index'
@@ -167,7 +169,8 @@ const KaKaoMap = () => {
         <BiCurrentLocation size={40} />
       </StyledMapButton>
       <StyledListButton onClick={markerInfoClick} state={openPopUp}>
-        <FaListUl info={markerInfo} size={40} />
+        <FaListUl info={markerInfo} size={40} className="listIcon" />
+        <ListName>가게 보기</ListName>
       </StyledListButton>
       <Div state={openPopUp}>
         <MarkerInformation info={markerInfo} />
