@@ -1,8 +1,15 @@
 import { useEffect, useState, useRef } from 'react'
 import { Map, MapMarker } from 'react-kakao-maps-sdk'
 import { BiCurrentLocation } from 'react-icons/bi'
+import { FaListUl } from 'react-icons/fa'
 
-import { StyledMapDiv, StyledMap, StyledMapButton, Div } from './style'
+import {
+  StyledMapDiv,
+  StyledMap,
+  StyledMapButton,
+  StyledListButton,
+  Div,
+} from './style'
 
 import MarkerInformation from '../../components/markerInfo/index'
 
@@ -141,6 +148,10 @@ const KaKaoMap = () => {
     setOpenPopUp(false)
   }
 
+  const markerInfoClick = () => {
+    console.log('123')
+  }
+
   return (
     <StyledMapDiv>
       <StyledMap
@@ -155,6 +166,9 @@ const KaKaoMap = () => {
       <StyledMapButton onClick={refreshButtonClick} state={openPopUp}>
         <BiCurrentLocation size={40} />
       </StyledMapButton>
+      <StyledListButton onClick={markerInfoClick} state={openPopUp}>
+        <FaListUl info={markerInfo} size={40} />
+      </StyledListButton>
       <Div state={openPopUp}>
         <MarkerInformation info={markerInfo} />
       </Div>
