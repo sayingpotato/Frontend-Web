@@ -1,6 +1,8 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import Router, { useRouter } from 'next/router'
 
+import { Title } from './style'
+
 const StoreList = () => {
   const router = useRouter()
 
@@ -25,7 +27,7 @@ const StoreList = () => {
           animate={animate.animate}
           exit={animate.exit}
         >
-          <h1>123</h1>
+          <Title>내 주변 가게</Title>
         </motion.div>
       </AnimatePresence>
     </>
