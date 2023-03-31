@@ -3,7 +3,7 @@ function isNull(v) {
 }
 
 export const isEnglish = (input) => {
-    return !isNull(input.match(/[a-zA-Z0-9]/g));
+    return !isNull(input.match(/[a-zA-Z]/g));
 }
 
 export const isNumber = (input) => {
@@ -11,5 +11,16 @@ export const isNumber = (input) => {
 }
 
 export const isMoreThan = (input, length) => {
+    if (isNull(input) || !input.length || input.includes(' ')) {
+        return 0;
+    }
     return input.length >= length;
+}
+
+export const isSpecialCharacter = (input) => {
+    return !isNull(input.match(/[^\w ]/g));
+}
+
+export const isKoreanEnglish = (input) => {
+    return !isNull(input.match(/^[가-힣a-zA-Z]+$/g));
 }
