@@ -53,7 +53,7 @@ const Agree = () => {
          <AgreeComponent>
             <Label
                title={'동의 여부'}
-               onClick={() => console.log(useAgree, infoAgree, locateAgree)}/>
+               />
             {sample.map((item, index) => {
                return (
                   <OneAgree
