@@ -1,48 +1,47 @@
-import { LevelComponent, LevelOne, LevelTwo, LevelThree, DetailLevelBlue, DetailLevelGray } from "./style"
-import {DetailTOTALLevel} from '@constants/register.js'
+import { 
+    LevelComponent, 
+    BigLevel, 
+    SmallLevel } from "./style"
+import {DETAIL_TOTAL_LEVEL} from '@constants/register.js'
 import { RegisterLevel } from "@utils/atom.js"
+import { useRecoilState} from "recoil"
+import { useEffect, useState } from "react";
 
-export default function Level({level}){
-    const firstDetailBlue = [3, 5, 5];
-    const secondDetailBlue = [0, 3, 5]; 
+export default function Level(){
+    const [registerLevel, setRegisterLevel] = useRecoilState(RegisterLevel);
+    const [bigLevelStatus, setBigLevelStatus] = useState([0, 0, 0]);
+    const firstSmall = [3, 5, 5];
+    const secondSmall = [0, 3, 5];
 
-    const blue = (array) => {
+    useEffect(() => {
+        switch (registerLevel) {
+            case 0: setBigLevelStatus([1, 0, 0]); break;
+            case 1: setBigLevelStatus([1, 1, 0]); break;
+            case 2: setBigLevelStatus([1, 1, 1]); break;
+        }
+    },[registerLevel]);
+
+    const smallLevel = (array, check) => {
+        const value = check ? array[registerLevel] : DETAIL_TOTAL_LEVEL - array[registerLevel];
+        
         return(
-            [... new Array(array[level])].map((index) => {
-                return (<DetailLevelBlue key = {index}/>)
+            [... new Array(value)].map((item, index) => {
+                return (<SmallLevel 
+                            status={check} 
+                            key={index}/>)
             })
         )
     }
-
-    const gray = (array) => {
-        return(
-            [... new Array(TOTAL - array[level])].map((index) => {
-                return (<DetailLevelGray key = {index}/>)
-            })
-        )
-    }
-
+    
     return (
         <LevelComponent>
-            <LevelOne>본인인증</LevelOne>
-            {blue(firstDetailBlue)}
-            {gray(firstDetailBlue)}
-            {level === 0 ?
-                <LevelTwo 
-                    style = {{backgroundColor : '#B8B8BA'}}>
-                    정보입력</LevelTwo> 
-                :
-                <LevelTwo>정보입력</LevelTwo>
-            }
-            {blue(secondDetailBlue)}
-            {gray(secondDetailBlue)}
-            {level !== 2 ?
-                <LevelThree 
-                    style = {{backgroundColor : '#B8B8BA'}}>
-                    학교인증</LevelThree> 
-                :
-                <LevelThree>학교인증</LevelThree>
-            }
+            <BigLevel level={bigLevelStatus[0]}>본인<br/>인증</BigLevel>
+            {smallLevel(firstSmall, 1)}
+            {smallLevel(firstSmall, 0)}
+            <BigLevel level={bigLevelStatus[1]}>정보<br/>입력</BigLevel>
+            {smallLevel(secondSmall, 1)}
+            {smallLevel(secondSmall, 0)}
+            <BigLevel level={bigLevelStatus[2]}>인증<br/>하기</BigLevel>
         </LevelComponent>
     )
 }

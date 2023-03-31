@@ -2,40 +2,26 @@ import styled from "styled-components";
 
 const LevelComponent = styled.div`
     display: flex;
+    justify-content: space-between;
     align-items: center;
     padding: 24px 16px 8px 16px;
-    gap: 8px;
 `;
 
-const LevelOne = styled.div`
+const BigLevel = styled.div`
+    text-align: center;
+    background-color: ${props => props.level ? '#28469C' :' #D9D9D9'};
+    color: white;
+    border-radius: 50%;
+    padding: 8px 14px 8px 14px;
     font-size: 16px;
     font-weight: 600;
-    display: flex;
-    text-align: center;
-    align-items: center;
-    width: 34px;
-    height: 34px;
-    border-radius: 50%;
-    padding: 16px 16px 16px 16px;
-    background-color: #28469C;
-    color: white;
 `;
 
-const LevelTwo = styled(LevelOne)`
-`;
-
-const LevelThree = styled(LevelOne)`
-`;
-
-const DetailLevelBlue = styled.div`
+const SmallLevel = styled.div`
     width: 7px;
     height: 7px;
     border-radius: 50%;
-    background-color: #28469C;
+    background-color: ${props => props.status ? '#28469C' :' #D9D9D9'};
 `;
 
-const DetailLevelGray = styled(DetailLevelBlue)`
-    background-color: #D9D9D9;
-`;
-
-export {LevelComponent, LevelOne, LevelTwo, LevelThree, DetailLevelBlue, DetailLevelGray};
+export {LevelComponent, BigLevel, SmallLevel};
