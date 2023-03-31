@@ -1,18 +1,17 @@
-import { useState } from 'react'
 import Back from '@components/back/index.js'
 import SignUp from '@components/signUp/index.js'
 import Level from '@components/level/index.js'
 import Line from '@components/line/index.js'
 
-const Register = () => {
-  const [level, setLevel] = useState(0);
+const Register = ({children}) => {
 
   return (
     <>
       <Back/>
         <SignUp/>
-          <Level level = {level}/>
+          <Level/>
           <Line/>
+          {children}
     </>
   )
 }
