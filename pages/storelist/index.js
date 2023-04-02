@@ -1,5 +1,8 @@
+import { useRef, useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Router, { useRouter } from 'next/router'
+import Image from 'next/image'
+import StorelistImage from '@components/storelistImage'
 
 import { Title, DataDiv } from './style'
 
@@ -109,7 +112,7 @@ const StoreList = () => {
           exit={animate.exit}
         >
           <Title>내 주변 가게</Title>
-          <DataDiv>123</DataDiv>
+          {StoreInfoResult}
         </motion.div>
       </AnimatePresence>
     </>
