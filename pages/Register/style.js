@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
-const Practice = styled.div`
+const RegisterDiv = styled.div`
     background-color: yellow;
+    
 `;
 
-export {Practice};
+export { RegisterDiv };
