@@ -8,6 +8,15 @@ import Image from "next/image";
 import preview from '@public/images/studentPreview.svg'
 import Next from "@components/next";
 
+College.Layout = ({ children }) => {
+    return (
+       <div>
+        {children}
+       </div>
+    );
+};
+  
+College.Layout.displayName = 'RegisterLayout';
 export default function College(){
     const setRegisterLevel = useSetRecoilState(RegisterLevel)
     const [state, setState] = useState(0);

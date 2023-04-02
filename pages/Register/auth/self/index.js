@@ -49,4 +49,14 @@ const Auth = () => {
   )
 }
 
+Auth.Layout = ({ children }) => {
+   return (
+      <div>
+       {children}
+      </div>
+   );
+ };
+ 
+Auth.Layout.displayName = 'RegisterLayout';
+
 export default Auth

@@ -78,5 +78,14 @@ const Agree = () => {
      </Register>
   )
 }
+Agree.Layout = ({ children }) => {
+   return (
+      <div>
+       {children}
+      </div>
+   );
+ };
+ 
+ Agree.Layout.displayName = 'RegisterLayout';
 
 export default Agree
