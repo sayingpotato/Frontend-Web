@@ -3,7 +3,7 @@ import styled from 'styled-components'
 const ImageWholeDiv = styled.div`
   display: flex;
   justify-content: space-between;
-  height: 180px;
+  height: 100px;
 `
 
 const MiddleDiv = styled.div`
@@ -16,17 +16,14 @@ const FirstImageDiv = styled.div`
 
 const SecondImageDiv = styled.div`
   width: 100%;
-  height: 50%;
 `
 
 const ThirdImageDiv = styled.div`
   width: 100%;
-  height: 50%;
 `
 
 const FourthImageDiv = styled.div`
   width: 100%;
-  height: 100%;
 `
 
 const One = styled.div`
