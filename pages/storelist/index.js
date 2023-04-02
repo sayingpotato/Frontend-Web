@@ -1,11 +1,19 @@
 import { useRef, useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Router, { useRouter } from 'next/router'
-import Image from 'next/image'
 import StorelistImage from '@components/storelistImage'
 import StorelistMenu from '@components/storelistMenu'
+import StorelistReview from '@components/storelistReview'
 
-import { Title, DataDiv } from './style'
+import {
+  Title,
+  DataDiv,
+  TitleDiv,
+  StoreName,
+  StoreMin,
+  StoreMax,
+  ContentDiv,
+} from './style'
 
 const StoreList = () => {
   const router = useRouter()
@@ -104,7 +112,10 @@ const StoreList = () => {
           <StoreMin>{`${oneData.minValue}`}</StoreMin>
           <StoreMax>{`${oneData.maxValue}`}</StoreMax>
         </TitleDiv>
+        <ContentDiv>
           <StorelistMenu menu={JSON.stringify(oneData.topMenu)} />
+          <StorelistReview review={JSON.stringify(oneData.topReview)} />
+        </ContentDiv>
       </DataDiv>
     )
   })
