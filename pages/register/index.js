@@ -4,7 +4,6 @@ import Level from '@components/level/index.js'
 import Line from '@components/line/index.js'
 
 const Register = ({children}) => {
-
   return (
     <>
       <Back/>
