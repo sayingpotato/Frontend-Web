@@ -132,5 +132,15 @@ const Pw = () => {
     )
 }
 
+Pw.Layout = ({ children }) => {
+    return (
+       <div>
+        {children}
+       </div>
+    );
+};
+  
+Pw.Layout.displayName = 'RegisterLayout';
+
 export default Pw
 

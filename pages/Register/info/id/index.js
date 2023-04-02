@@ -104,4 +104,14 @@ const Info = () => {
     )
 }
 
+Info.Layout = ({ children }) => {
+    return (
+       <div>
+        {children}
+       </div>
+    );
+};
+  
+Info.Layout.displayName = 'RegisterLayout';
+
 export default Info

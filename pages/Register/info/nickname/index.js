@@ -94,4 +94,14 @@ const NickName = () => {
     )
 }
 
+NickName.Layout = ({ children }) => {
+    return (
+       <div>
+        {children}
+       </div>
+    );
+};
+  
+NickName.Layout.displayName = 'RegisterLayout';
+
 export default NickName

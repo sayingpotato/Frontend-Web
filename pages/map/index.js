@@ -109,7 +109,7 @@ const KaKaoMap = () => {
     const info = JSON.parse(e.getTitle())
     setMarkerInfo(info)
   }
-
+  
   const MapResult = data.map((oneData) => {
     return (
       <MapMarker
