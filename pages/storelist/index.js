@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import Router, { useRouter } from 'next/router'
 import Image from 'next/image'
 import StorelistImage from '@components/storelistImage'
+import StorelistMenu from '@components/storelistMenu'
 
 import { Title, DataDiv } from './style'
 
@@ -103,6 +104,7 @@ const StoreList = () => {
           <StoreMin>{`${oneData.minValue}`}</StoreMin>
           <StoreMax>{`${oneData.maxValue}`}</StoreMax>
         </TitleDiv>
+          <StorelistMenu menu={JSON.stringify(oneData.topMenu)} />
       </DataDiv>
     )
   })
