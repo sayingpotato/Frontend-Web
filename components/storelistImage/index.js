@@ -44,7 +44,7 @@ const StorelistImage = (props) => {
             src={`${imageSrc['firstImage']}`}
             alt="첫 번째 이미지"
             width={firstParentImage}
-            height={180}
+            height={100}
           />
         </FirstImageDiv>
       </One>
@@ -54,7 +54,7 @@ const StorelistImage = (props) => {
             src={`${imageSrc['secondImage']}`}
             alt="두 번째 이미지"
             width={secondParentImage}
-            height={90}
+            height={50}
           />
         </SecondImageDiv>
         <ThirdImageDiv ref={thirdParentRef}>
@@ -62,7 +62,7 @@ const StorelistImage = (props) => {
             src={`${imageSrc['thirdImage']}`}
             alt="세 번째 이미지"
             width={thirdParentImage}
-            height={90}
+            height={50}
           />
         </ThirdImageDiv>
       </Two>
@@ -72,7 +72,7 @@ const StorelistImage = (props) => {
             src={`${imageSrc['fourthImage']}`}
             alt="네 번째 이미지"
             width={fourthParentImage}
-            height={180}
+            height={100}
           />
         </FourthImageDiv>
       </Three>
