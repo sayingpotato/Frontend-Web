@@ -18,6 +18,87 @@ const StoreList = () => {
     },
   }
 
+  let data = [
+    {
+      id: 1,
+      name: '좋은 원두',
+      maxValue: '25%',
+      minValue: '15%',
+      images: {
+        firstImage: '/images/food.png',
+        secondImage: '/images/food.png',
+        thirdImage: '/images/Calender.svg',
+        fourthImage: '/images/bean.png',
+      },
+      topMenu: {
+        firstTopMenu: '돼지갈비',
+        secondTopMenu: '삼겹살',
+        thirdTopMenu: '갈매기살',
+      },
+
+      topReview: {
+        firsttopReview: '음식이 맛있어요',
+        secondtopReview: '가성비가 좋아요',
+        thirdtopReview: '분위기가 좋아요',
+      },
+    },
+    {
+      id: 2,
+      name: '좋은 원두',
+      maxValue: '25%',
+      minValue: '15%',
+      images: {
+        firstImage: '/images/bean.png',
+        secondImage: '/images/bean.png',
+        thirdImage: '/images/bean.png',
+        fourthImage: '/images/bean.png',
+      },
+      topMenu: {
+        firstTopMenu: '돼지갈비',
+        secondTopMenu: '삼겹살',
+        thirdTopMenu: '갈매기살',
+      },
+
+      topReview: {
+        firsttopReview: '음식이 맛있어요',
+        secondtopReview: '가성비가 좋아요',
+        thirdtopReview: '분위기가 좋아요',
+      },
+    },
+    {
+      id: 3,
+      name: '좋은 원두',
+      maxValue: '25%',
+      minValue: '15%',
+      images: {
+        firstImage: '/images/bean.png',
+        secondImage: '/images/bean.png',
+        thirdImage: '/images/bean.png',
+        fourthImage: '/images/bean.png',
+      },
+
+      topMenu: {
+        firstTopMenu: '돼지갈비',
+        secondTopMenu: '삼겹살',
+        thirdTopMenu: '갈매기살',
+      },
+
+      topReview: {
+        firsttopReview: '음식이 맛있어요',
+        secondtopReview: '가성비가 좋아요',
+        thirdtopReview: '분위기가 좋아요',
+      },
+    },
+  ]
+
+  const StoreInfoResult = data.map((oneData) => {
+    return (
+      <DataDiv key={`${oneData.id}`}>
+        <StorelistImage imageSrc={JSON.stringify(oneData.images)} />
+      </DataDiv>
+    )
+  })
+
   return (
     <>
       <AnimatePresence mode="wait">
