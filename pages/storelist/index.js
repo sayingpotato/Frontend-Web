@@ -98,6 +98,11 @@ const StoreList = () => {
     return (
       <DataDiv key={`${oneData.id}`}>
         <StorelistImage imageSrc={JSON.stringify(oneData.images)} />
+        <TitleDiv>
+          <StoreName>{`${oneData.name}`}</StoreName>
+          <StoreMin>{`${oneData.minValue}`}</StoreMin>
+          <StoreMax>{`${oneData.maxValue}`}</StoreMax>
+        </TitleDiv>
       </DataDiv>
     )
   })
