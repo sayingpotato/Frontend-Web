@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { Map } from 'react-kakao-maps-sdk'
 
 const StyledMapDiv = styled.div`
-  height: 100vh;
+  height: 100%;
   width: 100vw;
 `
 
@@ -14,12 +14,12 @@ const StyledMap = styled(Map)`
 
 const StyledMapButton = styled.button`
   position: absolute;
-  bottom: ${(props) => (props.state === true ? '33%' : '3%')};
+  bottom: ${(props) => (props.state === true ? '33%' : '14%')};
   border: 1px solid white;
   z-index: 2;
   border-radius: 50%;
   background-color: white;
-  right: 3%;
+  right: 0;
 `
 
 const Div = styled.div`
