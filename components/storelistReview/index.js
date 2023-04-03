@@ -21,7 +21,7 @@ const StorelistReview = (props) => {
             width={10}
             height={10}
           />
-          <ReviewName>{`${reviewList['firstTopReivew']}`}</ReviewName>
+          <ReviewName>{`${reviewList['firstTopReview']}`}</ReviewName>
         </OneColoredDiv>
       </ReviewDiv>
       <ReviewDiv>
@@ -32,7 +32,7 @@ const StorelistReview = (props) => {
             width={10}
             height={10}
           />
-          <ReviewName>{`${reviewList['secondTopReivew']}`}</ReviewName>
+          <ReviewName>{`${reviewList['secondTopReview']}`}</ReviewName>
         </TwoColoredDiv>
       </ReviewDiv>
       <ReviewDiv>
@@ -43,7 +43,7 @@ const StorelistReview = (props) => {
             width={10}
             height={10}
           />
-          <ReviewName>{`${reviewList['thirdTopReivew']}`}</ReviewName>
+          <ReviewName>{`${reviewList['thirdTopReview']}`}</ReviewName>
         </ThreeColoredDiv>
       </ReviewDiv>
     </ReviewWholeDiv>
