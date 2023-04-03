@@ -16,8 +16,6 @@ import {
 } from './style'
 
 const StoreList = () => {
-  const router = useRouter()
-
   const animate = {
     initial: {
       opacity: 0,
@@ -60,9 +58,9 @@ const StoreList = () => {
       maxValue: '25%',
       minValue: '15%',
       images: {
-        firstImage: '/images/bean.png',
-        secondImage: '/images/bean.png',
-        thirdImage: '/images/bean.png',
+        firstImage: '/images/food.png',
+        secondImage: '/images/food.png',
+        thirdImage: '/images/Calender.svg',
         fourthImage: '/images/bean.png',
       },
       topMenu: {
@@ -83,9 +81,9 @@ const StoreList = () => {
       maxValue: '25%',
       minValue: '15%',
       images: {
-        firstImage: '/images/bean.png',
-        secondImage: '/images/bean.png',
-        thirdImage: '/images/bean.png',
+        firstImage: '/images/food.png',
+        secondImage: '/images/food.png',
+        thirdImage: '/images/Calender.svg',
         fourthImage: '/images/bean.png',
       },
 
@@ -119,6 +117,12 @@ const StoreList = () => {
       </DataDiv>
     )
   })
+
+  const router = useRouter()
+  const routerValue = [router['query']['lat'], router['query']['lng']]
+
+  // map에서 중심 값을 통하여 정렬 받을 예정
+  console.log(routerValue)
 
   return (
     <>
