@@ -1,4 +1,12 @@
-import { MarkerInfoDiv, PName, PStatus, PAddress, PTime, PCall } from './style'
+import {
+  MarkerInfoDiv,
+  PName,
+  PStatus,
+  PAddress,
+  PTime,
+  PCall,
+  icon,
+} from './style'
 import { GiPositionMarker } from 'react-icons/gi'
 import { AiOutlineClockCircle } from 'react-icons/ai'
 import { IoIosCall } from 'react-icons/io'
@@ -17,15 +25,15 @@ const MarkerInformation = (props) => {
           </PStatus>
         </div>
         <div>
-          <GiPositionMarker style={{ display: 'inline-block' }} />
+          <GiPositionMarker className="icon" />
           <PAddress>{props.info['address']}</PAddress>
         </div>
         <div>
-          <AiOutlineClockCircle style={{ display: 'inline-block' }} />
+          <AiOutlineClockCircle className="icon" />
           <PTime>{props.info['time']}</PTime>
         </div>
         <div>
-          <IoIosCall style={{ display: 'inline-block' }} />
+          <IoIosCall className="icon" />
           <PCall>{props.info['call']}</PCall>
         </div>
       </MarkerInfoDiv>

@@ -1,14 +1,27 @@
 import { useEffect, useState, useRef } from 'react'
 import { Map, MapMarker } from 'react-kakao-maps-sdk'
 import { BiCurrentLocation } from 'react-icons/bi'
+import { FaListUl } from 'react-icons/fa'
 
-import { StyledMapDiv, StyledMap, StyledMapButton, Div } from './style'
+import Router, { useRouter } from 'next/router'
+
+import {
+  StyledMapDiv,
+  StyledMap,
+  StyledMapButton,
+  StyledListButton,
+  ListName,
+  Div,
+  listIcon,
+} from './style'
 
 import MarkerInformation from '../../components/markerInfo/index'
 
 import currentLocation from '../../utils/getCurrentLocation'
 
 const KaKaoMap = () => {
+  const router = useRouter()
+
   const foodSrc =
     'https://user-images.githubusercontent.com/44117975/226111201-c9dc37f4-cd7a-49d3-8d18-303852bb996b.png'
 
@@ -96,7 +109,7 @@ const KaKaoMap = () => {
     const info = JSON.parse(e.getTitle())
     setMarkerInfo(info)
   }
-  
+
   const MapResult = data.map((oneData) => {
     return (
       <MapMarker
@@ -141,6 +154,13 @@ const KaKaoMap = () => {
     setOpenPopUp(false)
   }
 
+  const markerInfoClick = () => {
+    router.push({
+      pathname: '/storelist',
+      query: { lat: center['lat'], lng: center['lng'] },
+    })
+  }
+
   return (
     <StyledMapDiv>
       <StyledMap
@@ -155,6 +175,10 @@ const KaKaoMap = () => {
       <StyledMapButton onClick={refreshButtonClick} state={openPopUp}>
         <BiCurrentLocation size={40} />
       </StyledMapButton>
+      <StyledListButton onClick={markerInfoClick} state={openPopUp}>
+        <FaListUl info={markerInfo} size={40} className="listIcon" />
+        <ListName>가게 보기</ListName>
+      </StyledListButton>
       <Div state={openPopUp}>
         <MarkerInformation info={markerInfo} />
       </Div>
