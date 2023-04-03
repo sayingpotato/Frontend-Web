@@ -10,33 +10,50 @@ const StyledMap = styled(Map)`
   z-index: 1;
   height: 100%;
   width: inherit;
+
+  .marker {
+  }
 `
 
 const StyledMapButton = styled.button`
   position: absolute;
-  bottom: ${(props) => (props.state === true ? '38%' : '18%')};
+  bottom: ${(props) => (props.state === true ? '50%' : '25%')};
   border: 1px solid white;
   z-index: 2;
   border-radius: 50%;
   background-color: white;
   right: 3%;
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
+  padding: 0px;
+  align: center;
+
+  .refreshIcon {
+    margin: 0 auto;
+  }
 `
 
 const StyledListButton = styled.button`
   position: absolute;
-  bottom: ${(props) => (props.state === true ? '48%' : '28%')};
+  bottom: ${(props) => (props.state === true ? '43%' : '18%')};
   border: 1px solid white;
   z-index: 2;
-  border-radius: 13%;
+  border-radius: 20%;
   background-color: white;
   right: 3%;
-  width: 120px;
-  height: 60px;
+  width: 110px;
+  height: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
+
+  .storeListIcon {
+  }
+`
+
+const storeListIcon = styled.image`
+  width: 30px;
+  height: 30px;
 `
 
 const ListName = styled.p`
@@ -45,7 +62,8 @@ const ListName = styled.p`
   margin-left: 7%;
   top: 50%;
   left: 50%;
-  font-weight: 300;
+  font-weight: 400;
+  font-family: 'Pretendard Variable';
 `
 
 const listIcon = styled.nav`
@@ -55,21 +73,21 @@ const listIcon = styled.nav`
 
 const Div = styled.div`
   position: absolute;
-  bottom: 0%;
+  bottom: 16%;
   background-color: white;
   z-index: 2;
   width: inherit;
-  height: 30%;
+  height: 25%;
   display: ${(props) => (props.state === true ? 'inline-block' : 'none')};
-  border-radius: 40px 40px 0px 0px;
-  box-shadow: 0px -10px 10px grey;
-  border: 1px solid black;
+  border-radius: 15px 15px 0px 0px;
+  box-shadow: 0px -3px 5px grey;
 `
 
 export {
   StyledMapDiv,
   StyledMap,
   StyledMapButton,
+  storeListIcon,
   StyledListButton,
   ListName,
   Div,
