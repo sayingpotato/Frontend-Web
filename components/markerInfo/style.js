@@ -44,4 +44,16 @@ const PCall = styled.p`
   font-weight: 400;
 `
 
-export { MarkerInfoDiv, PName, PStatus, PAddress, PTime, PCall }
+const icon = styled.nav`
+  display: 'inline-block';
+`
+
+export {
+  MarkerInfoDiv,
+  PName,
+  PStatus,
+  PAddress,
+  PTime,
+  PCall,
+  icon,
+}
