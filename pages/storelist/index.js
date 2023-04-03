@@ -1,17 +1,20 @@
 import { useRef, useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Router, { useRouter } from 'next/router'
-import { RiMap2Line } from 'react-icons/ri'
 
 import Title from '@components/title'
 import StorelistImage from '@components/storelistImage'
 import StorelistMenu from '@components/storelistMenu'
 import StorelistReview from '@components/storelistReview'
 
+import Image from 'next/image'
+import map from '@public/images/whiteMap.svg'
+
 import {
   DataDiv,
   TitleDiv,
   StoreName,
+  DiscountDiv,
   StoreMin,
   StoreMax,
   ContentDiv,
@@ -38,10 +41,10 @@ const StoreList = () => {
       maxValue: '25%',
       minValue: '15%',
       images: {
-        firstImage: '/images/meat1.jpg',
-        secondImage: '/images/meat2.jpg',
-        thirdImage: '/images/meat3.jpg',
-        fourthImage: '/images/meat4.jpeg',
+        firstImage: '/images/meat1.svg',
+        secondImage: '/images/meat2.svg',
+        thirdImage: '/images/meat3.svg',
+        fourthImage: '/images/meat4.svg',
       },
       topMenu: {
         firstTopMenu: '돼지갈비',
@@ -61,10 +64,10 @@ const StoreList = () => {
       maxValue: '25%',
       minValue: '15%',
       images: {
-        firstImage: '/images/food.png',
-        secondImage: '/images/food.png',
-        thirdImage: '/images/Calender.svg',
-        fourthImage: '/images/bean.png',
+        firstImage: '/images/meat1.svg',
+        secondImage: '/images/meat2.svg',
+        thirdImage: '/images/meat3.svg',
+        fourthImage: '/images/meat4.svg',
       },
       topMenu: {
         firstTopMenu: '돼지갈비',
@@ -84,10 +87,10 @@ const StoreList = () => {
       maxValue: '25%',
       minValue: '15%',
       images: {
-        firstImage: '/images/food.png',
-        secondImage: '/images/food.png',
-        thirdImage: '/images/Calender.svg',
-        fourthImage: '/images/bean.png',
+        firstImage: '/images/meat1.svg',
+        secondImage: '/images/meat2.svg',
+        thirdImage: '/images/meat3.svg',
+        fourthImage: '/images/meat4.svg',
       },
 
       topMenu: {
@@ -110,8 +113,10 @@ const StoreList = () => {
         <StorelistImage imageSrc={JSON.stringify(oneData.images)} />
         <TitleDiv>
           <StoreName>{`${oneData.name}`}</StoreName>
-          <StoreMin>{`${oneData.minValue}`}</StoreMin>
-          <StoreMax>{`${oneData.maxValue}`}</StoreMax>
+          <DiscountDiv>
+            <StoreMin>{`${oneData.minValue}`}</StoreMin>
+            <StoreMax>{`${oneData.maxValue}`}</StoreMax>
+          </DiscountDiv>
         </TitleDiv>
         <ContentDiv>
           <StorelistMenu menu={JSON.stringify(oneData.topMenu)} />
@@ -146,7 +151,13 @@ const StoreList = () => {
           <div>
             {StoreInfoResult}
             <StyledMapButton onClick={goMapButtonClick}>
-              <RiMap2Line size={40} />
+              <Image
+                width={30}
+                height={30}
+                src={map}
+                className="map"
+                alt="map"
+              />
             </StyledMapButton>
           </div>
         </motion.div>

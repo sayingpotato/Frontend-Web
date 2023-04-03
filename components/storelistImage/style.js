@@ -3,7 +3,7 @@ import styled from 'styled-components'
 const ImageWholeDiv = styled.div`
   display: flex;
   justify-content: space-between;
-  height: 20%;
+  height: 50%;
   padding: 0;
 `
 
