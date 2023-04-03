@@ -50,9 +50,9 @@ const StoreList = () => {
       },
 
       topReview: {
-        firsttopReview: '음식이 맛있어요',
-        secondtopReview: '가성비가 좋아요',
-        thirdtopReview: '분위기가 좋아요',
+        firstTopReview: '음식이 맛있어요',
+        secondTopReview: '가성비가 좋아요',
+        thirdTopReview: '분위기가 좋아요',
       },
     },
     {
@@ -73,9 +73,9 @@ const StoreList = () => {
       },
 
       topReview: {
-        firsttopReview: '음식이 맛있어요',
-        secondtopReview: '가성비가 좋아요',
-        thirdtopReview: '분위기가 좋아요',
+        firstTopReview: '음식이 맛있어요',
+        secondTopReview: '가성비가 좋아요',
+        thirdTopReview: '분위기가 좋아요',
       },
     },
     {
@@ -97,9 +97,9 @@ const StoreList = () => {
       },
 
       topReview: {
-        firsttopReview: '음식이 맛있어요',
-        secondtopReview: '가성비가 좋아요',
-        thirdtopReview: '분위기가 좋아요',
+        firstTopReview: '음식이 맛있어요',
+        secondTopReview: '가성비가 좋아요',
+        thirdTopReview: '분위기가 좋아요',
       },
     },
   ]
