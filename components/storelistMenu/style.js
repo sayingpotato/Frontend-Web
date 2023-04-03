@@ -10,11 +10,12 @@ const MenuDiv = styled.div`
   display: flex;
   align-items: center;
   margin-bottom: 1%;
+  height: 25px;
 `
 
 const MenuName = styled.p`
   font-size: 10px;
-  font-weight: 400;
+  font-weight: 500;
   margin-left: 5%;
 `
 
