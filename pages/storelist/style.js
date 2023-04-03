@@ -7,10 +7,10 @@ const Title = styled.p`
 `
 
 const DataDiv = styled.div`
-  border: 1px solid black;
+  border: 1px solid white;
   border-radius: 1px 1px 5px 5px;
   width: 90%;
-  box-shadow: -5px 5px 5px -5px;
+  box-shadow: 0px 5px 5px -5px;
   margin: 0 auto;
   height: 50%;
   margin-bottom: 5%;
@@ -54,4 +54,25 @@ const ContentDiv = styled.div`
   display: flex;
 `
 
-export { Title, DataDiv, TitleDiv, StoreName, StoreMin, StoreMax, ContentDiv }
+const StyledMapButton = styled.button`
+  position: absolute;
+  bottom: ${(props) => (props.state === true ? '38%' : '18%')};
+  border: 1px solid white;
+  z-index: 2;
+  border-radius: 50%;
+  background-color: #28469c;
+  right: 3%;
+  width: 60px;
+  height: 60px;
+`
+
+export {
+  Title,
+  DataDiv,
+  TitleDiv,
+  StoreName,
+  StoreMin,
+  StoreMax,
+  ContentDiv,
+  StyledMapButton,
+}
