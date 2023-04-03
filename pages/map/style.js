@@ -14,7 +14,7 @@ const StyledMap = styled(Map)`
 
 const StyledMapButton = styled.button`
   position: absolute;
-  bottom: ${(props) => (props.state === true ? '33%' : '14%')};
+  bottom: ${(props) => (props.state === true ? '38%' : '18%')};
   border: 1px solid white;
   z-index: 2;
   border-radius: 50%;
@@ -26,7 +26,7 @@ const StyledMapButton = styled.button`
 
 const StyledListButton = styled.button`
   position: absolute;
-  bottom: ${(props) => (props.state === true ? '41%' : '11%')};
+  bottom: ${(props) => (props.state === true ? '48%' : '28%')};
   border: 1px solid white;
   z-index: 2;
   border-radius: 13%;
