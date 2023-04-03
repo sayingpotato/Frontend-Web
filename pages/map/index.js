@@ -109,7 +109,7 @@ const KaKaoMap = () => {
     const info = JSON.parse(e.getTitle())
     setMarkerInfo(info)
   }
-  
+
   const MapResult = data.map((oneData) => {
     return (
       <MapMarker
@@ -155,7 +155,10 @@ const KaKaoMap = () => {
   }
 
   const markerInfoClick = () => {
-    router.push('/storelist')
+    router.push({
+      pathname: '/storelist',
+      query: { lat: center['lat'], lng: center['lng'] },
+    })
   }
 
   return (
