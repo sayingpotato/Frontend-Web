@@ -1,6 +1,7 @@
 import { useRef, useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Router, { useRouter } from 'next/router'
+import { RiMap2Line } from 'react-icons/ri'
 import StorelistImage from '@components/storelistImage'
 import StorelistMenu from '@components/storelistMenu'
 import StorelistReview from '@components/storelistReview'
@@ -13,6 +14,7 @@ import {
   StoreMin,
   StoreMax,
   ContentDiv,
+  StyledMapButton,
 } from './style'
 
 const StoreList = () => {
@@ -124,6 +126,12 @@ const StoreList = () => {
   // map에서 중심 값을 통하여 정렬 받을 예정
   console.log(routerValue)
 
+  const goMapButtonClick = () => {
+    router.push({
+      pathname: '/map',
+    })
+  }
+
   return (
     <>
       <AnimatePresence mode="wait">
@@ -134,7 +142,12 @@ const StoreList = () => {
           exit={animate.exit}
         >
           <Title>내 주변 가게</Title>
-          {StoreInfoResult}
+          <div>
+            {StoreInfoResult}
+            <StyledMapButton onClick={goMapButtonClick}>
+              <RiMap2Line size={40} />
+            </StyledMapButton>
+          </div>
         </motion.div>
       </AnimatePresence>
     </>
