@@ -35,10 +35,10 @@ const StoreList = () => {
       maxValue: '25%',
       minValue: '15%',
       images: {
-        firstImage: '/images/food.png',
-        secondImage: '/images/food.png',
-        thirdImage: '/images/Calender.svg',
-        fourthImage: '/images/bean.png',
+        firstImage: '/images/meat1.jpg',
+        secondImage: '/images/meat2.jpg',
+        thirdImage: '/images/meat3.jpg',
+        fourthImage: '/images/meat4.jpeg',
       },
       topMenu: {
         firstTopMenu: '돼지갈비',
