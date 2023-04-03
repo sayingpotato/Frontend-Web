@@ -2,12 +2,13 @@ import { useRef, useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Router, { useRouter } from 'next/router'
 import { RiMap2Line } from 'react-icons/ri'
+
+import Title from '@components/title'
 import StorelistImage from '@components/storelistImage'
 import StorelistMenu from '@components/storelistMenu'
 import StorelistReview from '@components/storelistReview'
 
 import {
-  Title,
   DataDiv,
   TitleDiv,
   StoreName,
