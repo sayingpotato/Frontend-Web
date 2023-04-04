@@ -36,6 +36,44 @@ const TodayDiscount = () => {
     }
   }, [])
   return <div></div>
+
+  let data = [
+    {
+      id: 1,
+      value: {
+        name: '좋은 원두',
+        imageSrc: '/images/bronzeMedal.svg',
+      },
+    },
+    {
+      id: 2,
+      value: {
+        name: '좋은 원두2',
+        imageSrc: '/images/silverMedal.svg',
+      },
+    },
+    {
+      id: 3,
+      value: {
+        name: '좋은 원두3',
+        imageSrc: '/images/goldMedal.svg',
+      },
+    },
+    {
+      id: 4,
+      value: {
+        name: '좋은 원두4',
+        imageSrc: '/images/close.svg',
+      },
+    },
+    {
+      id: 5,
+      value: {
+        name: '좋은 원두4',
+        imageSrc: '/images/close.svg',
+      },
+    },
+  ]
 }
 
 export default TodayDiscount
