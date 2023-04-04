@@ -7,8 +7,11 @@ import DiscountTable from '@components/discountTable'
 import {
   InfoDiv,
   TypeButtonDiv,
-  TypeButton,
+  TypeFoodButton,
+  TypeCafeButton,
   DayInfoDiv,
+  NotNowDay,
+  NowDay,
   BackDiv,
   WholeDiv,
 } from './style'
@@ -133,17 +136,21 @@ const TodayDiscount = () => {
       <Title>오늘의 할인</Title>
       <InfoDiv>
         <TypeButtonDiv>
-          <TypeButton>식당</TypeButton>
-          <TypeButton>카페</TypeButton>
+          <TypeFoodButton state={clickValue} onClick={typeFoodClick}>
+            식당
+          </TypeFoodButton>
+          <TypeCafeButton state={clickValue} onClick={typeCafeClick}>
+            카페
+          </TypeCafeButton>
         </TypeButtonDiv>
         <DayInfoDiv>
-          <p>{`${prevDay}`}</p>
-          <p>{`${nowDay}`}</p>
-          <p>{`${nextDay}`}</p>
+          <NotNowDay>{`${prevDay}`}</NotNowDay>
+          <NowDay>{`${nowDay}`}</NowDay>
+          <NotNowDay>{`${nextDay}`}</NotNowDay>
         </DayInfoDiv>
       </InfoDiv>
       <BackDiv>
-        <WholeDiv>{rendering()}</WholeDiv>
+        <WholeDiv>{`${clickValue}` === 'cafe' ? CafeArr : FoodArr}</WholeDiv>
       </BackDiv>
     </>
   )
