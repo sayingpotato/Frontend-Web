@@ -18,6 +18,8 @@ const TodayDiscount = () => {
   const [prevDay, setPrevDay] = useState('')
   const [nextDay, setNextDay] = useState('')
 
+  const [clickValue, setClickValue] = useState('food')
+
   const days = [
     '일요일',
     '월요일',
@@ -31,7 +33,7 @@ const TodayDiscount = () => {
   useEffect(() => {
     setNowDay(date())
 
-    const idx = days.indexOf(nowDay)
+    const idx = days.indexOf(date())
 
     if (idx === 0) {
       setPrevDay('토요일')
@@ -45,7 +47,7 @@ const TodayDiscount = () => {
       setNextDay(days[idx + 1])
       setPrevDay(days[idx - 1])
     }
-  }, [])
+  }, [date()])
 
   let data = [
     {
@@ -98,19 +100,32 @@ const TodayDiscount = () => {
     },
   ]
 
-  const arr2 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+  const CafeArr = data.map((oneData, index) => {
+    return oneData.type === 'cafe' ? (
+      <DiscountTable
+        className={index === data.length - 1 ? 'last' : ''}
+        key={`${oneData.id}`}
+        data={`${JSON.stringify(oneData.value)}`}
+      ></DiscountTable>
+    ) : null
+  })
 
-  for (let i = 0; i < 12; i++) {
-    const value1 = data[i] || '' // undefined나 null 대신 빈 문자열 사용
-    console.log(value1)
+  const FoodArr = data.map((oneData, index) => {
+    return oneData.type === 'food' ? (
+      <DiscountTable
+        className={index === data.length - 1 ? 'last' : ''}
+        key={`${oneData.id}`}
+        data={`${JSON.stringify(oneData.value)}`}
+      ></DiscountTable>
+    ) : null
+  })
+
+  const typeFoodClick = (e) => {
+    setClickValue('food')
   }
-  const rendering = () => {
-    const result = []
 
-    for (let i = 0; i < arr2.length; i++) {
-      result.push(<span key={i}>{arr2[i] + ' / '}</span>)
-    }
-    return result
+  const typeCafeClick = (e) => {
+    setClickValue('cafe')
   }
 
   return (
