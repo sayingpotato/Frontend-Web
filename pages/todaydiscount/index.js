@@ -1,6 +1,17 @@
 import { useEffect, useState, useRef } from 'react'
 
 import date from '@utils/date'
+import Title from '@components/title'
+import DiscountTable from '@components/discountTable'
+
+import {
+  InfoDiv,
+  TypeButtonDiv,
+  TypeButton,
+  DayInfoDiv,
+  BackDiv,
+  WholeDiv,
+} from './style'
 
 const TodayDiscount = () => {
   const [nowDay, setNowDay] = useState('')
@@ -35,7 +46,6 @@ const TodayDiscount = () => {
       setPrevDay(days[idx - 1])
     }
   }, [])
-  return <div></div>
 
   let data = [
     {
@@ -74,6 +84,41 @@ const TodayDiscount = () => {
       },
     },
   ]
+
+  const arr2 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+
+  for (let i = 0; i < 12; i++) {
+    const value1 = data[i] || '' // undefined나 null 대신 빈 문자열 사용
+    console.log(value1)
+  }
+  const rendering = () => {
+    const result = []
+
+    for (let i = 0; i < arr2.length; i++) {
+      result.push(<span key={i}>{arr2[i] + ' / '}</span>)
+    }
+    return result
+  }
+
+  return (
+    <>
+      <Title>오늘의 할인</Title>
+      <InfoDiv>
+        <TypeButtonDiv>
+          <TypeButton>식당</TypeButton>
+          <TypeButton>카페</TypeButton>
+        </TypeButtonDiv>
+        <DayInfoDiv>
+          <p>{`${prevDay}`}</p>
+          <p>{`${nowDay}`}</p>
+          <p>{`${nextDay}`}</p>
+        </DayInfoDiv>
+      </InfoDiv>
+      <BackDiv>
+        <WholeDiv>{rendering()}</WholeDiv>
+      </BackDiv>
+    </>
+  )
 }
 
 export default TodayDiscount
