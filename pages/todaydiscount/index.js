@@ -54,6 +54,7 @@ const TodayDiscount = () => {
         name: '좋은 원두',
         imageSrc: '/images/bronzeMedal.svg',
       },
+      type: 'food',
     },
     {
       id: 2,
@@ -61,6 +62,7 @@ const TodayDiscount = () => {
         name: '좋은 원두2',
         imageSrc: '/images/silverMedal.svg',
       },
+      type: 'cafe',
     },
     {
       id: 3,
@@ -68,6 +70,7 @@ const TodayDiscount = () => {
         name: '좋은 원두3',
         imageSrc: '/images/goldMedal.svg',
       },
+      type: 'food',
     },
     {
       id: 4,
@@ -75,13 +78,23 @@ const TodayDiscount = () => {
         name: '좋은 원두4',
         imageSrc: '/images/close.svg',
       },
+      type: 'food',
     },
     {
       id: 5,
       value: {
-        name: '좋은 원두4',
+        name: '좋은 원두5',
         imageSrc: '/images/close.svg',
       },
+      type: 'cafe',
+    },
+    {
+      id: 6,
+      value: {
+        name: '좋은 원두6',
+        imageSrc: '/images/close.svg',
+      },
+      type: 'food',
     },
   ]
 
