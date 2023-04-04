@@ -1,59 +1,46 @@
 import styled from 'styled-components'
 
 const MarkerInfoDiv = styled.div`
-  padding: 5%;
+  padding-left: 5%;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 5px;
 
   & > div {
     display: flex;
-    gap: inherit;
+    gap: 10px;
     align-items: center;
   }
 `
 
+const MainDiv = styled.div`
+  height: 5%;
+  padding: 0;
+`
+
 const PName = styled.p`
   font-size: 20px;
-  display: inline-block;
-  font-weight: 500;
+  margin: 0;
+  font-weight: 600;
+  font-family: 'Pretendard Variable';
 `
 
 const PStatus = styled.p`
-  display: inline-block;
   font-size: 15px;
   color: ${(props) => props.status};
+  font-weight: 600;
+  font-family: 'Pretendard Variable';
+`
+
+const InfoValue = styled.p`
+  display: inline-block;
+  font-size: 10px;
   font-weight: 500;
-`
-
-const PAddress = styled.p`
-  display: inline-block;
-  font-size: 10px;
-  font-weight: 400;
-`
-
-const PTime = styled.p`
-  display: inline-block;
-  font-size: 10px;
-  font-weight: 400;
-`
-
-const PCall = styled.p`
-  display: inline-block;
-  font-size: 10px;
-  font-weight: 400;
+  font-family: 'Pretendard Variable';
 `
 
 const icon = styled.nav`
   display: 'inline-block';
 `
 
-export {
-  MarkerInfoDiv,
-  PName,
-  PStatus,
-  PAddress,
-  PTime,
-  PCall,
-  icon,
-}
+export { MarkerInfoDiv, MainDiv, PName, PStatus, InfoValue, icon }

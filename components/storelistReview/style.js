@@ -10,6 +10,7 @@ const ReviewDiv = styled.div`
   margin-bottom: 2%;
   background-color: #eaf2ff;
   border-radius: 4px;
+  height: 25px;
 `
 
 const ReviewName = styled.p`
@@ -25,6 +26,7 @@ const OneColoredDiv = styled.div`
   padding: 0 0 0 5%;
   border-radius: 4px;
   width: 80%;
+  height: 25px;
 `
 
 const TwoColoredDiv = styled.div`
@@ -34,6 +36,7 @@ const TwoColoredDiv = styled.div`
   padding: 0 0 0 5%;
   border-radius: 4px;
   width: 70%;
+  height: 25px;
 `
 
 const ThreeColoredDiv = styled.div`
@@ -43,6 +46,7 @@ const ThreeColoredDiv = styled.div`
   padding: 0 0 0 5%;
   border-radius: 4px;
   width: 60%;
+  height: 25px;
 `
 
 export {
