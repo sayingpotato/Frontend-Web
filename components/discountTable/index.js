@@ -1,13 +1,14 @@
-import { Div } from './style'
+import { Div, StyledImage, StyledName } from './style'
 import { useRef, useEffect, useState } from 'react'
 
 const DiscountTable = (props) => {
-  const data = JSON.parse(props.data)
+  const value = JSON.parse(props.data)
 
   return (
-    <>
-      <Div>{data['name']}</Div>
-    </>
+    <Div>
+      <StyledImage src={value['imageSrc']} alt="logo" />
+      <StyledName>{value['name']}</StyledName>
+    </Div>
   )
 }
 
