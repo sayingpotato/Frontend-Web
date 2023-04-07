@@ -1,5 +1,7 @@
+import { useEffect, useState } from "react";
 import Back from "@components/back";
 import SignUp from "@components/signUp";
+import Router from "next/router";
 import { 
     Input,
     Main,
@@ -7,12 +9,41 @@ import {
     LoginButton,
     RegisterButton,
     Find,
-    RegisterComponent } from "./style";
+    RegisterComponent,
+TotalLogin } from "./style";
 import Line from "@components/line";
 
 const Login = () => {
+    const [state, setState] = useState(false);
+    const [inputId, setInputId] = useState('');
+    const [inputPw, setInputPw] = useState('');
+
+    useEffect(() => {
+        if (inputId && inputPw) {
+            setState(true);
+            return;
+        }
+        setState(false);
+    },[inputId, inputPw])
+    
+    const onChangeId = (e) => {
+        setInputId(e.target.value);
+    }
+    
+    const onChangePw = (e) => {
+        setInputPw(e.target.value);
+    }
+
+    const onClickLoginButton = () => {
+        Router.push('/');
+    }
+
+    const onClickRegisterButton = () => {
+        Router.push('/register');
+    }
+    
     return (
-        <>
+        <TotalLogin>
             <Back/>
             <SignUp 
                 title={'LOG IN'}
@@ -20,11 +51,15 @@ const Login = () => {
             <LoginComponent>
                 <Main>
                     <Input
+                        onChange={onChangeId}
                         placeholder='ID'/>
                     <Input
+                        onChange={onChangePw}
                         type='password'
                         placeholder='PW'/>
-                    <LoginButton>
+                    <LoginButton 
+                        state={state}
+                        onClick={onClickLoginButton}>
                         로그인
                     </LoginButton>
                     <Find>
@@ -36,9 +71,10 @@ const Login = () => {
             <Line/>
             <RegisterComponent>
                 <p>회원이 아니신가요?</p>
-                <RegisterButton>회원가입</RegisterButton>
+                <RegisterButton 
+                    onClick={onClickRegisterButton}>회원가입</RegisterButton>
             </RegisterComponent>
-        </>
+        </TotalLogin>
     )
 }
 

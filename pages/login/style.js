@@ -3,7 +3,9 @@ import styled from "styled-components";
 const LoginComponent = styled.div`
     display: flex;
     justify-content: center;
-    margin-top: 32px;
+    align-items: flex-end;
+    margin-top:28px;
+    flex-grow: 1;
 `;
 
 const Main = styled.div`
@@ -25,32 +27,35 @@ const Input = styled.input`
     }
 
     ::placeholder {
-        font-family: 'Pretendard Variable'
+        font-family: 'Pretendard Variable';
         font-weight: 600;
     }
 `;
 
 const LoginButton = styled.button`
-    width: 304px;
+    width: 264px;
     border-radius: 16px;
-    padding: 18px 24px 18px 24px;
+    padding: 20px;
     font-size: 16px;
     font-weight: 600;
     margin-top: 12px;
     border: none;
-    background-color: #B0B0B0;
+    background-color: ${props => props.state ? '#28469C':'#B0B0B0'};
     color: white;
+    box-sizing: content-box;
 `;
 
 const RegisterComponent = styled.div`
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     text-align: center;
+    flex-grow: 1;
     p {
         color: #7B7B7B;
         font-weight: 500;
-        margin:14px;
+        margin:8px;
     }
 `;
 
@@ -67,4 +72,11 @@ const Find = styled.div`
     margin-bottom: 24px;
     font-size: 14px;
 `;
-export {LoginComponent, Main, Input, LoginButton, RegisterButton, Find, RegisterComponent}
+
+const TotalLogin = styled.div`
+    display: flex;
+    flex-direction: column;
+    height: 100svh;
+`;
+
+export {LoginComponent, Main, Input, LoginButton, RegisterButton, Find, RegisterComponent, TotalLogin}
