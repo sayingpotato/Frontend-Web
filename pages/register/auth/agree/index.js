@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Register from '@pages/register'
-import right from '@public/images/Check circle true.svg'
-import wrong from '@public/images/Check circle false.svg'
+import right from '@public/images/checkCircleTrue.svg'
+import wrong from '@public/images/checkCircleFalse.svg'
 import Image from 'next/image'
 import Next from "@components/next";
 import Label from "@components/label";
