@@ -12,6 +12,14 @@ const index = () => {
       value: {
         name: '좋은 원두',
         imageSrc: '/images/bronzeMedal.svg',
+        menu: [
+          '카페라떼 : 1',
+          '카페라떼 : 3',
+          '카라멜마끼아또 : 5',
+          '카라멜마끼아또 : 5',
+          '카라멜마끼아또 : 5',
+          '카라멜마끼아또 : 5',
+        ],
       },
       type: 'food',
     },
@@ -20,6 +28,14 @@ const index = () => {
       value: {
         name: '좋은 원두2',
         imageSrc: '/images/silverMedal.svg',
+        menu: [
+          '카페라떼 : 1',
+          '카페라떼 : 3',
+          '카라멜마끼아또 : 5',
+          '카라멜마끼아또 : 5',
+          '카페 모카 : 5',
+          '카라멜마끼아또 : 5',
+        ],
       },
       type: 'cafe',
     },
@@ -28,6 +44,12 @@ const index = () => {
       value: {
         name: '좋은 원두3',
         imageSrc: '/images/goldMedal.svg',
+        menu: [
+          '카페라떼 : 1',
+          '카페라떼 : 3',
+          '카라멜마끼아또 : 5',
+          '카라멜마끼아또 : 5',
+        ],
       },
       type: 'food',
     },
@@ -36,6 +58,14 @@ const index = () => {
       value: {
         name: '좋은 원두4',
         imageSrc: '/images/close.svg',
+        menu: [
+          '카페라떼 : 1',
+          '카페라떼 : 3',
+          '카라멜마끼아또 : 5',
+          '카라멜마끼아또 : 5',
+          '카라멜마끼아또 : 5',
+          '카라멜마끼아또 : 5',
+        ],
       },
       type: 'food',
     },
