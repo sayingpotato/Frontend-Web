@@ -76,6 +76,7 @@ const index = () => {
       <OrderedContent
         key={`${oneData.id}`}
         data={`${JSON.stringify(oneData.value)}`}
+        type={`${oneData.type}`}
       ></OrderedContent>
     )
   })
