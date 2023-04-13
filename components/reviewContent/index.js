@@ -1,7 +1,9 @@
 import { useEffect, useState, useRef } from 'react'
 import { Wholediv, ReviewWholeDiv, ReviewButtonDiv, ReviewResetButton, ReviewConfirmButton, ReviewButtonName } from './style'
 
-const Review = () => {
+const Review = (props) => {
+  const type = props.type;
+
   const [clickedIndex, setClickedIndex] = useState(-1);
   
   const cafeReviewArr = [
@@ -35,13 +37,19 @@ const Review = () => {
   return (
     <Wholediv>
       <ReviewWholeDiv>
-        {cafeReviewArr.map((data, index) => (
+        {type === "cafe" ? (cafeReviewArr.map((data, index) => (
         <ReviewButtonName
           key={index}
           onClick={() => handleClick(index)}
           state={clickedIndex === index}
         >{data.name}</ReviewButtonName>
-      ))}
+      ))) : (foodReviewArr.map((data, index) => (
+        <ReviewButtonName
+          key={index}
+          onClick={() => handleClick(index)}
+          state={clickedIndex === index}
+        >{data.name}</ReviewButtonName>
+      )))}
       </ReviewWholeDiv>
       <ReviewButtonDiv>
         <ReviewResetButton>초기화</ReviewResetButton>
