@@ -1,9 +1,9 @@
-import React from 'react'
-
-import { Wholediv, ReviewWholeDiv, ReviewButtonDiv, ReviewButtonName, ReviewResetButton, ReviewConfirmButton } from './style'
+import { useEffect, useState, useRef } from 'react'
+import { Wholediv, ReviewWholeDiv, ReviewButtonDiv, ReviewResetButton, ReviewConfirmButton, ReviewButtonName } from './style'
 
 const Review = () => {
-  const cafeReviewArr = ["☕ 커피가 맛있어요", "🤫 조용해요", "🍮 디저트가 맛있어요", "🔌 콘센트가 많아요", "🔌 콘센트가 많아요", "🔌 콘센트가 많아요", "🔌 콘센트가 많아요", "🔌 콘센트가 많아요", "🔌 콘센트가 많아요",]
+  const [clickedIndex, setClickedIndex] = useState(-1);
+  
   const cafeReviewArr = [
     { id: 1, name: "☕ 커피가 맛있어요" },
     { id: 2, name: "🤫 조용해요" },
@@ -14,13 +14,6 @@ const Review = () => {
     { id: 7, name: "🧁 디저트가 맛있어요" },
   ];
 
-  const cafeReviewData = () => {
-    const result = []
-      for (let i = 0; i < cafeReviewArr.length; i++) {
-        result.push(<ReviewButtonName key={i}>{cafeReviewArr[i]}</ReviewButtonName>)
-      }
-    return result
-  }
   const foodReviewArr = [
     { id: 1, name: "🥘 음식이 맛있어요" },
     { id: 2, name: "🤫 조용해요" },
@@ -31,10 +24,24 @@ const Review = () => {
     { id: 7, name: "😇 친절해요" },
   ];
 
+  const handleClick = (index) => {
+    if (index === clickedIndex) {
+      setClickedIndex(-1);
+    } else {
+      setClickedIndex(index);
+    }
+  }
+  
   return (
     <Wholediv>
       <ReviewWholeDiv>
-        {cafeReviewData()}
+        {cafeReviewArr.map((data, index) => (
+        <ReviewButtonName
+          key={index}
+          onClick={() => handleClick(index)}
+          state={clickedIndex === index}
+        >{data.name}</ReviewButtonName>
+      ))}
       </ReviewWholeDiv>
       <ReviewButtonDiv>
         <ReviewResetButton>초기화</ReviewResetButton>
