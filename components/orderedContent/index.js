@@ -18,6 +18,7 @@ import Review from '@components/reviewContent'
 
 const OrderedContent = (props) => {
   const value = JSON.parse(props.data)
+  const type = props.type
 
   const [open, setOpen] = useState(false)
 
@@ -58,7 +59,7 @@ const OrderedContent = (props) => {
           {open ? '▲ 접기' : '▼ 리뷰하기'}
         </ReviewButton>
         <ReviewContent state={open}>
-          <Review />
+          <Review type={type}/>
         </ReviewContent>
       </ReviewDiv>
     </Div>
