@@ -20,17 +20,6 @@ const ReviewButtonDiv = styled.div`
   gap : 2px;
 `
 
-const ReviewButtonName = styled.button`
-  background-color : white;
-  border : 1.5px solid #D9D9D9;
-  border-radius : 8px;
-  font-size : 7px;
-  font-weight : 400;
-  padding-left : 5px;
-  padding-right : 5px;
-  padding-top : 0px;
-  padding-bottom : 0px;
-`
 
 const ReviewResetButton = styled.button`
   background-color : white;
@@ -52,4 +41,16 @@ const ReviewConfirmButton = styled.button`
   height : 5vh;
 `
 
-export { Wholediv, ReviewWholeDiv, ReviewButtonDiv, ReviewButtonName, ReviewResetButton, ReviewConfirmButton }
+const ReviewButtonName = styled.button`
+  background-color : ${(props) => (props.state === true ? '#28469C' : 'white')};;
+  border : 1.5px solid #D9D9D9;
+  border-radius : 5px;
+  font-size : 7px;
+  font-weight : 400;
+  padding-left : 5px;
+  padding-right : 5px;
+  padding-top : 0px;
+  padding-bottom : 0px;
+`
+
+export { Wholediv, ReviewWholeDiv, ReviewButtonDiv, ReviewResetButton, ReviewConfirmButton, ReviewButtonName }
