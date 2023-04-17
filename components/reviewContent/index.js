@@ -4,7 +4,7 @@ import { Wholediv, ReviewWholeDiv, ReviewButtonDiv, ReviewResetButton, ReviewCon
 const Review = (props) => {
   const type = props.type;
 
-  const [clickedIndex, setClickedIndex] = useState(-1);
+  const [clickedIndex, setClickedIndex] = useState([]);
   
   const cafeReviewArr = [
     { id: 1, name: "☕ 커피가 맛있어요" },
@@ -27,11 +27,20 @@ const Review = (props) => {
   ];
 
   const handleClick = (index) => {
-    if (index === clickedIndex) {
-      setClickedIndex(-1);
+    if (clickedIndex.includes(index)) {
+      const removedArr = clickedIndex.filter(item => item !== index);
+      setClickedIndex(removedArr);
     } else {
-      setClickedIndex(index);
+      setClickedIndex([...clickedIndex, index]);
     }
+  }
+
+  const confirmButtonClick = () => {
+    console.log("확인- 차후 처리")
+  }
+
+  const resetButtonClick = () => {
+    setClickedIndex([-1])
   }
   
   return (
@@ -41,19 +50,19 @@ const Review = (props) => {
         <ReviewButtonName
           key={index}
           onClick={() => handleClick(index)}
-          state={clickedIndex === index}
+          state={clickedIndex.includes(index)}
         >{data.name}</ReviewButtonName>
       ))) : (foodReviewArr.map((data, index) => (
         <ReviewButtonName
           key={index}
           onClick={() => handleClick(index)}
-          state={clickedIndex === index}
+          state={clickedIndex.includes(index)}
         >{data.name}</ReviewButtonName>
       )))}
       </ReviewWholeDiv>
       <ReviewButtonDiv>
-        <ReviewResetButton>초기화</ReviewResetButton>
-        <ReviewConfirmButton>확인</ReviewConfirmButton>
+        <ReviewResetButton onClick={resetButtonClick}>초기화</ReviewResetButton>
+        <ReviewConfirmButton onClick={confirmButtonClick}>확인</ReviewConfirmButton>
       </ReviewButtonDiv>
     </Wholediv>
   )
