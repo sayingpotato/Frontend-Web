@@ -42,23 +42,21 @@ const Review = (props) => {
   const resetButtonClick = () => {
     setClickedIndex([-1])
   }
+
+  const reviewArr = type === "cafe" ? cafeReviewArr : foodReviewArr;
   
   return (
     <Wholediv>
       <ReviewWholeDiv>
-        {type === "cafe" ? (cafeReviewArr.map((data, index) => (
-        <ReviewButtonName
-          key={index}
-          onClick={() => handleClick(index)}
-          state={clickedIndex.includes(index)}
-        >{data.name}</ReviewButtonName>
-      ))) : (foodReviewArr.map((data, index) => (
-        <ReviewButtonName
-          key={index}
-          onClick={() => handleClick(index)}
-          state={clickedIndex.includes(index)}
-        >{data.name}</ReviewButtonName>
-      )))}
+        {reviewArr.map((data, index) => (
+      <ReviewButtonName
+        key={index}
+        onClick={() => handleClick(index)}
+        state={clickedIndex.includes(index)}
+      >
+        {data.name}
+      </ReviewButtonName>
+    ))}
       </ReviewWholeDiv>
       <ReviewButtonDiv>
         <ReviewResetButton onClick={resetButtonClick}>초기화</ReviewResetButton>
