@@ -4,8 +4,8 @@ const Div = styled.div`
   background-color: white;
   margin-top: 20px;
   margin-bottom: 20px;
-  padding: 1%;
-  height: ${(props) => (props.state === true ? '30vh' : '20vh')};
+  padding: 2%;
+  height: ${(props) => (props.state === true ? '35vh' : '20vh')};
 `
 
 const ContentDiv = styled.div`
@@ -23,7 +23,7 @@ const StoreDiv = styled.div`
 
 const PName = styled.p`
   font-weight: 800;
-  font-size: 10px;
+  font-size: 13px;
 `
 
 const MenuDiv = styled.div`
@@ -32,7 +32,7 @@ const MenuDiv = styled.div`
 `
 
 const PMenu = styled.p`
-  font-size: 8px;
+  font-size: 10px;
   font-weight: 400;
   margin-right: 3%;
   margin-top: 0;
@@ -43,7 +43,7 @@ const MoreButton = styled.button`
   border: 1px solid black;
   background-color: white;
   border-radius: 8px;
-  font-size: 5px;
+  font-size: 3px;
   font-weight: 400;
   width: 20vw;
   height: 4vh;
@@ -56,6 +56,7 @@ const StyledImage = styled.img`
 
 const ReviewDiv = styled.div`
   margin: auto;
+  margin-top : 5px;
 `
 
 const ReviewButton = styled.button`
@@ -66,6 +67,7 @@ const ReviewButton = styled.button`
   font-size : 8px;
   font-weight : 800;
   color : #B0B0B0;
+  margin-bottom : 3px;
 `
 
 const ReviewContent = styled.div`
