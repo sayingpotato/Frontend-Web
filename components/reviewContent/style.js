@@ -17,7 +17,7 @@ const ReviewButtonDiv = styled.div`
   flex-direction: column;
   justify-content: center;
   width: 25vw;
-  gap : 2px;
+  gap : 10px;
 `
 
 
@@ -39,18 +39,20 @@ const ReviewConfirmButton = styled.button`
   font-weight : 500;
   width : 20vw;
   height : 5vh;
+  color : white;
 `
 
 const ReviewButtonName = styled.button`
-  background-color : ${(props) => (props.state === true ? '#28469C' : 'white')};;
+  background-color : ${(props) => (props.state === true ? '#28469C' : 'white')};
   border : 1.5px solid #D9D9D9;
   border-radius : 5px;
   font-size : 7px;
   font-weight : 400;
-  padding-left : 5px;
-  padding-right : 5px;
-  padding-top : 0px;
-  padding-bottom : 0px;
+  padding-left : 8px;
+  padding-right : 8px;
+  padding-top : 3px;
+  padding-bottom : 3px;
+  color : ${(props) => (props.state === true ? 'white' : 'black')};
 `
 
 export { Wholediv, ReviewWholeDiv, ReviewButtonDiv, ReviewResetButton, ReviewConfirmButton, ReviewButtonName }
