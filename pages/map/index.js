@@ -78,8 +78,11 @@ const KaKaoMap = () => {
 
   const mapRef = useRef()
 
+  // 현 위치 (최초 useEffect 함수 또는 새로고침 버튼)
   const [currentCenter, setCurrentCenter] = useState({ lat: 0, lng: 0 })
+  // 지도의 중심 값 (최초에는 현 위치를 기준 -> 지도를 움직일 때마다 변경 또는 마커를 클릭할 때 변경)
   const [center, setCenter] = useState({ lat: 0, lng: 0 })
+
   const [markerInfo, setMarkerInfo] = useState({
     name: '',
     address: '',
@@ -170,6 +173,10 @@ const KaKaoMap = () => {
         onClick={() => {
           setOpenPopUp(false)
         }}
+        onDragEnd={(map) => setCenter({
+          lat: map.getCenter().getLat(),
+          lng: map.getCenter().getLng(),
+        })}
       >
         {MapResult}
       </StyledMap>
