@@ -22,6 +22,11 @@ import currentLocation from '@utils/getCurrentLocation'
 const KaKaoMap = () => {
   const router = useRouter()
 
+  const goBackrouterValue = [router['query']['goBackLat'], router['query']['goBackLng']]
+
+  // 가게 보기에서 다시 돌려준 중심값
+  console.log(goBackrouterValue)
+
   const imageSize = { width: 30, height: 30 }
 
   const foodIcon =
