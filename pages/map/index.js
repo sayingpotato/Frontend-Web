@@ -158,7 +158,7 @@ const KaKaoMap = () => {
     setOpenPopUp(false)
   }
 
-  const markerInfoClick = () => {
+  const storeListClick = () => {
     router.push({
       pathname: '/storelist',
       query: { lat: center['lat'], lng: center['lng'] },
@@ -189,7 +189,7 @@ const KaKaoMap = () => {
           alt="refreshIcon"
         />
       </StyledMapButton>
-      <StyledListButton onClick={markerInfoClick} state={openPopUp}>
+      <StyledListButton onClick={storeListClick} state={openPopUp}>
         <Image
           width={30}
           height={30}
