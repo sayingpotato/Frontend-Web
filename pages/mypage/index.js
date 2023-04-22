@@ -11,7 +11,7 @@ import MedalSrc from '@public/images/medal.svg'
 import ChartSrc from '@public/images/chart.svg'
 import CallSrc from '@public/images/call.svg'
 
-import { UserInfo, UserName, DiscountDiv, MoneyTitle, MoneyDiv, Money, BackDiv, DiscountInfo, DiscountTitle, ButtonWholeDiv, ButtonDiv, ButtonTitle } from './style'
+import { UserInfo, UserName, DiscountDiv, MoneyTitle, MoneyDiv, Money, BackDiv, DiscountInfo, DiscountTitle, ButtonWholeDiv, ButtonDiv, ButtonTitle, ButtonLogoutTitle } from './style'
 
 const ImageLists = [
     { image: PotatoSrc, title: '프로필 수정', next: 'modify' },
@@ -41,18 +41,25 @@ const mypage = () => {
             <DiscountTitle>최근 받은 할인</DiscountTitle>
         </DiscountInfo>
         {ImageLists.map((item, index) => {
-                const nextUrl = `/${item.next}`
-                return (
-                    <ButtonWholeDiv key={index}>
-                        <Link href={nextUrl}>
-                        <ButtonDiv>
-                            <Image src={item.image} alt={item.title} />
-                            <ButtonTitle>{item.title}</ButtonTitle>
-                        </ButtonDiv>
-                        </Link>
-                    </ButtonWholeDiv>
-                )
-            })}
+            const nextUrl = `/${item.next}`
+            return (
+                <ButtonWholeDiv key={index}>
+                    <Link href={nextUrl}>
+                    <ButtonDiv>
+                        <Image src={item.image} alt={item.title} />
+                        <ButtonTitle>{item.title}</ButtonTitle>
+                    </ButtonDiv>
+                    </Link>
+                </ButtonWholeDiv>
+            )
+        })}
+        <ButtonWholeDiv>
+            <Link href={'/login'}>
+                <ButtonDiv>
+                    <ButtonLogoutTitle>로그아웃</ButtonLogoutTitle>
+                </ButtonDiv>
+            </Link>
+        </ButtonWholeDiv>
       </BackDiv>
     </>
   )
