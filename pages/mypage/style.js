@@ -43,12 +43,16 @@ const BackDiv = styled.div`
     background-color : #EFEFEF;
     padding : 20px 30px 20px 30px;
     height : 80vh;
+    gap : 10px;
+    display: flex;
+    flex-direction: column;
 `
 
 const DiscountInfo = styled.div`
     border : 1px solid #999999;
     border-radius : 10px;
     height : 20vh;
+    background-color : white;
 `
 
 const DiscountTitle = styled.p`
@@ -64,9 +68,10 @@ const DiscountTitle = styled.p`
 const ButtonWholeDiv = styled.div`
     height : 8vh;
     border : 1px solid #999999;
-    border-radius : 10px;
+    border-radius : 5px;
+    background-color : white;
 
-    link {
+    a   {
         text-decoration: none;
     }
 `
@@ -75,11 +80,19 @@ const ButtonDiv = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    gap : 10px;
 `
 
 const ButtonTitle = styled.p`
     font-size : 15px;
     font-weight : 800;
+    color : black;
 `
 
-export {UserInfo, UserName, DiscountDiv, MoneyTitle, MoneyDiv, Money, BackDiv, DiscountInfo, DiscountTitle, ButtonWholeDiv, ButtonDiv, ButtonTitle}
+const ButtonLogoutTitle = styled.p`
+    font-size : 15px;
+    font-weight : 800;
+    color : red;
+`
+
+export {UserInfo, UserName, DiscountDiv, MoneyTitle, MoneyDiv, Money, BackDiv, DiscountInfo, DiscountTitle, ButtonWholeDiv, ButtonDiv, ButtonTitle, ButtonLogoutTitle}
