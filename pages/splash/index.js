@@ -20,4 +20,16 @@ const Splash = () => {
             <Name>감자입니다</Name>
         </ContentDiv>
     );
-}export default Splash;}
+}
+
+Splash.Layout = ({children}) => {
+    return (
+        <div>
+            {children}
+        </div>
+    )
+}
+
+Splash.Layout.displayName = 'SplashLayout';
+
+export default Splash;
