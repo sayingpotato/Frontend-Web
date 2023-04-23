@@ -12,7 +12,6 @@ const UserName = styled.p`
     font-size : 30px;
     font-weight : 800;
     color : white;
-
 `
 
 const DiscountDiv = styled.div`
@@ -20,7 +19,7 @@ const DiscountDiv = styled.div`
 `
 
 const MoneyTitle = styled.p`
-    font-size : 10px;
+    font-size : 12px;
     color : white;
     font-weight : 800;
     margin-left : 30px;
@@ -34,7 +33,7 @@ const MoneyDiv = styled.div`
 `
 
 const Money = styled.p`
-    font-size : 10px;
+    font-size : 12px;
     color : white;
     font-weight : 800;
 `
@@ -51,8 +50,36 @@ const BackDiv = styled.div`
 const DiscountInfo = styled.div`
     border : 1px solid #999999;
     border-radius : 10px;
-    height : 20vh;
     background-color : white;
+`
+
+const DiscountContentWhole = styled.div`
+    display : flex;
+    flex-wrap: wrap;
+    padding-left : 20px;
+    padding-right : 20px;
+`
+
+const DiscountContent = styled.div`
+    width : 50%;
+    display : flex;
+    align-items: center;
+`
+
+const DiscountContentValue = styled.div`
+    display : block;
+`
+
+const DiscountContentName = styled.p`
+    font-size:10px;
+    font-weight : 500;
+    margin-bottom : 1px;
+`
+
+const DiscountContentMoney = styled.p`
+    font-size:10px;
+    font-weight : 500;
+    margin-top : 1px;
 `
 
 const DiscountTitle = styled.p`
@@ -95,4 +122,4 @@ const ButtonLogoutTitle = styled.p`
     color : red;
 `
 
-export {UserInfo, UserName, DiscountDiv, MoneyTitle, MoneyDiv, Money, BackDiv, DiscountInfo, DiscountTitle, ButtonWholeDiv, ButtonDiv, ButtonTitle, ButtonLogoutTitle}
+export {UserInfo, UserName, DiscountDiv, MoneyTitle, MoneyDiv, Money, BackDiv, DiscountInfo, DiscountContent, DiscountContentValue, DiscountContentWhole, DiscountTitle, DiscountContentName, DiscountContentMoney, ButtonWholeDiv, ButtonDiv, ButtonTitle, ButtonLogoutTitle}
