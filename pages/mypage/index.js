@@ -11,7 +11,24 @@ import MedalSrc from '@public/images/medal.svg'
 import ChartSrc from '@public/images/chart.svg'
 import CallSrc from '@public/images/call.svg'
 
-import { UserInfo, UserName, DiscountDiv, MoneyTitle, MoneyDiv, Money, BackDiv, DiscountInfo, DiscountTitle, ButtonWholeDiv, ButtonDiv, ButtonTitle, ButtonLogoutTitle } from './style'
+import { UserInfo, 
+  UserName, 
+  DiscountDiv, 
+  MoneyTitle, 
+  MoneyDiv, 
+  Money, 
+  BackDiv, 
+  DiscountInfo, 
+  DiscountTitle, 
+  DiscountContentWhole, 
+  DiscountContent, 
+  DiscountContentValue, 
+  DiscountContentName, 
+  DiscountContentMoney, 
+  ButtonWholeDiv, 
+  ButtonDiv, 
+  ButtonTitle, 
+  ButtonLogoutTitle } from './style'
 
 const ImageLists = [
     { image: PotatoSrc, title: '프로필 수정', next: 'modify' },
@@ -46,6 +63,20 @@ const mypage = () => {
       },
     },
   ]
+
+  const discountResult = data.map((oneData) => {
+    return (
+      <DiscountContent key={`${oneData.id}`}>
+        <Image src={MoneySrc} alt="logo" />
+        <DiscountContentValue>
+          <DiscountContentName>{`${oneData.value.name}`}</DiscountContentName>
+          <DiscountContentMoney>{`${oneData.value.discountMoney}`}</DiscountContentMoney>
+        </DiscountContentValue>
+        
+      </DiscountContent>
+    )
+  })
+
   return (
     <>
       <Title>마이페이지</Title>
@@ -62,6 +93,7 @@ const mypage = () => {
       <BackDiv>
         <DiscountInfo>
             <DiscountTitle>최근 받은 할인</DiscountTitle>
+            <DiscountContentWhole>{discountResult}</DiscountContentWhole>
         </DiscountInfo>
         {ImageLists.map((item, index) => {
             const nextUrl = `/${item.next}`
