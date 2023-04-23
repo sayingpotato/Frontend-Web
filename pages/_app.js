@@ -27,9 +27,10 @@ export default function App({Component, pageProps}) {
       </Head>
       <RecoilRoot>
             <GlobalStyle/>
+            {showSplash ? <Splash /> :
             <Layout>
               <Component {...pageProps} />
-            </Layout>
+            </Layout>}
       </RecoilRoot>
     </QueryClientProvider>
    )
