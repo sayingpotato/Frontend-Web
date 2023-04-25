@@ -1,8 +1,9 @@
 import { Input } from "./style"
 
-const SearchInput = ({onChange}) => {
+const SearchInput = ({onChange, value}) => {
     return (
         <Input 
+            value={value}
             onChange = {onChange}/>
     )
 }

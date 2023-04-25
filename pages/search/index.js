@@ -48,18 +48,19 @@ const Search = () => {
     const [keyword, setKeyword] = useState('')
     
     const onChangeSearchInput = (e) => {
-        debouncedSetKeyword(e.target.value)
+        setKeyword(e.target.value)
     }
     
     const onClickSearchButton = () => {
-        console.log(keyword)
+        debouncedSetKeyword()
     }
 
-    const debouncedSetKeyword = useDebounce(setKeyword, 500)
+    const debouncedSetKeyword = useDebounce(() => console.log(keyword), 500)
 
     const clear = () => {
-        
+        setKeyword('')
     }
+
     return (
         <>
             <Title>검색</Title>
@@ -72,6 +73,7 @@ const Search = () => {
                         src={search}
                         alt='search'/>
                     <SearchInput
+                        value={keyword}
                         onChange = {onChangeSearchInput}/>
                     <Image 
                         onClick={clear}
