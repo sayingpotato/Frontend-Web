@@ -1,15 +1,44 @@
 import styled from 'styled-components';
 
-const StyledInlineBlock = styled.input`
-  border: 3px solid black;
-  color: white;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
+const StyledInlineBlock = styled.div`
 
-  &.blue {
-    background-color: blue;
+  &.outside {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2%;
+    background-color: #eaf2ff;
+    border-radius: 4px;
+    height: 25px;
+  }
+
+  &.oneInside {
+    background-color: #4f79f1;
+    display: flex;
+    align-items: center;
+    padding: 0 0 0 5%;
+    border-radius: 4px;
+    width: 80%;
+    height: 25px;
+  }
+
+  &.twoInside {
+    background-color: #4f79f1;
+    display: flex;
+    align-items: center;
+    padding: 0 0 0 5%;
+    border-radius: 4px;
+    width: 70%;
+    height: 25px;
+  }
+
+  &.threeInside {
+    background-color: #4f79f1;
+    display: flex;
+    align-items: center;
+    padding: 0 0 0 5%;
+    border-radius: 4px;
+    width: 60%;
+    height: 25px;
   }
 `
 

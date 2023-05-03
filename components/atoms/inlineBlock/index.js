@@ -1,9 +1,9 @@
 import { StyledInlineBlock } from './style';
 
-const InlineBlock = ({ className }) => {
+const InlineBlock = ({ children, className }) => {
 
     return (
-        <StyledInlineBlock className={className} />
+        <StyledInlineBlock className={className}>{children}</StyledInlineBlock>
     );
 };
 
