@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from 'react'
 
 import date from '@utils/date'
-import Title from '@components/title'
+import Title from '@molecules/title'
 import DiscountTable from '@components/discountTable'
 
 import {
@@ -133,7 +133,7 @@ const TodayDiscount = () => {
 
   return (
     <>
-      <Title>오늘의 할인</Title>
+      <Title text="오늘의 할인"/>
       <InfoDiv>
         <TypeButtonDiv>
           <TypeFoodButton state={clickValue} onClick={typeFoodClick}>
