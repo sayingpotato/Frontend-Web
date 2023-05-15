@@ -2,13 +2,6 @@ import styled from 'styled-components';
 
 const StyledText = styled.p`
 
-  &.title {
-    color : black;
-    font-weight : 800;
-    text-align : center;
-    font-size : 20px;
-  }
-
   &.storeName {
     font-size: 15px;
     font-weight: 700;
