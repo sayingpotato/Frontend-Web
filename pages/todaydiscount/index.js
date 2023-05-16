@@ -1,21 +1,12 @@
 import { useEffect, useState, useRef } from 'react'
 
 import date from '@utils/date'
+
 import Title from '@molecules/title'
 import TodayDiscountHeader from '@organisms/todayDiscountHeader'
-import DiscountTable from '@components/discountTable'
+import TodayDiscountTemplate from '@templates/todayDiscountTemplate'
 
-import {
-  InfoDiv,
-  TypeButtonDiv,
-  TypeFoodButton,
-  TypeCafeButton,
-  DayInfoDiv,
-  NotNowDay,
-  NowDay,
-  BackDiv,
-  WholeDiv,
-} from './style'
+import { ContentWholeDiv, ContentDiv } from './style';
 
 const TodayDiscount = () => {
   const [nowDay, setNowDay] = useState('')
@@ -104,24 +95,21 @@ const TodayDiscount = () => {
     },
   ]
 
+  const discountTable = (oneData, index) => {
+    return (
+      <TodayDiscountTemplate
+        className={index === data.length - 1 ? 'last' : ''}
+        key={`${oneData.id}`}
+        data={`${JSON.stringify(oneData.value)}`}
+      ></TodayDiscountTemplate>
+    )
+  }
+  
   const CafeArr = data.map((oneData, index) => {
-    return oneData.type === 'cafe' ? (
-      <DiscountTable
-        className={index === data.length - 1 ? 'last' : ''}
-        key={`${oneData.id}`}
-        data={`${JSON.stringify(oneData.value)}`}
-      ></DiscountTable>
-    ) : null
+    return oneData.type === 'cafe' &&  discountTable(oneData, index)
   })
-
   const FoodArr = data.map((oneData, index) => {
-    return oneData.type === 'food' ? (
-      <DiscountTable
-        className={index === data.length - 1 ? 'last' : ''}
-        key={`${oneData.id}`}
-        data={`${JSON.stringify(oneData.value)}`}
-      ></DiscountTable>
-    ) : null
+    return oneData.type === 'food' &&  discountTable(oneData, index)
   })
 
   const typeFoodClick = (e) => {
@@ -139,9 +127,9 @@ const TodayDiscount = () => {
         state={clickValue}
         prevDay={`${prevDay}`} nowDay={`${nowDay}`} nextDay={`${nextDay}`}
         />
-      <BackDiv>
-        <WholeDiv>{`${clickValue}` === 'cafe' ? CafeArr : FoodArr}</WholeDiv>
-      </BackDiv>
+      <ContentWholeDiv>
+        <ContentDiv>{`${clickValue}` === 'cafe' ? CafeArr : FoodArr}</ContentDiv>
+      </ContentWholeDiv>
     </>
   )
 }
