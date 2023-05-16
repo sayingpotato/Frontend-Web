@@ -2,6 +2,7 @@ import { useEffect, useState, useRef } from 'react'
 
 import date from '@utils/date'
 import Title from '@molecules/title'
+import TodayDiscountHeader from '@organisms/todayDiscountHeader'
 import DiscountTable from '@components/discountTable'
 
 import {
@@ -134,21 +135,10 @@ const TodayDiscount = () => {
   return (
     <>
       <Title text="오늘의 할인"/>
-      <InfoDiv>
-        <TypeButtonDiv>
-          <TypeFoodButton state={clickValue} onClick={typeFoodClick}>
-            식당
-          </TypeFoodButton>
-          <TypeCafeButton state={clickValue} onClick={typeCafeClick}>
-            카페
-          </TypeCafeButton>
-        </TypeButtonDiv>
-        <DayInfoDiv>
-          <NotNowDay>{`${prevDay}`}</NotNowDay>
-          <NowDay>{`${nowDay}`}</NowDay>
-          <NotNowDay>{`${nextDay}`}</NotNowDay>
-        </DayInfoDiv>
-      </InfoDiv>
+      <TodayDiscountHeader FoodOnClick={typeFoodClick} CafeOnClick={typeCafeClick} 
+        state={clickValue}
+        prevDay={`${prevDay}`} nowDay={`${nowDay}`} nextDay={`${nextDay}`}
+        />
       <BackDiv>
         <WholeDiv>{`${clickValue}` === 'cafe' ? CafeArr : FoodArr}</WholeDiv>
       </BackDiv>
