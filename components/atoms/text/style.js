@@ -43,6 +43,13 @@ const StyledText = styled.p`
     font-size: 13px;
     font-weight: 700;
   }
+
+  &.todayDiscountLogoName {
+    margin: auto;
+    font-weight: 600;
+    font-size: 10px;
+    text-align: center;
+  }
 `
 
 export { StyledText };
