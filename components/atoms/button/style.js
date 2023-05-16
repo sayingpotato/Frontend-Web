@@ -14,6 +14,26 @@ const StyledButton = styled.button`
     height: 50px;
     padding: 0px;
   }
+
+  &.typeCafeButton {
+    width: 50px;
+    font-size: 10px;
+    height: 20px;
+    background-color: ${(props) => (props.state === 'cafe' ? 'black' : 'white')};
+    color: ${(props) => (props.state === 'cafe' ? 'white' : 'black')};
+    border: 0px solid ${(props) => (props.state === 'cafe' ? 'black' : 'white')};
+    border-radius: 3px;
+  }
+
+  &.typeFoodButton {
+    width: 50px;
+    font-size: 10px;
+    height: 20px;
+    background-color: ${(props) => (props.state === 'food' ? 'black' : 'white')};
+    color: ${(props) => (props.state === 'food' ? 'white' : 'black')};
+    border: 0px solid ${(props) => (props.state === 'cafe' ? 'black' : 'white')};
+    border-radius: 3px;
+  }
 `
 
 export { StyledButton };
