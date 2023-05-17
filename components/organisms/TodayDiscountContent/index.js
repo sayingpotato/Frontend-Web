@@ -1,13 +1,11 @@
 import { TodayDiscountContentDiv } from './style';
 
-import Image from '@atoms/image'
-import Text from '@atoms/text';
+import ImageTitle from '@molecules/imageTitle'
 
 const TodayDiscountContent = ({src, alt, text}) => {
     return (
         <TodayDiscountContentDiv>
-            <Image src={src} alt={alt} className='todayDiscountLogoImage'/>
-            <Text text={text} className='todayDiscountLogoName' />
+            <ImageTitle imageClassName='todayDiscountLogoImage' textClassName='todayDiscountLogoName' src={src} alt={alt} text={text} />
         </TodayDiscountContentDiv>
     );
 };
