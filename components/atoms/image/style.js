@@ -11,6 +11,12 @@ const StyledImage = styled.img`
     height: 50%;
     object-fit: contain;
   }
+  &.todayDiscountLogoImage {
+    width: 60px;
+    height: 60px;
+    display: block;
+    margin: auto;
+  }
 `
 
 export { StyledImage };

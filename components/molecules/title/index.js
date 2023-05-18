@@ -1,10 +1,8 @@
-import Text from "@atoms/text"
+import { StyledTitle } from './style';
 
-const Title = ({text}) => {
+const Title = ({text, className}) => {
     return (
-        <div>
-            <Text text={text} className="title"/>
-        </div>
+        <StyledTitle className={className}>{text}</StyledTitle>
     );
 };
 
