@@ -47,6 +47,22 @@ const StyledButton = styled.button`
     height: 50px;
     padding: 0px;
   }
+
+  &.mapListButton {
+    position: absolute;
+    bottom: ${(props) => (props.state === true ? '43%' : '18%')};
+    border: 1px solid white;
+    z-index: 2;
+    border-radius: 20px;
+    background-color: white;
+    right: 3%;
+    width: 110px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
 `
 
 export { StyledButton };
