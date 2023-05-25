@@ -40,6 +40,16 @@ const StyledInlineBlock = styled.div`
     width: 60%;
     height: 25px;
   }
+
+  &.fourInside {
+    background-color: #4f79f1;
+    display: flex;
+    align-items: center;
+    padding: 0 0 0 5%;
+    border-radius: 4px;
+    width: 50%;
+    height: 25px;
+  }
 `
 
 export { StyledInlineBlock };
