@@ -50,6 +50,29 @@ const StyledText = styled.p`
     font-size: 10px;
     text-align: center;
   }
+
+  &.mapListName {
+    font-size: 12px;
+    display: inline;
+    font-weight: 400;
+  }
+
+  &.markerContentHeaderName {
+    font-size: 20px;
+    margin: 0;
+    font-weight: 600;
+  }
+
+  &.markerContentHeaderStatus {
+    font-size: 14px;
+    color: ${(props) => props.status};
+    font-weight: 600;
+  }
+
+  &.markerContentInfoText {
+    font-size: 12px;
+    font-weight: 500;
+  }
 `
 
 export { StyledText };
