@@ -1,7 +1,8 @@
 import axios from "axios";
+import APP_HOST from "@constants/api.constants";
 
 const fetcher = axios.create({
-    baseURL : "http://34.64.165.57:8080",
+    baseURL : APP_HOST,
     timeout: 2500
 })
 
