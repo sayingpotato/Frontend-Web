@@ -52,7 +52,7 @@ const StyledInlineBlock = styled.div`
   }
 
   &.twoVisitorReviewInside {
-    background-color: #4f79f1;
+    background-color: #6C92FF;
     display: flex;
     align-items: center;
     padding: 0 0 0 5%;
@@ -62,7 +62,7 @@ const StyledInlineBlock = styled.div`
   }
 
   &.threeVisitorReviewInside {
-    background-color: #4f79f1;
+    background-color: #A3BAFF;
     display: flex;
     align-items: center;
     padding: 0 0 0 5%;
@@ -72,7 +72,7 @@ const StyledInlineBlock = styled.div`
   }
 
   &.fourVisitorReviewInside {
-    background-color: #4f79f1;
+    background-color: #DAE3FF;
     display: flex;
     align-items: center;
     padding: 0 0 0 5%;
