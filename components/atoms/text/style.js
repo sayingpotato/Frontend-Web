@@ -73,6 +73,11 @@ const StyledText = styled.p`
     font-size: 12px;
     font-weight: 500;
   }
+
+  &.menuTitle {
+    font-size : 8px;
+    font-weight : 500;
+  }
 `
 
 export { StyledText };
