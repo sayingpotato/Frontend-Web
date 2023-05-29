@@ -3,7 +3,7 @@ import { StoreInformationDiv, TextInfoDiv } from './style';
 import Image from "@atoms/image"
 import ImageText from '@molecules/imageText';
 
-const StoreInformation = ({address, time, call, concent, rank}) => {
+const StoreInformation = ({address, time, call, concent, rank, room}) => {
     return (
         <>
         <ImageText src="images/position.svg" text={address} divClassName="storeInformationPostion"/>
@@ -14,7 +14,7 @@ const StoreInformation = ({address, time, call, concent, rank}) => {
                     <ImageText src="images/concent.svg" text={concent} />
                     <ImageText src="images/rank.svg" text={rank} />
                 </TextInfoDiv>
-                <Image src="images/seating.svg" alt="images/seating.svg" />
+                <Image src={room} alt={room} />
             </StoreInformationDiv>
         </>
     );
