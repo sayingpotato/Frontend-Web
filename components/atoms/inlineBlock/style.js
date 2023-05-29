@@ -41,13 +41,43 @@ const StyledInlineBlock = styled.div`
     height: 25px;
   }
 
-  &.fourInside {
+  &.oneVisitorReviewInside {
+    background-color: #4f79f1;
+    display: flex;
+    align-items: center;
+    padding: 0 0 0 5%;
+    border-radius: 4px;
+    width: 60%;
+    height: 25px;
+  }
+
+  &.twoVisitorReviewInside {
     background-color: #4f79f1;
     display: flex;
     align-items: center;
     padding: 0 0 0 5%;
     border-radius: 4px;
     width: 50%;
+    height: 25px;
+  }
+
+  &.threeVisitorReviewInside {
+    background-color: #4f79f1;
+    display: flex;
+    align-items: center;
+    padding: 0 0 0 5%;
+    border-radius: 4px;
+    width: 40%;
+    height: 25px;
+  }
+
+  &.fourVisitorReviewInside {
+    background-color: #4f79f1;
+    display: flex;
+    align-items: center;
+    padding: 0 0 0 5%;
+    border-radius: 4px;
+    width: 30%;
     height: 25px;
   }
 `
