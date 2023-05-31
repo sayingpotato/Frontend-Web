@@ -40,8 +40,8 @@ const StyledText = styled.p`
   }
 
   &.reviewName {
-    font-size: 13px;
-    font-weight: 700;
+    font-size: 8px;
+    font-weight: 500;
   }
 
   &.todayDiscountLogoName {
@@ -92,6 +92,36 @@ const StyledText = styled.p`
     font-size : 30px;
     font-weight : 800;
     color : white;
+  &.storeDetailMenuTitle {
+    font-size : 8px;
+    font-weight : 500;
+  }
+
+  &.storeDetailMiniTitle {
+    font-size : 12px;
+    font-weight : 600;
+  }
+
+  &.storeDetailInfo {
+    font-size : 10px;
+  }
+
+  &.storeDetailPrice {
+    font-size : 8px;
+    color : #8C0909;
+    font-weight : 500;
+  }
+
+  &.storeDetailReviewTotal {
+    font-size : 8px;
+    color : #28469C;
+    font-weight : 500;
+  }
+
+  &.reviewTotal {
+    font-size : 8px;
+    color : red;
+    font-weight : 500;
   }
 `
 
