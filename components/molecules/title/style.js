@@ -17,6 +17,12 @@ const StyledTitle = styled.h1`
         font-size: 32px;
         margin-top: 10px;
     }
+
+    &.mypageName {
+        color: white;
+        font-weight: 800;
+        font-size: 32px;
+    }
 `
 
 export { StyledTitle };
