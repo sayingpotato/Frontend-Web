@@ -2,7 +2,9 @@ import { useEffect, useState, useRef } from 'react'
 import Image from 'next/image';
 import Link from 'next/link'
 
-import Title from '@components/title'
+import Title from '@molecules/title';
+import MypageUserInfo from '@organisms/mypageUserInfo';
+
 
 import MoneySrc from '@public/images/coin.svg'
 import PotatoSrc from '@public/images/modify.svg'
@@ -79,22 +81,17 @@ const mypage = () => {
 
   return (
     <>
-      <Title>마이페이지</Title>
-      <UserInfo>
-        <UserName>권낙현님</UserName>
-        <DiscountDiv>
-            <MoneyTitle>할인금액</MoneyTitle>
-            <MoneyDiv>
-                <Image src={MoneySrc} alt="logo" />
-                <Money>15000</Money>
-            </MoneyDiv>
-        </DiscountDiv>
-      </UserInfo>
+      <Title text="마이페이지" />
+
+      <MypageUserInfo />
+
       <BackDiv>
+
         <DiscountInfo>
             <DiscountTitle>최근 받은 할인</DiscountTitle>
             <DiscountContentWhole>{discountResult}</DiscountContentWhole>
         </DiscountInfo>
+
         {ImageLists.map((item, index) => {
             const nextUrl = `/${item.next}`
             return (
