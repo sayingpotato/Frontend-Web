@@ -9,12 +9,12 @@ const StoreVisitorReview = ({reviewData}) => {
     return (
         <>
             <StoreVisitorReviewDiv>
-                    <InlineText divClassName="basic" text1="방문자 리뷰" text2={reviewData.total} text1ClassName="storeDetailMiniTitle" text2ClassName="storeDetailReviewTotal" />
+                    <InlineText divClassName="basic" textOne="방문자 리뷰" textTwo={reviewData.total} textOneClassName="storeDetailMiniTitle" textTwoClassName="storeDetailReviewTotal" />
                     <PercentBlock>
-                        <ImageText text={reviewData.review1.text} textClass="reviewName" inlineBlockClass="oneVisitorReviewInside" out="visitorReviewOutside" reviewCount={reviewData.review1.count} />
-                        <ImageText text={reviewData.review2.text} textClass="reviewName" inlineBlockClass="twoVisitorReviewInside" out="visitorReviewOutside" reviewCount={reviewData.review2.count} />
-                        <ImageText text={reviewData.review3.text} textClass="reviewName" inlineBlockClass="threeVisitorReviewInside" out="visitorReviewOutside" reviewCount={reviewData.review3.count} />
-                        <ImageText text={reviewData.review4.text} textClass="reviewName" inlineBlockClass="fourVisitorReviewInside" out="visitorReviewOutside" reviewCount={reviewData.review4.count} />
+                        <ImageText text={reviewData.review1.text} textClassName="reviewName" inlineBlockClass="oneVisitorReviewInside" out="visitorReviewOutside" reviewCount={reviewData.review1.count} />
+                        <ImageText text={reviewData.review2.text} textClassName="reviewName" inlineBlockClass="twoVisitorReviewInside" out="visitorReviewOutside" reviewCount={reviewData.review2.count} />
+                        <ImageText text={reviewData.review3.text} textClassName="reviewName" inlineBlockClass="threeVisitorReviewInside" out="visitorReviewOutside" reviewCount={reviewData.review3.count} />
+                        <ImageText text={reviewData.review4.text} textClassName="reviewName" inlineBlockClass="fourVisitorReviewInside" out="visitorReviewOutside" reviewCount={reviewData.review4.count} />
                     </PercentBlock>
             </StoreVisitorReviewDiv>
         </>

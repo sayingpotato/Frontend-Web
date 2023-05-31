@@ -10,7 +10,7 @@ const PercentBlock = ({ children }) => {
       {React.Children.map(children, child => (
         <InlineBlock className={child.props.out}>
           <InlineBlock className={`${child.props.inlineBlockClass}`}>
-            <ImageText divClassName="basic" src={child.props.src} alt={child.props.alt} text={child.props.text} textClass={child.props.textClass}/>
+            <ImageText divClassName="basic" src={child.props.src} alt={child.props.alt} text={child.props.text} textClassName={child.props.textClassName}/>
           </InlineBlock>
         </InlineBlock>
       ))}
