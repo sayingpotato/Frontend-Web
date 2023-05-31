@@ -23,16 +23,38 @@ const storedetail = () => {
                 image3 : 'images/storeImage.svg',
                 image4 : 'images/storeImage.svg',
             }],
-            menuImages : [{
-                image1 : 'images/storeImage.svg',
-                image2 : 'images/storeImage.svg',
-                image3 : 'images/storeImage.svg',
-            }],
-            menuNames : [{
-                image1 : '아이스 아메리카노',
-                image2 : '카페라떼',
-                image3 : '배고파요',
-            }]
+            menus : {
+                image1 : {
+                    src : 'images/storeImage.svg',
+                    name : '아이스 아메리카노',
+                    price : '3500원',
+                    rank : 'images/bronzeMedalColor.svg',
+                },
+                image2 : {
+                    src : 'images/storeImage.svg',
+                    name : '아이스 아메리카노2',
+                    price : '4000원',
+                    rank : '',
+                },
+                image3 : {
+                    src : 'images/storeImage.svg',
+                    name : '카페라떼3',
+                    price : '6000원',
+                    rank : 'images/silverMedalColor.svg',
+                },
+                image4 : {
+                    src : 'images/storeImage.svg',
+                    name : '카페라떼3',
+                    price : '6000원',
+                    rank : 'images/goldMedalColor.svg',
+                },
+                image5 : {
+                    src : 'images/storeImage.svg',
+                    name : '카페라떼3',
+                    price : '6000원',
+                    rank : '',
+                },
+            }
         }
     ]
 
