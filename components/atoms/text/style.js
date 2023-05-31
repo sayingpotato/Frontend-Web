@@ -93,6 +93,18 @@ const StyledText = styled.p`
     color : #8C0909;
     font-weight : 500;
   }
+
+  &.storeDetailReviewTotal {
+    font-size : 8px;
+    color : #28469C;
+    font-weight : 500;
+  }
+
+  &.reviewTotal {
+    font-size : 8px;
+    color : red;
+    font-weight : 500;
+  }
 `
 
 export { StyledText };
