@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const StoreInformationDiv = styled.div`
   display: flex;
-  gap : 10px;
+  gap : 40px;
   margin-left : 10px;
   margin-right : 10px;
 `
