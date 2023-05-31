@@ -10,10 +10,10 @@ const StoreVisitorReview = ({address, time, call, concent, rank}) => {
             <StoreVisitorReviewDiv>
                     <Text text="방문자 리뷰" className="storeDetailMiniTitle"/>
                     <PercentBlock>
-                        <ImageText text="리뷰명1" textClass="reviewName" inlineBlockClass="oneVisitorReviewInside"/>
-                        <ImageText text="리뷰명2" textClass="reviewName" inlineBlockClass="twoVisitorReviewInside"/>
-                        <ImageText text="리뷰명3" textClass="reviewName" inlineBlockClass="threeVisitorReviewInside"/>
-                        <ImageText text="리뷰명4" textClass="reviewName" inlineBlockClass="fourVisitorReviewInside"/>
+                        <ImageText text="리뷰명1" textClass="reviewName" inlineBlockClass="oneVisitorReviewInside" out="visitorReviewOutside"/>
+                        <ImageText text="리뷰명2" textClass="reviewName" inlineBlockClass="twoVisitorReviewInside" out="visitorReviewOutside"/>
+                        <ImageText text="리뷰명3" textClass="reviewName" inlineBlockClass="threeVisitorReviewInside" out="visitorReviewOutside"/>
+                        <ImageText text="리뷰명4" textClass="reviewName" inlineBlockClass="fourVisitorReviewInside" out="visitorReviewOutside"/>
                     </PercentBlock>
             </StoreVisitorReviewDiv>
         </>
