@@ -40,8 +40,8 @@ const StyledText = styled.p`
   }
 
   &.reviewName {
-    font-size: 13px;
-    font-weight: 700;
+    font-size: 8px;
+    font-weight: 500;
   }
 
   &.todayDiscountLogoName {
@@ -74,8 +74,23 @@ const StyledText = styled.p`
     font-weight: 500;
   }
 
-  &.menuTitle {
+  &.storeDetailMenuTitle {
     font-size : 8px;
+    font-weight : 500;
+  }
+
+  &.storeDetailMiniTitle {
+    font-size : 12px;
+    font-weight : 600;
+  }
+
+  &.storeDetailInfo {
+    font-size : 10px;
+  }
+
+  &.storeDetailPrice {
+    font-size : 8px;
+    color : #8C0909;
     font-weight : 500;
   }
 `
