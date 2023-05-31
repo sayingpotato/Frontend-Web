@@ -23,6 +23,25 @@ const storedetail = () => {
                 image3 : 'images/storeImage.svg',
                 image4 : 'images/storeImage.svg',
             }],
+            review : {
+                total : 30,
+                review1 : {
+                    text : '가격이 싸요',
+                    count : 10,
+                },
+                review2 : {
+                    text : '가격이 싸요2',
+                    count : 10,
+                },
+                review3 : {
+                    text : '가격이 싸요3',
+                    count : 6,
+                },
+                review4 : {
+                    text : '가격이 싸요4',
+                    count : 4,
+                },
+            },
             menus : {
                 image1 : {
                     src : 'images/storeImage.svg',
