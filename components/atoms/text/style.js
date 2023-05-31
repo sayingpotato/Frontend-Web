@@ -84,8 +84,8 @@ const StyledText = styled.p`
     font-size : 12px;
     color : white;
     font-weight : 800;
-    margin-left : 30px;
     margin-bottom : 0px;
+    margin-left : 25px;
   }
 
   &.mypageUserName {
@@ -119,6 +119,7 @@ const StyledText = styled.p`
     color : #28469C;
     font-weight : 500;
   }
+
 `
 
 export { StyledText };
