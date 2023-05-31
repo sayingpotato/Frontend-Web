@@ -1,19 +1,20 @@
 import { StoreVisitorReviewDiv } from './style';
 
-import Text from "@atoms/text"
 import PercentBlock from '@molecules/percentBlock';
 import ImageText from '@molecules/imageText';
+import InlineText from '@molecules/inlineText';
 
-const StoreVisitorReview = ({address, time, call, concent, rank}) => {
+const StoreVisitorReview = ({reviewData}) => {
+
     return (
         <>
             <StoreVisitorReviewDiv>
-                    <Text text="방문자 리뷰" className="storeDetailMiniTitle"/>
+                    <InlineText divClassName="basic" text1="방문자 리뷰" text2={reviewData.total} text1ClassName="storeDetailMiniTitle" text2ClassName="storeDetailReviewTotal" />
                     <PercentBlock>
-                        <ImageText text="리뷰명1" textClass="reviewName" inlineBlockClass="oneVisitorReviewInside" out="visitorReviewOutside"/>
-                        <ImageText text="리뷰명2" textClass="reviewName" inlineBlockClass="twoVisitorReviewInside" out="visitorReviewOutside"/>
-                        <ImageText text="리뷰명3" textClass="reviewName" inlineBlockClass="threeVisitorReviewInside" out="visitorReviewOutside"/>
-                        <ImageText text="리뷰명4" textClass="reviewName" inlineBlockClass="fourVisitorReviewInside" out="visitorReviewOutside"/>
+                        <ImageText text={reviewData.review1.text} textClass="reviewName" inlineBlockClass="oneVisitorReviewInside" out="visitorReviewOutside" reviewCount={reviewData.review1.count} />
+                        <ImageText text={reviewData.review2.text} textClass="reviewName" inlineBlockClass="twoVisitorReviewInside" out="visitorReviewOutside" reviewCount={reviewData.review2.count} />
+                        <ImageText text={reviewData.review3.text} textClass="reviewName" inlineBlockClass="threeVisitorReviewInside" out="visitorReviewOutside" reviewCount={reviewData.review3.count} />
+                        <ImageText text={reviewData.review4.text} textClass="reviewName" inlineBlockClass="fourVisitorReviewInside" out="visitorReviewOutside" reviewCount={reviewData.review4.count} />
                     </PercentBlock>
             </StoreVisitorReviewDiv>
         </>
