@@ -92,6 +92,8 @@ const StyledText = styled.p`
     font-size : 30px;
     font-weight : 800;
     color : white;
+  }
+
   &.storeDetailMenuTitle {
     font-size : 8px;
     font-weight : 500;
@@ -115,12 +117,6 @@ const StyledText = styled.p`
   &.storeDetailReviewTotal {
     font-size : 8px;
     color : #28469C;
-    font-weight : 500;
-  }
-
-  &.reviewTotal {
-    font-size : 8px;
-    color : red;
     font-weight : 500;
   }
 `
