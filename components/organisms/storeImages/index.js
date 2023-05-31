@@ -10,7 +10,7 @@ const StoreImages = ({images}) => {
     return (
         <>
             <StoreImagesDiv>
-                <Text text="가게 사진"/>
+                <Text text="가게 사진" className="storeDetailMiniTitle"/>
                 <ImagesDiv>
                     <Image src={imageData['image1']} alt="images/storeImage.svg" />
                     <Image src={imageData['image2']} alt="images/storeImage.svg" />
