@@ -25,7 +25,7 @@ const StorelistTemplate = ({data}) => {
             <Line />
             <StoreImages images={value['storeImages']}/>
             <Line />
-            <MenuImages images={value['menuImages']} name={value['menuNames']}/>
+            <MenuImages menuData={value['menus']}/>
         </StoredetailTemplateDiv>
     );
 };
