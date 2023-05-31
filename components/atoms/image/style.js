@@ -17,6 +17,10 @@ const StyledImage = styled.img`
     display: block;
     margin: auto;
   }
+  &.storeInfoIcon{
+    width : 20px;
+    height : 20px;
+  }
 `
 
 export { StyledImage };
