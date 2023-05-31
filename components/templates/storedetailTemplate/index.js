@@ -21,7 +21,7 @@ const StorelistTemplate = ({data}) => {
             <Line />
             <StoreInformation address={value['address']} time={value['time']} call={value['call']} concent={value['concent']} rank={value['rank']} room={value['roomImage']}/>
             <Line />
-            <StoreVisitorReview />
+            <StoreVisitorReview reviewData={value['review']}/>
             <Line />
             <StoreImages images={value['storeImages']}/>
             <Line />
