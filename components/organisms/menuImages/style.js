@@ -6,14 +6,24 @@ const MenuImagesDiv = styled.div`
 `
 
 const MenuWholeImagesDiv = styled.div`
-    display: block;
-    text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  box-sizing: border-box;
+`
+
+const MenuImagesContentDiv = styled.div`
+    float: left;
+    width: calc((100% - (2 * 15px)) / 3);
+    box-sizing: border-box;
 `
 
 const ImagesDiv = styled.div`
-    display : flex;
-    gap : 20px;
-    justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  justify-content: center;
+  text-align : center;
 `
 
-export { MenuImagesDiv, MenuWholeImagesDiv, ImagesDiv };
+export { MenuImagesDiv, MenuWholeImagesDiv, MenuImagesContentDiv, ImagesDiv };
