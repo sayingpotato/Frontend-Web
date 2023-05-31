@@ -9,6 +9,7 @@ const StyledInlineBlock = styled.div`
     background-color: #eaf2ff;
     border-radius: 4px;
     height: 25px;
+    width : 100%;
   }
 
   &.oneInside {
@@ -39,6 +40,16 @@ const StyledInlineBlock = styled.div`
     border-radius: 4px;
     width: 60%;
     height: 25px;
+  }
+
+  &.visitorReviewOutside {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2%;
+    background-color: #eaf2ff;
+    border-radius: 4px;
+    height: 25px;
+    width : 100%;
   }
 
   &.oneVisitorReviewInside {
