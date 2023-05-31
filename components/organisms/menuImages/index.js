@@ -1,33 +1,27 @@
-import { MenuImagesDiv, MenuWholeImagesDiv, ImagesDiv } from './style';
+import { MenuImagesDiv, MenuWholeImagesDiv, MenuImagesContentDiv, ImagesDiv } from './style';
 
-import ImageTitle from "@molecules/imageTitle"
+import Image from "@atoms/image"
+import MenuInfo from '@organisms/menuInfo'
 import Text from "@atoms/text"
 
-const MenuImages = ({images, name}) => {
+const MenuImages = ({menuData}) => {
 
-    let imageData = images[0]
-    let nameData = name[0]
+    console.log(menuData)
 
     return (
         <>
             <MenuImagesDiv>
-                <Text text="메뉴판"/>
+                <Text text="메뉴판" className="storeDetailMiniTitle" />
                 <MenuWholeImagesDiv>
-                    <ImagesDiv>
-                        <ImageTitle text={nameData['image1']} textClassName="menuTitle" src={imageData['image1']} alt="images/storeImage.svg" />
-                        <ImageTitle text={nameData['image2']} textClassName="menuTitle" src={imageData['image2']} alt="images/storeImage.svg" />
-                        <ImageTitle text={nameData['image3']} textClassName="menuTitle" src={imageData['image3']} alt="images/storeImage.svg" />
-                    </ImagesDiv>
-                    <ImagesDiv>
-                        <ImageTitle text={nameData['image1']} textClassName="menuTitle" src={imageData['image1']} alt="images/storeImage.svg" />
-                        <ImageTitle text={nameData['image2']} textClassName="menuTitle" src={imageData['image2']} alt="images/storeImage.svg" />
-                        <ImageTitle text={nameData['image3']} textClassName="menuTitle" src={imageData['image3']} alt="images/storeImage.svg" />
-                    </ImagesDiv> 
-                    <ImagesDiv>
-                        <ImageTitle text={nameData['image1']} textClassName="menuTitle" src={imageData['image1']} alt="images/storeImage.svg" />
-                        <ImageTitle text={nameData['image2']} textClassName="menuTitle" src={imageData['image2']} alt="images/storeImage.svg" />
-                        <ImageTitle text={nameData['image3']} textClassName="menuTitle" src={imageData['image3']} alt="images/storeImage.svg" />
-                    </ImagesDiv>   
+                    {Object.entries(menuData).map(([key, value], index) => (
+                        <MenuImagesContentDiv key={key}>
+                            <ImagesDiv>
+                                <Image src={value.src} alt={value.src} />
+                                <MenuInfo name={value.name} price={value.price} rank={value.rank} />
+                            </ImagesDiv>
+                            {((index + 1) % 3 === 0) && <br />}
+                        </MenuImagesContentDiv>
+                    ))}
                 </MenuWholeImagesDiv>
             </MenuImagesDiv>
         </>
