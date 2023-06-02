@@ -13,12 +13,21 @@ const login = async(form) => {
         "api/v1/customers/signIn",
         form
     );
-    return data.data;
+    return data;
+}
+
+const submitStudentCard = async(form) => {
+    const {data} = await fetcher.put(
+        "api/v1/customers/image",
+        form
+    );
+    return data;
 }
 
 const guest = {
     submitRegister,
-    login
+    login,
+    submitStudentCard
 }
 
 export default guest;
