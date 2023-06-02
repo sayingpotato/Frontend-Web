@@ -1,14 +1,27 @@
 import axios from "axios";
-import APP_HOST from "@constants/api.constants";
+import { NEXT_PUBLIC_HOST } from "@constants/api.constants";
 
 const fetcher = axios.create({
-    baseURL : APP_HOST,
+    baseURL : NEXT_PUBLIC_HOST,
     timeout: 2500
 })
 
-//권한이 필요한 api가 생길 시 추가 
 fetcher.interceptors.request.use((config) => {
-    return config;
-})
+    const localToken = localStorage.getItem("recoil-persist");
 
+    if (!localToken || !localToken.includes("Token")) return config;
+
+    const {Token: token} = JSON.parse(localToken);
+    
+    const newConfing = {
+        ...config,
+        headers: {
+          ...config.headers,
+          Authorization: `Bearer ${token}`,
+        },
+    }
+    return newConfing;
+});
+    
 export default fetcher;
+
