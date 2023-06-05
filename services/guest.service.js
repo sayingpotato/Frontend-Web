@@ -1,11 +1,16 @@
 import {guestApi} from "api"
 
-const login = () => {
-    
+const login = async (form) => {
+    try {
+        const data = await guestApi.login(form);
+        return data;
+    } catch (error) {
+        throw error;
+    }
 }
 
 const checkSameId = () => {
-
+    
 }
 
 const submitRegister = async(form) => {
@@ -17,8 +22,13 @@ const submitRegister = async(form) => {
     } 
 }
 
-const submitStudentCard = () => {
-
+const submitStudentCard = async(form) => {
+    try {
+        const data = await guestApi.submitStudentCard(form);
+        return data;
+    } catch (error) {
+        throw error;
+    } 
 }
 
 const guestService = {
