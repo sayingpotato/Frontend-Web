@@ -74,6 +74,26 @@ const StyledText = styled.p`
     font-weight: 500;
   }
 
+  &.mypageMoneyTotal {
+    font-size : 12px;
+    color : white;
+    font-weight : 800;
+  }
+
+  &.mypageMoneyTitle {
+    font-size : 12px;
+    color : white;
+    font-weight : 800;
+    margin-bottom : 0px;
+    margin-left : 25px;
+  }
+
+  &.mypageUserName {
+    font-size : 30px;
+    font-weight : 800;
+    color : white;
+  }
+
   &.storeDetailMenuTitle {
     font-size : 8px;
     font-weight : 500;
@@ -100,11 +120,30 @@ const StyledText = styled.p`
     font-weight : 500;
   }
 
-  &.reviewTotal {
-    font-size : 8px;
-    color : red;
-    font-weight : 500;
+  &.mypageButtonsName {
+    font-size : 15px;
+    font-weight : 800;
+    color : black;
   }
+
+  &.mypageButtonsLogoutName {
+    font-size : 15px;
+    font-weight : 800;
+    color : red;
+  }
+  
+  &.discountContentName {
+    font-size:10px;
+    font-weight : 500;
+    margin-bottom : 1px;
+  }
+
+  &.discountContentMoney {
+    font-size:10px;
+    font-weight : 500;
+    margin-top : 1px;
+  }
+
 `
 
 export { StyledText };

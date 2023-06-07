@@ -1,11 +1,11 @@
 import { StyledInlineTextDiv } from './style';
 import Text from "@atoms/text"
 
-const InlineText = ({divClassName, text1, text2, text1ClassName, text2ClassName, status}) => {
+const InlineText = ({divClassName, textOne, textTwo, textOneClassName, textTwoClassName, status}) => {
     return (
         <StyledInlineTextDiv className={divClassName}>
-            <Text text={text1} className={text1ClassName}/>
-            <Text text={text2} className={text2ClassName} status={status} />
+            <Text text={textOne} className={textOneClassName}/>
+            <Text text={textTwo} className={textTwoClassName} status={status} />
         </StyledInlineTextDiv>
     );
 };
