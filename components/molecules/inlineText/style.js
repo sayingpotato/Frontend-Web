@@ -7,6 +7,10 @@ const StyledInlineTextDiv = styled.div`
     gap: 5px;
     padding: 0;
   }
+
+  &.discountContentValue{
+    display : block;
+  }
 `
 
 export { StyledInlineTextDiv };
