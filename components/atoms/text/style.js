@@ -120,6 +120,30 @@ const StyledText = styled.p`
     font-weight : 500;
   }
 
+  &.mypageButtonsName {
+    font-size : 15px;
+    font-weight : 800;
+    color : black;
+  }
+
+  &.mypageButtonsLogoutName {
+    font-size : 15px;
+    font-weight : 800;
+    color : red;
+  }
+  
+  &.discountContentName {
+    font-size:10px;
+    font-weight : 500;
+    margin-bottom : 1px;
+  }
+
+  &.discountContentMoney {
+    font-size:10px;
+    font-weight : 500;
+    margin-top : 1px;
+  }
+
 `
 
 export { StyledText };
