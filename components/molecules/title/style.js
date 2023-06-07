@@ -23,6 +23,17 @@ const StyledTitle = styled.h1`
         font-weight: 800;
         font-size: 32px;
     }
+
+    &.mypageDiscountTitle {
+        font-size : 15px;
+        font-weight : 800;
+        text-align : center;
+        text-decoration: underline;
+        text-decoration-color : #999999;
+        text-underline-offset : 5px;
+        margin-top : 5px;
+    }
+
 `
 
 export { StyledTitle };
