@@ -1,8 +1,8 @@
-import { storeApi, userApi } from "api"
+import { storeApi } from "api"
 
-const getDailyDiscountStore = async() => {
+const getDailyDiscountStore = async(date) => {
     try {
-        const data = await storeApi.getDailyDiscountStore();
+        const data = await storeApi.getDailyDiscountStore(date);
         return data;
     } catch (error) {
         throw error;
