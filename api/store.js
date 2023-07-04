@@ -1,8 +1,8 @@
 import fetcher from "./fetcher";
 
-const getDailyDiscountStore = async() => {
+const getDailyDiscountStore = async(date) => {
     const {data} = await fetcher.get(
-        "api/v1/"
+        `/api/v1/stores/discount?day=${date}`
     );
 
     return data.data;
