@@ -8,9 +8,9 @@ const getDailyDiscountStore = async(date) => {
     return data.data;
 }
 
-const getMapStoreList = async() => {
+const getMapStoreList = async(latitude, longtitude) => {
     const {data} = await fetcher.get(
-        
+        `/api/v1/stores/nearby?latitude=${latitude}&longitude=${longtitude}&offset=0&limit=100`
     );
 
     return data.data;
