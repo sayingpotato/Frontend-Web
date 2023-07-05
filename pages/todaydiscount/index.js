@@ -26,21 +26,22 @@ const TodayDiscount = () => {
   ];
 
   const days2 = [
-    'SUN', 'MON','MON', 'WED', 'THU', 'FRI', 'SAT'
+    'SUN', 'MON','TUE', 'MON', 'THU', 'FRI', 'SAT'
   ];
 
-  const getDailyDiscountStore = useGetDailyDiscountStore(days2[days.indexOf(nowDay)]);
+  const englishDay = days2[days.indexOf(nowDay)];
+  const getDailyDiscountStore = useGetDailyDiscountStore(englishDay);
   const dates = date();
 
-  useEffect(() => { 
+  useEffect(() => {
     setData(getDailyDiscountStore);
-  }, [getDailyDiscountStore]); 
+  }, [dates])
 
   useEffect(() => {  
     setNowDay(dates)
 
     const idx = days.indexOf(dates)
-
+    
     if (idx === 0) {
       setPrevDay('토요일')
       setNextDay(days[idx + 1])
