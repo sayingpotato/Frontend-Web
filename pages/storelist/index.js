@@ -128,9 +128,9 @@ const StoreList = () => {
 
   useEffect(() => {
     if (latitude !== undefined) {
-     setData(getMapStoreList);  
+     setData(getMapStoreList); 
     }
-  }, []);
+  }, [getMapStoreList]);
 
   return (
     <>
@@ -145,7 +145,7 @@ const StoreList = () => {
             <Title text="내 주변 가게"/>
             {data && data.map((oneData) => (
               <StorelistTemplate key={`${oneData.id}`} 
-                storeName={`${oneData.name}`} 
+                storeName={`${oneData.name}`}  
                 imageSrc={JSON.stringify(oneData.storeMapThumbnail)} 
                 minDiscount={`${oneData.discounts[0].discountRatio}`}
                 maxDisount={`${oneData.discounts[oneData.discounts.length - 1].discountRatio}`}
