@@ -9,9 +9,9 @@ const getDailyDiscountStore = async(date) => {
     }
 }
 
-const getMapStoreList = async() => {
+const getMapStoreList = async(latitude, longtitude) => {
     try {
-        const data = await storeApi.getMapStoreList();
+        const data = await storeApi.getMapStoreList(latitude, longtitude);
         return data;
     } catch (error) {
         throw error;
