@@ -153,7 +153,7 @@ const KaKaoMap = () => {
       query: { lat: center['lat'], lng: center['lng'] },
     })
   }
-
+  
   //백엔드의 response 데이터
   const [datas, setData] = useState(null);
   const getMapStoreList = useGetMapStoreList(center.lat, center.lng);
