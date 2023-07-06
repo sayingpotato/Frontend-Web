@@ -1,11 +1,11 @@
 import { useEffect, useState, useRef } from 'react'
 import Router, { useRouter } from 'next/router'
-
+import useGetStoreDetail from '@hooks/useGetStoreDetail';
 import StoredetailTemplate from '@templates/storedetailTemplate'
 
-import {  } from './style';
+import {  } from './style'; 
 
-const storedetail = () => {
+const Storedetail = () => {
 
     let data = [
         {
@@ -77,11 +77,20 @@ const storedetail = () => {
         }
     ]
 
+    const id = 1;
+    const [datas, setData] = useState("");
+    const getStoreDetail = useGetStoreDetail(id);
+
+    useEffect(() => { 
+        setData(getStoreDetail); 
+    },[getStoreDetail]);
+
     return (
-        <div>
+        <div> 
+            {datas && <div>{datas.name}</div>}
             <StoredetailTemplate data={data}/>
         </div>
     );
 };
 
-export default storedetail;
+export default Storedetail;
