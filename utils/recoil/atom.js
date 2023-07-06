@@ -6,6 +6,7 @@ const { persistAtom } = recoilPersist()
 export const LoginStatus = atom({
     key:"LoginStatus",
     default:false,
+    effects_UNSTABLE: [persistAtom],
 })
 
 export const TotalPw = atom({

@@ -13,7 +13,6 @@ const StorelistTemplate = ({data}) => {
     let value = data[0]
 
     const router = useRouter()
-    console.log(router)
 
     return (
         <StoredetailTemplateDiv>

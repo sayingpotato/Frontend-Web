@@ -6,7 +6,6 @@ import Text from "@atoms/text"
 
 const MenuImages = ({menuData}) => {
 
-    console.log(menuData)
 
     return (
         <>

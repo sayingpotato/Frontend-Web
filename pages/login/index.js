@@ -25,7 +25,7 @@ const Login = () => {
         if (!post) return ;
         login();
     }, [post]);
-
+    
     useEffect(() => {
         if (inputId && inputPw) {
             setState(true);
