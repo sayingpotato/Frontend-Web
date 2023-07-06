@@ -16,9 +16,9 @@ const getMapStoreList = async(latitude, longtitude) => {
     return data.data;
 }
 
-const getStoreDetail = async() => {
+const getStoreDetail = async(id) => {
     const {data} = await fetcher.get(
-        "api/v1/"
+        `/api/v1/stores/detail?id=${id}&offset=0&limit=100`
     );
 
     return data.data;
