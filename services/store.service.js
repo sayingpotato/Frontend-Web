@@ -18,9 +18,9 @@ const getMapStoreList = async(latitude, longtitude) => {
     }
 }
 
-const getStoreDetail = async() => {
+const getStoreDetail = async(id) => {
     try {
-        const data = await storeApi.getStoreDetail();
+        const data = await storeApi.getStoreDetail(id);
         return data;
     } catch (error) {
         throw error;
