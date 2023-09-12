@@ -18,6 +18,28 @@ const TodayDiscount = () => {
     // const dateName = date();
   const dateName = "MON";
   const getDailyDiscountStore = useGetDailyDiscountStore(dateName);
+  const [nowDay, setNowDay] = useState("");
+  const [englishNowDay, setEnglishNowDay] = useState("");
+  const [prevDay, setPrevDay] = useState("");
+  const [nextDay, setNextDay] = useState("");
+
+  const [data, setData] = useState(null);
+
+  const daysOfWeek = [["일요일", "SUN"], ["월요일", "MON"], ["화요일", "TUE"], ["수요일", "WED"], ["목요일", "THU"], ["금요일", "FRI"], ["토요일", "SAT"]];
+
+  useEffect(() => {
+    const dateIndex = date();
+    const todayName = daysOfWeek[dateIndex][0]
+    const prevName = daysOfWeek[dateIndex-1][0]
+    const nextName = daysOfWeek[dateIndex+1][0]
+
+    setPrevDay(prevName)
+    setNextDay(nextName)
+    setNowDay(todayName)
+    setEnglishNowDay("MON") // DB에 데이터 삽입 이후 변경 예정 
+  }, [])
+
+  const getDailyDiscountStore = useGetDailyDiscountStore(englishNowDay);
 
   useEffect(() => {
     setData(getDailyDiscountStore);
