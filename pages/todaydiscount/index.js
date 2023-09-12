@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from 'react'
+import { useEffect, useState, useRef, use } from 'react'
 import router from "next/router";
 
 import date from '@utils/date'
@@ -12,12 +12,8 @@ import { ContentWholeDiv, ContentDiv } from './style';
 
 const TodayDiscount = () => {
 
-  const [clickValue, setClickValue] = useState('FOOD')
-  const [datas, setData] = useState(null);
+  const [clickValue, setClickValue] = useState('FOOD');
 
-    // const dateName = date();
-  const dateName = "MON";
-  const getDailyDiscountStore = useGetDailyDiscountStore(dateName);
   const [nowDay, setNowDay] = useState("");
   const [englishNowDay, setEnglishNowDay] = useState("");
   const [prevDay, setPrevDay] = useState("");
@@ -43,43 +39,38 @@ const TodayDiscount = () => {
 
   useEffect(() => {
     setData(getDailyDiscountStore);
-  }, [dateName, getDailyDiscountStore])
-
-  const onClickItem = (id) => {
-    router.push({
-      pathname : `/storedetail/${id}`,
-      query : {id : id}
-    })
-  }
+  }, [nowDay, getDailyDiscountStore])
 
   const discountTable = (oneData, index) => {
-    console.log(index)
+    const dataValue = {
+      id : oneData.id,
+      name : oneData.name, 
+      storeTodayDiscountThumbnail : oneData.storeTodayDiscountThumbnail,
+      category : oneData.category
+    }
     return (
       <TodayDiscountTemplate
-        className={index === datas.length - 1 ? 'last' : ''}
-        // key={`${oneData.index}`}
-        // data={`${JSON.stringify(oneData)}`}
-        // onClick={onClickItem(index)}
+        className={index === data.length - 1 ? 'last' : ''}
+        key={`${oneData.id}`}
+        data={dataValue}
       ></TodayDiscountTemplate>
     )
   }
 
-  const CafeArr = datas && datas.map((oneData, index) => {
-    return (
-      oneData.catecory === 'CAFE' && discountTable(oneData, index)
-    )
+  const CafeArr = data && data.map((oneData, index) => {
+    return oneData.category === 'CAFE' && discountTable(oneData, index)
   })
   
-  const FoodArr = datas && datas.map((oneData, index) => {
-    return oneData.catecory === 'FOOD' &&  discountTable(oneData, index)
+  const FoodArr = data && data.map((oneData, index) => {
+    return oneData.category === 'FOOD' && discountTable(oneData, index)
   })
 
   const typeFoodClick = (e) => {
-    setClickValue('food')
+    setClickValue('FOOD')
   }
 
   const typeCafeClick = (e) => {
-    setClickValue('cafe')
+    setClickValue('CAFE')
   }
 
 
@@ -88,7 +79,7 @@ const TodayDiscount = () => {
       <Title text="오늘의 할인"/>
       <TodayDiscountHeader FoodOnClick={typeFoodClick} CafeOnClick={typeCafeClick} 
         state={clickValue}
-        // prevDay={`${prevDay}`} nowDay={`${nowDay}`} nextDay={`${nextDay}`}
+        prevDay={`${prevDay}`} nowDay={`${nowDay}`} nextDay={`${nextDay}`}
         />
       <ContentWholeDiv>
         <ContentDiv>{`${clickValue}` === 'CAFE' ? CafeArr : FoodArr}</ContentDiv>
