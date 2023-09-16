@@ -15,7 +15,7 @@ const MenuImages = ({menuData}) => {
                     {Object.entries(menuData).map(([key, value], index) => (
                         <MenuImagesContentDiv key={key}>
                             <ImagesDiv>
-                                <Image src={value.src} alt={value.src} />
+                                <Image src={value.storeDetailItemOptions} alt={value.storeDetailItemOptions} />
                                 <MenuInfo name={value.name} price={value.price} rank={value.rank} />
                             </ImagesDiv>
                             {((index + 1) % 3 === 0) && <br />}
