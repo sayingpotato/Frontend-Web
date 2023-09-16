@@ -25,6 +25,10 @@ const StyledImage = styled.img`
     width : 30px;
     height : 30px;
   }
+  &.storeImage {
+    width : 60px;
+    height : 60px;
+  }
 `
 
 export { StyledImage };
