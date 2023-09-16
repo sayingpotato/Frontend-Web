@@ -9,22 +9,21 @@ import StoreImages from "@organisms/storeImages"
 import MenuImages from "@organisms/menuImages"
 
 const StorelistTemplate = ({data}) => {
-
-    let value = data[0]
+    console.log(data)
 
     const router = useRouter()
 
     return (
         <StoredetailTemplateDiv>
-            <Title text={value['name']} />
+            <Title text={data.name} />
             <Line />
-            <StoreInformation address={value['address']} time={value['time']} call={value['call']} concent={value['concent']} rank={value['rank']} room={value['roomImage']}/>
+            <StoreInformation address={data.address.jibunAddr} time={data.storeOperationHours[0].startTime} call={"043-1234-1234"} concent={"8개"} rank={"1위 무질서도"} room={data.tableImg} />
             <Line />
-            <StoreVisitorReview reviewData={value['review']}/>
+            <StoreVisitorReview reviewData={data.reviewResultOfCafe}/>
             <Line />
-            <StoreImages images={value['storeImages']}/>
+            <StoreImages images={data.storeDetailStoreImages}/>
             <Line />
-            <MenuImages menuData={value['menus']}/>
+            <MenuImages menuData={data.storeDetailItems}/>
         </StoredetailTemplateDiv>
     );
 };
