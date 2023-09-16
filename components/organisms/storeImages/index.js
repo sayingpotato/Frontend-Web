@@ -11,7 +11,7 @@ const StoreImages = ({images}) => {
                 <ImagesDiv>
                     {images.map((item, index) => {
                         return(
-                            <Image key={index} src={item.storeImg} alt={item.storeImg} />
+                            <Image className="storeImage" key={index} src={item.storeImg} alt={item.storeImg} />
                         )
                     })}
                 </ImagesDiv>    
