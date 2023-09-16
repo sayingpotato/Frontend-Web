@@ -27,7 +27,7 @@ const TodayDiscount = () => {
     const dateIndex = date();
     const todayName = daysOfWeek[dateIndex][0]
     const prevName = daysOfWeek[dateIndex-1][0]
-    const nextName = daysOfWeek[dateIndex+1][0]
+    const nextName = daysOfWeek[dateIndex+1 == 7 ? 0 : dateIndex+1][0]
 
     setPrevDay(prevName)
     setNextDay(nextName)
