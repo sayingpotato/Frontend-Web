@@ -14,7 +14,7 @@ const StoreInformation = ({address, time, call, concent, rank, room}) => {
                     <ImageText imageClassName="storeInfoIcon" src="images/concent.svg" text={concent} textClassName="storeDetailInfo" divClassName="basic" />
                     <ImageText imageClassName="storeInfoIcon" src="images/rank.svg" text={rank} textClassName="storeDetailInfo" divClassName="basic" />
                 </TextInfoDiv>
-                <Image src={room} alt={room} />
+                <Image className="storeRoomImage" src={room} alt={room} />
             </StoreInformationDiv>
         </>
     );
