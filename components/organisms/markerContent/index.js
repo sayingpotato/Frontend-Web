@@ -5,9 +5,12 @@ import MarkerContentHeader from "@organisms/markerContentHeader"
 import MarkerContentInfo from "@organisms/markerContentInfo"
 
 const MarkerContent = ({state, info}) => {
-
     const handleMoreMarkerInfo = () => {
-        console.log('페이지 이동')
+        console.log('페이지 이동!!')
+        Router.push({
+            pathname: '/storedetail',
+            query: { id: info.id },
+        })
     }
 
     return (
