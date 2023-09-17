@@ -33,6 +33,10 @@ const StyledImage = styled.img`
     width : 60px;
     height : 60px;
   }
+  &.menuImage {
+    width : 100px;
+    height : 100px;
+  }
 `
 
 export { StyledImage };
