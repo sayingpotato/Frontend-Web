@@ -17,7 +17,7 @@ const StorelistTemplate = ({data}) => {
         <StoredetailTemplateDiv>
             <Title text={data.name} />
             <Line />
-            <StoreInformation address={data.address.jibunAddr} time={data.storeOperationHours[0].startTime} call={"043-1234-1234"} concent={"8개"} rank={"1위 무질서도"} room={data.tableImg} />
+            <StoreInformation address={data.address.roadAddr} time={data.storeOperationHours[0].startTime} call={data.phone} concent={"8개"} rank={"1위 무질서도"} room={data.tableImg} />
             <Line />
             <StoreVisitorReview reviewData={data.reviewResultOfCafe}/>
             <Line />
