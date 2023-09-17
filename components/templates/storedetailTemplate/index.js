@@ -9,15 +9,13 @@ import StoreImages from "@organisms/storeImages"
 import MenuImages from "@organisms/menuImages"
 
 const StorelistTemplate = ({data}) => {
-    console.log(data)
-
     const router = useRouter()
 
     return (
         <StoredetailTemplateDiv>
             <Title text={data.name} />
             <Line />
-            <StoreInformation address={data.address.roadAddr} time={data.storeOperationHours[0].startTime} call={data.phone} concent={"8개"} rank={"1위 무질서도"} room={data.tableImg} />
+            <StoreInformation address={data.address.roadAddr} time={data.storeOperationHours} call={data.phone} concent={data.outletNum} rank={"1위 무질서도"} room={data.tableImg} />
             <Line />
             <StoreVisitorReview reviewData={data.reviewResultOfCafe}/>
             <Line />
