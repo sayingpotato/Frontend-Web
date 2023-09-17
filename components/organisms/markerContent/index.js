@@ -15,8 +15,8 @@ const MarkerContent = ({state, info}) => {
 
     return (
         <MarkerContentDiv state={state} onClick={handleMoreMarkerInfo}>
-            <MarkerContentHeader name={info['name']} status={info['status'] === 'OPEN' ? 'green' : 'red'} statusText={info['status'] === 'OPEN' ? '영업중' : '영업 종료'}/>
-            <MarkerContentInfo address={info['address']} time={info['time']} call={info['call']} />
+            <MarkerContentHeader name={info.name} status={info.status === 'OPEN' ? 'green' : 'red'} statusText={info.status === 'OPEN' ? '영업중' : '영업 종료'}/>
+            <MarkerContentInfo address={info.address} time={info.time} call={info.call} />
         </MarkerContentDiv>
     );
 };
