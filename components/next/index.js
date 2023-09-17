@@ -34,7 +34,7 @@ export default function Next({ state, input, nextView}){
                                   break;
                 case "student" : setRegisterInfo({...registerInfo, nickname : input})
                                  setPost(post + 1);
-                                 router.push(`/login`)
+                                 router.push(`/register/${nextView}`)
                                  break;
                 case "login" :  
                 console.log(typeof(input)) 
