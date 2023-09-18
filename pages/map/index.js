@@ -66,7 +66,7 @@ const KaKaoMap = () => {
     const timeText = info.markerInfo.operationHour[0].startDay + '~' + info.markerInfo.operationHour[0].endDay + ' ' + info.markerInfo.operationHour[0].startTime + '~' + info.markerInfo.operationHour[0].endTime
     setMarkerInfo({
       id : info.id,
-      name: '',
+      name: info.name,
       address: info.markerInfo.address.roadAddr,
       time: timeText,
       call: info.markerInfo.phone,
