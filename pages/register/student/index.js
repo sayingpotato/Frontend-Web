@@ -12,6 +12,7 @@ export default function College(){
     const setRegisterLevel = useSetRecoilState(RegisterLevel);
     const [state, setState] = useState(0);
     const [imageSource, setImageSource] = useRecoilState(StudentCard);
+    const [alterImage, setAlterImage] = useState();
     const inputRef = useRef(null);
 
     useEffect(() => {
@@ -29,11 +30,13 @@ export default function College(){
 
     const onClickImage = () => {
         inputRef.current.click();
-    }
+    }   
 
     const onChangeFile = (e) => {
-        const imageUrl = URL.createObjectURL(e.target.files[0]);
+        const imageUrl = e.target.files[0];
+        const alterImageUrl = URL.createObjectURL(imageUrl);
         setImageSource(imageUrl);
+        setAlterImage(alterImageUrl);
     }
 
     return (
@@ -51,13 +54,13 @@ export default function College(){
                     height={40}
                     onClick={onClickImage}
                     className="imagePreview"
-                    src={imageSource?imageSource:preview}
+                    src={alterImage?alterImage:preview}
                     alt='이미지 미리보기'/>    
             </InfoComponent>
             <Next
                 input = {imageSource}
                 state = {state}
-                nextView={"login"}/>
+                nextView={"student"}/>
         </Register>
     )
     

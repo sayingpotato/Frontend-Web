@@ -47,7 +47,7 @@ const Login = () => {
     }
 
     const onClickRegisterButton = () => {
-        Router.push('/register');
+        Router.push('/register/auth/self');
     }
     
     return (
