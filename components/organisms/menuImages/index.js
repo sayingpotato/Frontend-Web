@@ -18,6 +18,29 @@ const MenuImages = ({menuData}) => {
         }
         });
     };
+    const submitOrderMenu = () => {
+        console.log("주문하기");
+        
+        const selectedObjects = selectedMenuIds.map(targetId => {
+        const foundObject = menuData.find(item => item.id === targetId);
+            return foundObject || null;
+        });
+
+        if (selectedObjects.length === 0) {
+            alert("하나 이상 주문하세요.")
+        } else {
+            selectedObjects.forEach(obj => {
+                if (obj) {
+                    console.log(obj)
+                    sum += obj.price
+                } else {
+                    console.log(`해당 id를 가진 객체를 찾지 못했습니다.`);
+            }
+        });
+        }
+
+        console.log(sum)
+    }
     return (
         <>
             <MenuImagesDiv>
