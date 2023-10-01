@@ -27,4 +27,9 @@ const ImagesDiv = styled.div`
   text-align : center;
 `
 
-export { MenuImagesDiv, MenuWholeImagesDiv, MenuImagesContentDiv, ImagesDiv };
+const PeopleButtons = styled.div`
+  display: flex;
+  justify-content: center;
+`
+
+export { MenuImagesDiv, MenuWholeImagesDiv, MenuImagesContentDiv, ImagesDiv, PeopleButtons };
