@@ -84,6 +84,14 @@ const StyledButton = styled.button`
     font-weight: 600;
     font-family: "Pretendard Variable";
   }
+
+  &.orderPeopleButton {
+    border: 1px solid white;
+    background-color : #999999;
+    width: 50px;
+    color : white;
+    border-radius: 6px;
+  }
 `
 
 export { StyledButton };
