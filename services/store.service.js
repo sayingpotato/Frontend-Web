@@ -36,6 +36,14 @@ const getSurroundStoreList = async(latitude, longtitude) => {
     }
 }
 
+const submitOrder = async(form) => {
+    try {
+        const data = await storeApi.submitOrder(form);
+        return data;
+    } catch (error) {
+        throw error;
+    }
+}
 const storeService = {
     getDailyDiscountStore,
     getMapStoreList,
