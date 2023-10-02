@@ -39,11 +39,21 @@ const submitOrder = async(form) => {
     );
     return data.data;
 }
+
+const getOrder = async() => {
+    const {data} = await fetcher.get(
+        `/api/v1/order/detail?offset=0&limit=20`
+    );
+    return data.data;
+}
+
 const store = {
     getDailyDiscountStore,
     getMapStoreList,
     getStoreDetail,
-    getSurroundStoreList
+    getSurroundStoreList,
+    submitOrder,
+    getOrder
 }
 
 export default store;
