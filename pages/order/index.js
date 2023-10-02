@@ -3,9 +3,9 @@ import { useEffect, useState, useRef } from 'react'
 import Title from '@components/title'
 import OrderedContent from '@components/orderedContent'
 
-import { ContentDiv } from './style'
+import { ContentDiv } from '../../styles/order/style'
 
-const index = () => {
+const order = () => {
   let data = [
     {
       id: 1,
@@ -88,4 +88,4 @@ const index = () => {
   )
 }
 
-export default index
+export default order

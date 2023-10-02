@@ -3,7 +3,7 @@ import Register from "@pages/register";
 import {RegisterLevel, StudentCard} from "@utils/recoil/atom";
 import { useRecoilState, useSetRecoilState} from "recoil";
 import Label from "@components/label";
-import { InfoComponent } from '@pages/register/info/id/style';
+import { InfoComponent } from '@styles/register/info/id/style';
 import Image from "next/image";
 import preview from '@public/images/studentPreview.svg'
 import Next from "@components/next";

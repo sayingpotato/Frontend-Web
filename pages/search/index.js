@@ -21,7 +21,7 @@ import {
     MenuDescription,
     MenuMenu,
     MenuNames
- } from './style'
+ } from '../../styles/search/style'
 import SearchButton from '@components/searchButton'
 import SearchInput from '@components/searchInput'
 
