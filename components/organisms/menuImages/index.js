@@ -1,12 +1,24 @@
 import { useEffect, useState } from "react";
+import router from "next/router";
 
-import { MenuImagesDiv, MenuWholeImagesDiv, MenuImagesContentDiv, ImagesDiv } from './style';
+import { MenuImagesDiv, MenuWholeImagesDiv, MenuImagesContentDiv, ImagesDiv, PeopleButtons } from './style';
 
 import Image from "@atoms/image"
-import MenuInfo from '@organisms/menuInfo'
 import Text from "@atoms/text"
+import Button from '@atoms/button'
+import Input from "@atoms/input"
+import MenuInfo from '@organisms/menuInfo'
+
+import useSubmitOrder from '@hooks/useSubmitOrder'
 
 const MenuImages = ({menuData}) => {
+
+    const currentURL = window.location.href;
+    const urlSearchParams = new URLSearchParams(currentURL.split('?')[1]);
+    const idParam = urlSearchParams.get('id');
+    
+    const [people, setPeople] = useState(0);
+
     const [selectedMenuIds, setSelectedMenuIds] = useState([]);
 
     const toggleMenu = (itemId) => {
@@ -18,8 +30,12 @@ const MenuImages = ({menuData}) => {
         }
         });
     };
+
+    const submitOrder = useSubmitOrder();
+
     const submitOrderMenu = () => {
         console.log("주문하기");
+        let sum = 0;
         
         const selectedObjects = selectedMenuIds.map(targetId => {
         const foundObject = menuData.find(item => item.id === targetId);
@@ -31,16 +47,30 @@ const MenuImages = ({menuData}) => {
         } else {
             selectedObjects.forEach(obj => {
                 if (obj) {
-                    console.log(obj)
                     sum += obj.price
                 } else {
-                    console.log(`해당 id를 가진 객체를 찾지 못했습니다.`);
             }
-        });
+        });}
+
+        const submitForm = {
+            "storeId": idParam,
+            "totalPrice": sum,
+            "totalPeople": people,
+            "itemIds": selectedMenuIds,
+            "itemOptionIds": [
+                0
+            ]
         }
 
-        console.log(sum)
+        submitOrder(submitForm);
+        router.push("/order")
+        
     }
+
+    const handleInputChange = (e) => {
+        setPeople(e.target.value);
+    };
+
     return (
         <>
             <MenuImagesDiv>
@@ -60,6 +90,22 @@ const MenuImages = ({menuData}) => {
                         </MenuImagesContentDiv>
                     ))}
                 </MenuWholeImagesDiv>
+                <br />
+                <div>
+                    <Text text="인원 선택" className="storeDetailMiniTitle" />
+                    <PeopleButtons>
+                        <Button text="+" className="orderPeopleButton" onClick={() => setPeople(people + 1)} />
+                        <Input
+                            className="orderPeopleInput"
+                            type="number"
+                            onChange={handleInputChange}
+                            value={people}
+                        />
+                        <Button text="-" className="orderPeopleButton" onClick={() => setPeople(people - 1)} />
+                    </PeopleButtons>
+                </div>
+                <br />
+                <Button className="orderButton" onClick={submitOrderMenu}>주문하기</Button>
             </MenuImagesDiv>
         </>
     );
