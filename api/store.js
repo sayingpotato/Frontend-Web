@@ -32,6 +32,13 @@ const getSurroundStoreList = async(latitude, longtitude) => {
     return data.data;
 }
 
+const submitOrder = async(form) => {
+    const {data} = await fetcher.post(
+        "api/v1/order",
+        form
+    );
+    return data.data;
+}
 const store = {
     getDailyDiscountStore,
     getMapStoreList,
