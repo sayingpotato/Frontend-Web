@@ -2,20 +2,30 @@ import { useEffect, useState, useRef } from 'react'
 
 import Title from '@components/title'
 import OrderedContent from '@components/orderedContent'
+import useGetOrder from '@hooks/useGetOrder';
 
 import { ContentDiv } from './style'
 
-const index = () => {
+const Order = () => {
 
-  const orderedResult = data.map((oneData) => {
+  const [data, setData] = useState("");
+  const getOrder = useGetOrder();
+
+  useEffect(() => { 
+    setData(getOrder); 
+  },[getOrder]);
+
+  const orderData = Object.entries(data);
+
+  const orderedResult = orderData.map((oneData, index) => {
     return (
       <OrderedContent
-        key={`${oneData.id}`}
-        data={`${JSON.stringify(oneData.value)}`}
-        type={`${oneData.type}`}
+        key={index}
+        data={oneData}
       ></OrderedContent>
     )
   })
+
   return (
     <>
       <Title>주문 내역</Title>
@@ -24,4 +34,4 @@ const index = () => {
   )
 }
 
-export default index
+export default Order
