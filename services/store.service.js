@@ -44,11 +44,23 @@ const submitOrder = async(form) => {
         throw error;
     }
 }
+
+const getOrder = async() => {
+    try {
+        const data = await storeApi.getOrder();
+        return data;
+    } catch (error) {
+        throw error;
+    }
+}
+
 const storeService = {
     getDailyDiscountStore,
     getMapStoreList,
     getStoreDetail,
-    getSurroundStoreList
+    getSurroundStoreList,
+    submitOrder,
+    getOrder
 }
 
 export default storeService;
