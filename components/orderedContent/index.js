@@ -17,7 +17,7 @@ import {
 import Review from '@components/reviewContent'
 
 const OrderedContent = (props) => {
-  const value = props.data[1]
+  const value = props.data;
   const type = props.type
 
   const [open, setOpen] = useState(false)
@@ -49,7 +49,7 @@ const OrderedContent = (props) => {
       <ContentDiv>
         <StyledImage src={value.image} alt="logo" />
         <StoreDiv>
-          <PName>{value['name']}</PName>
+          <PName>{value.name}</PName>
           <MenuDiv>{menuData()}</MenuDiv>
           <MoreButton>주문 상세</MoreButton>
         </StoreDiv>
