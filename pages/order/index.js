@@ -15,9 +15,7 @@ const Order = () => {
     setData(getOrder); 
   },[getOrder]);
 
-  const orderData = Object.entries(data);
-
-  const orderedResult = orderData.map((oneData, index) => {
+  const orderedResult = data && data.map((oneData, index) => {
     return (
       <OrderedContent
         key={index}
