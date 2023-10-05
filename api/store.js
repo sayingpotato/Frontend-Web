@@ -35,8 +35,12 @@ const getSurroundStoreList = async(latitude, longtitude) => {
 const submitOrder = async(form) => {
     const {data} = await fetcher.post(
         "api/v1/order",
-        form
-    );
+        form,
+        {
+        headers: { 
+            'Content-Type': 'application/json',
+        },
+    });
     return data.data;
 }
 
