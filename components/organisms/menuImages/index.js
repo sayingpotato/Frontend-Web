@@ -31,7 +31,7 @@ const MenuImages = ({menuData}) => {
         });
     };
 
-    const submitOrder = useSubmitOrder();
+    const submitOrderForm = useSubmitOrder();
 
     const submitOrderMenu = () => {
         console.log("주문하기");
@@ -53,17 +53,20 @@ const MenuImages = ({menuData}) => {
         });}
 
         const submitForm = {
-            "storeId": idParam,
+            "storeId": parseInt(idParam),
             "totalPrice": sum,
             "totalPeople": people,
             "itemIds": selectedMenuIds,
+            "discountPrice": 0,
             "itemOptionIds": [
                 0
             ]
         }
 
-        submitOrder(submitForm);
-        router.push("/order")
+        console.log(submitForm)
+
+        submitOrderForm(submitForm);
+        // router.push("/order")
         
     }
 
