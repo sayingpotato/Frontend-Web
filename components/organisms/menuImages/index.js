@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
 import router from "next/router";
+import { useRecoilState } from "recoil";
 
 import { MenuImagesDiv, MenuWholeImagesDiv, MenuImagesContentDiv, ImagesDiv, PeopleButtons } from './style';
+
+import { OrderData } from "@utils/recoil/atom";
 
 import Image from "@atoms/image"
 import Text from "@atoms/text"
@@ -12,6 +15,8 @@ import MenuInfo from '@organisms/menuInfo'
 import useSubmitOrder from '@hooks/useSubmitOrder'
 
 const MenuImages = ({menuData}) => {
+
+    const [submitOrderData, setSubmitOrderData] = useRecoilState(OrderData);
 
     const currentURL = window.location.href;
     const urlSearchParams = new URLSearchParams(currentURL.split('?')[1]);
@@ -52,7 +57,7 @@ const MenuImages = ({menuData}) => {
             }
         });}
 
-        const submitForm = {
+        setSubmitOrderData({
             "storeId": parseInt(idParam),
             "totalPrice": sum,
             "totalPeople": people,
@@ -61,12 +66,10 @@ const MenuImages = ({menuData}) => {
             "itemOptionIds": [
                 0
             ]
-        }
+        })
 
-        console.log(submitForm)
-
-        submitOrderForm(submitForm);
-        // router.push("/order")
+        submitOrderForm();
+        router.push("/order");
         
     }
 
