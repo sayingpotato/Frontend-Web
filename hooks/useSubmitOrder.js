@@ -1,9 +1,12 @@
 import storeService from "services/store.service"; 
+import { useRecoilValue } from "recoil";
+import { OrderData } from "@utils/recoil/atom";
 
-const useSubmitOrder = (form) => { 
-   
+const useSubmitOrder = () => { 
+    const orderData = useRecoilValue(OrderData);
+
     const submitOrder = async() => {
-        const data = await storeService.submitOrder(form);
+        const data = await storeService.submitOrder(orderData);
         return data;
     }
 
