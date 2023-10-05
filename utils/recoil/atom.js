@@ -34,3 +34,8 @@ export const StudentCard = atom({
     key:"StudentCard",
     default:"",
 })
+
+export const OrderData = atom({
+    key:"OrderData",
+    default:"",
+})
