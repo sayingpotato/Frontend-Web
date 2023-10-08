@@ -4,7 +4,7 @@ import Title from '@components/title'
 import OrderedContent from '@components/orderedContent'
 import useGetOrder from '@hooks/useGetOrder';
 
-import { ContentDiv } from './style'
+import { ContentDiv } from '../../styles/order/style'
 
 const Order = () => {
 

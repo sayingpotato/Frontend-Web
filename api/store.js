@@ -48,6 +48,11 @@ const getOrder = async() => {
     const {data} = await fetcher.get(
         `/api/v1/order/detail?offset=0&limit=20`
     );
+const getSearchList = async(searchKey) => {
+    const {data} = await fetcher.get(
+        `/api/v1/stores/name?name=${searchKey}&offset=0&limit=100`
+    );
+
     return data.data;
 }
 
@@ -57,7 +62,8 @@ const store = {
     getStoreDetail,
     getSurroundStoreList,
     submitOrder,
-    getOrder
+    getOrder,
+    getSearchList
 }
 
 export default store;

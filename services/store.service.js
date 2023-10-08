@@ -48,6 +48,9 @@ const submitOrder = async(form) => {
 const getOrder = async() => {
     try {
         const data = await storeApi.getOrder();
+const getSearchList = async(searchKey) => {
+    try {
+        const data = await storeApi.getSearchList(searchKey);
         return data;
     } catch (error) {
         throw error;
@@ -60,7 +63,8 @@ const storeService = {
     getStoreDetail,
     getSurroundStoreList,
     submitOrder,
-    getOrder
+    getOrder,
+    getSearchList
 }
 
 export default storeService;
