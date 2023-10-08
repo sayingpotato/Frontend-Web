@@ -61,8 +61,8 @@ const MenuImages = ({menuData}) => {
             "storeId": parseInt(idParam),
             "totalPrice": sum,
             "totalPeople": people,
-            "itemIds": selectedMenuIds,
             "discountPrice": 0,
+            "itemIds": selectedMenuIds,
             "itemOptionIds": [
                 0
             ]
