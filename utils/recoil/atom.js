@@ -39,3 +39,8 @@ export const OrderData = atom({
     key:"OrderData",
     default:"",
 })
+
+export const ReviewData = atom({
+    key:"ReviewData",
+    default:"",
+})
