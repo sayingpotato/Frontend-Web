@@ -64,7 +64,7 @@ const OrderedContent = (props) => {
           {open ? '▲ 접기' : '▼ 리뷰하기'}
         </ReviewButton>
         <ReviewContent state={open}>
-          <Review type={value.storeInfo.storeInfo} reviewStatus={value.orderDetailReview.reviewStatus} />
+          <Review type={value.storeInfo.category} reviewStatus={value.orderDetailReview.reviewStatus} reviews={value.orderDetailReview} />
         </ReviewContent>
       </ReviewDiv>
       
