@@ -38,6 +38,20 @@ const Search = () => {
     }
 
     const debouncedSetKeyword = useDebounce(() => console.log(keyword), 500)
+    const getSearchList = useGetSearchList(keyword);
+
+    const [storeArray, setStoreArray] = useState()
+    const [menuArray, setMenuArray] = useState()
+
+    useEffect(() => {
+        if (debouncedSetKeyword !== undefined) {
+            setData(getSearchList); 
+            const storeResult = getSearchList && getSearchList.filter(item => item.findByStore === true);
+            setStoreArray(storeResult);
+            const menuResult = getSearchList && getSearchList.filter(item => item.findByStore === false);
+            setMenuArray(menuResult);
+        }
+    }, [keyword]);
 
     const clear = () => {
         setKeyword('')
