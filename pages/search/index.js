@@ -25,24 +25,6 @@ import {
 import SearchButton from '@components/searchButton'
 import SearchInput from '@components/searchInput'
 
-const data = [
-    {pic : '', name : '김밥천국'},
-    {pic : '', name : '김밥천국'},
-    {pic : '', name : '김밥천국'},
-    {pic : '', name : '김밥천국'},
-    {pic : '', name : '김밥천국'},
-    {pic : '', name : '김밥천국'},
-    {pic : '', name : '김밥천국'},
-]
-
-const data2 = [
-    {pic : '', name : '김밥천국', des: '깊은 전통을 자랑하는 궁전김밥!', menu :['원조김밥', '참치김밥','누드김밥']},
-    {pic : '', name : '김밥천국', des: '깊은 전통을 자랑하는 궁전김밥!', menu :['원조김밥', '참치김밥','누드김밥']},
-    {pic : '', name : '김밥천국', des: '깊은 전통을 자랑하는 궁전김밥!', menu :['원조김밥', '참치김밥','누드김밥']},
-    {pic : '', name : '김밥천국', des: '깊은 전통을 자랑하는 궁전김밥!', menu :['원조김밥', '참치김밥','누드김밥']},
-    {pic : '', name : '김밥천국', des: '깊은 전통을 자랑하는 궁전김밥!', menu :['원조김밥', '참치김밥','누드김밥']},
-]
-
 
 const Search = () => {
     const [keyword, setKeyword] = useState('')
