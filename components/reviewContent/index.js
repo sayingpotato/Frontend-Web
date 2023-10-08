@@ -65,7 +65,7 @@ const Review = (props) => {
     ))}
       </ReviewWholeDiv>
       <ReviewButtonDiv>
-        <ReviewResetButton onClick={resetButtonClick}>초기화</ReviewResetButton>
+        {reviewStatus !== "EXPIRED" ? <ReviewResetButton onClick={resetButtonClick}>초기화</ReviewResetButton> : null}
         {reviewStatus !== "EXPIRED" ? <ReviewConfirmButton onClick={confirmButtonClick}>확인</ReviewConfirmButton> : null}
       </ReviewButtonDiv>
     </Wholediv>
