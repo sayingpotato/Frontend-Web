@@ -48,6 +48,11 @@ const submitOrder = async(form) => {
 const getOrder = async() => {
     try {
         const data = await storeApi.getOrder();
+    } catch (error) {
+        throw error;
+    }
+}
+
 const getSearchList = async(searchKey) => {
     try {
         const data = await storeApi.getSearchList(searchKey);
