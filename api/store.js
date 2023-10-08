@@ -48,6 +48,10 @@ const getOrder = async() => {
     const {data} = await fetcher.get(
         `/api/v1/order/detail?offset=0&limit=20`
     );
+
+    return data.data;
+}
+
 const getSearchList = async(searchKey) => {
     const {data} = await fetcher.get(
         `/api/v1/stores/name?name=${searchKey}&offset=0&limit=100`
