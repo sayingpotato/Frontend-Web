@@ -32,11 +32,20 @@ const getSurroundStoreList = async(latitude, longtitude) => {
     return data.data;
 }
 
+const getSearchList = async(searchKey) => {
+    const {data} = await fetcher.get(
+        `/api/v1/stores/name?name=${searchKey}&offset=0&limit=100`
+    );
+
+    return data.data;
+}
+
 const store = {
     getDailyDiscountStore,
     getMapStoreList,
     getStoreDetail,
-    getSurroundStoreList
+    getSurroundStoreList,
+    getSearchList
 }
 
 export default store;
