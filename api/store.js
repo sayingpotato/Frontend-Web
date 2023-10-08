@@ -44,6 +44,14 @@ const submitOrder = async(form) => {
     return data.data;
 }
 
+const submitReview = async(reviews) => {
+    const {data} = await fetcher.post(
+        `/api/v1/review/content`,
+        reviews,
+    );
+    return data.data;
+}
+
 const getOrder = async() => {
     const {data} = await fetcher.get(
         `/api/v1/order/detail?offset=0&limit=20`
@@ -66,6 +74,7 @@ const store = {
     getStoreDetail,
     getSurroundStoreList,
     submitOrder,
+    submitReview,
     getOrder,
     getSearchList
 }
