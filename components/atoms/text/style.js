@@ -148,6 +148,19 @@ const StyledText = styled.p`
     margin-top : 1px;
   }
 
+  &.whoText {
+    font-size : 30px;
+    font-weight : 800;
+    text-align : center;
+    margin-top : 80px;
+  }
+
+  &.whoAreText {
+    font-size : 23px;
+    font-weight : 800;
+    text-align : center;
+  }
+
 `
 
 export { StyledText };
