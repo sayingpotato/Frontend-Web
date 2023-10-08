@@ -36,11 +36,21 @@ const getSurroundStoreList = async(latitude, longtitude) => {
     }
 }
 
+const getSearchList = async(searchKey) => {
+    try {
+        const data = await storeApi.getSearchList(searchKey);
+        return data;
+    } catch (error) {
+        throw error;
+    }
+}
+
 const storeService = {
     getDailyDiscountStore,
     getMapStoreList,
     getStoreDetail,
-    getSurroundStoreList
+    getSurroundStoreList,
+    getSearchList
 }
 
 export default storeService;
