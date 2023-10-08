@@ -1,10 +1,16 @@
 import { useEffect, useState, useRef } from 'react'
 import { Wholediv, ReviewWholeDiv, ReviewButtonDiv, ReviewResetButton, ReviewConfirmButton, ReviewButtonName } from './style'
+import { useRecoilState } from "recoil";
+
+import { ReviewData } from "@utils/recoil/atom";
 
 const Review = (props) => {
   const type = props.type;
+  const reviewStatus = props.reviewStatus;
+  console.log(reviewStatus)
 
   const [clickedIndex, setClickedIndex] = useState([]);
+  // const [submitReviewData, setSubmitReviewData] = useRecoilState(ReviewData);
   
   const cafeReviewArr = [
     { id: 1, name: "☕ 커피가 맛있어요" },
@@ -43,7 +49,7 @@ const Review = (props) => {
     setClickedIndex([-1])
   }
 
-  const reviewArr = type === "cafe" ? cafeReviewArr : foodReviewArr;
+  const reviewArr = type === "CAFE" ? cafeReviewArr : foodReviewArr;
   
   return (
     <Wholediv>
@@ -60,7 +66,7 @@ const Review = (props) => {
       </ReviewWholeDiv>
       <ReviewButtonDiv>
         <ReviewResetButton onClick={resetButtonClick}>초기화</ReviewResetButton>
-        <ReviewConfirmButton onClick={confirmButtonClick}>확인</ReviewConfirmButton>
+        {reviewStatus !== "EXPIRED" ? <ReviewConfirmButton onClick={confirmButtonClick}>확인</ReviewConfirmButton> : null}
       </ReviewButtonDiv>
     </Wholediv>
   )
