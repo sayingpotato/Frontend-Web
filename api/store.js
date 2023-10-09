@@ -48,7 +48,11 @@ const submitReview = async(reviews) => {
     const {data} = await fetcher.post(
         `/api/v1/review/content`,
         reviews,
-    );
+        {
+        headers: { 
+            'Content-Type': 'application/json',
+        },
+    });
     return data.data;
 }
 
