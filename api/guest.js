@@ -8,9 +8,25 @@ const submitRegister = async(form) => {
     return data.data;
 }
 
+const submitOwnerRegister = async(form) => {
+    const {data} = await fetcher.post(
+        "api/v1/owner/signUp",
+        form
+    );
+    return data.data;
+}
+
 const login = async(form) => {
     const {data} = await fetcher.post(
         "api/v1/customers/signIn",
+        form
+    );
+    return data;
+}
+
+const ownerLogin = async(form) => {
+    const {data} = await fetcher.post(
+        "api/v1/owner/signIn",
         form
     );
     return data;
@@ -30,7 +46,9 @@ const submitStudentCard = async(form) => {
 
 const guest = {
     submitRegister,
+    submitOwnerRegister,
     login,
+    ownerLogin,
     submitStudentCard
 }
 
