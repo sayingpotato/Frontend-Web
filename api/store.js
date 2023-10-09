@@ -72,6 +72,14 @@ const getSearchList = async(searchKey) => {
     return data.data;
 }
 
+const getDiscountTotal = async() => {
+    const {data} = await fetcher.get(
+        `/api/v1/discount/total`
+    );
+
+    return data.data;
+}
+
 const store = {
     getDailyDiscountStore,
     getMapStoreList,
@@ -80,7 +88,8 @@ const store = {
     submitOrder,
     submitReview,
     getOrder,
-    getSearchList
+    getSearchList,
+    getDiscountTotal
 }
 
 export default store;

@@ -72,6 +72,15 @@ const getSearchList = async(searchKey) => {
     }
 }
 
+const getDiscountTotal = async() => {
+    try {
+        const data = await storeApi.getDiscountTotal();
+        return data;
+    } catch (error) {
+        throw error;
+    }
+}
+
 const storeService = {
     getDailyDiscountStore,
     getMapStoreList,
@@ -80,7 +89,8 @@ const storeService = {
     submitOrder,
     submitReview,
     getOrder,
-    getSearchList
+    getSearchList,
+    getDiscountTotal
 }
 
 export default storeService;
