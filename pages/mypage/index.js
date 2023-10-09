@@ -1,5 +1,8 @@
+import { useEffect, useState, useRef } from 'react'
+
 import Title from '@molecules/title';
 import MypageContentInfoTemplate from '@components/templates/mypageContentInfoTemplate';
+import useGetNickName from '@hooks/useGetNickName';
 
 const mypage = () => {
 
@@ -31,6 +34,7 @@ const mypage = () => {
     <>
       <Title text="마이페이지" />
       <MypageContentInfoTemplate name="권낙현" totalMoney="15000" discountData={data}/>
+      <MypageContentInfoTemplate name={data.nickname} totalMoney="15000" />
     </>
   )
 }
