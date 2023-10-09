@@ -12,14 +12,14 @@ import {
     RegisterComponent,
 TotalLogin } from "../../styles/login/style";
 import Line from "@components/line";
-import useLogin from "@hooks/useLogin";
+import useOwnerLogin from "@hooks/useOwnerLogin";
 
 const OwnerLogin = () => {
     const [state, setState] = useState(false);
     const [inputId, setInputId] = useState('');
     const [inputPw, setInputPw] = useState('');
     const [post, setPost] = useState(0);
-    const login = useLogin(inputId, inputPw);
+    const login = useOwnerLogin(inputId, inputPw);
 
     useEffect(() => {
         if (!post) return ;
