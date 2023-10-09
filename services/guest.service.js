@@ -9,6 +9,15 @@ const login = async (form) => {
     }
 }
 
+const ownerLogin = async (form) => {
+    try {
+        const data = await guestApi.ownerLogin(form);
+        return data;
+    } catch (error) {
+        throw error;
+    }
+}
+
 const checkSameId = () => {
     
 }
@@ -16,6 +25,15 @@ const checkSameId = () => {
 const submitRegister = async(form) => {
     try {
         const data = await guestApi.submitRegister(form);
+        return data;
+    } catch (error) {
+        throw error;
+    } 
+}
+
+const submitOwnerRegister = async(form) => {
+    try {
+        const data = await guestApi.submitOwnerRegister(form);
         return data;
     } catch (error) {
         throw error;
@@ -33,8 +51,10 @@ const submitStudentCard = async(form) => {
 
 const guestService = {
     login,
+    ownerLogin,
     checkSameId,
     submitRegister,
+    submitOwnerRegister,
     submitStudentCard
 }
 
