@@ -6,7 +6,7 @@ const useSubmitOwnerRegister = () => {
     const registerOwnerInfo = useRecoilValue(RegisterOwnerInfo);
     
     const submitRegister = async() => {
-        const data = await guestService.submitRegister(registerOwnerInfo);
+        const data = await guestService.submitOwnerRegister(registerOwnerInfo);
         return data;
     }
 
