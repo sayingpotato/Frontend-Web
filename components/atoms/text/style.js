@@ -148,6 +148,22 @@ const StyledText = styled.p`
     margin-top : 1px;
   }
 
+  &.orderStart {
+    color : #1BBB01;
+    float : right;
+    padding-right : 5px; 
+    font-size : 10px;
+    font-weight : 800;
+  }
+
+  &.orderFinish {
+    color : #B0B0B0;
+    float : right;
+    padding-right : 5px; 
+    font-size : 10px;
+    font-weight : 800;
+  }
+  
   &.whoText {
     font-size : 30px;
     font-weight : 800;
