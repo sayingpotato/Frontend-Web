@@ -44,12 +44,21 @@ const submitStudentCard = async(form) => {
     return data;
 }
 
+const getNickName = async() => {
+    const {data} = await fetcher.get(
+        `/api/v1/mypage`
+    );
+
+    return data.data;
+}
+
 const guest = {
     submitRegister,
     submitOwnerRegister,
     login,
     ownerLogin,
-    submitStudentCard
+    submitStudentCard,
+    getNickName
 }
 
 export default guest;
