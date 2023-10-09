@@ -9,6 +9,12 @@ export const LoginStatus = atom({
     effects_UNSTABLE: [persistAtom],
 })
 
+export const LoginOwnerStatus = atom({
+    key:"LoginOwnerStatus",
+    default:false,
+    effects_UNSTABLE: [persistAtom],
+})
+
 export const TotalPw = atom({
     key:"TotalPw",
     default:"",
