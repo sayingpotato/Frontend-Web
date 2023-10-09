@@ -19,6 +19,11 @@ export const RegisterInfo = atom({
     default:"",
 });
 
+export const RegisterOwnerInfo = atom({
+    key:"RegisterOwnerInfo",
+    default:"",
+});
+
 export const RegisterLevel = atom({
     key:"RegisterLevel",
     default:0,
