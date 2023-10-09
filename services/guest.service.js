@@ -49,13 +49,23 @@ const submitStudentCard = async(form) => {
     } 
 }
 
+const getNickName = async() => {
+    try {
+        const data = await guestApi.getNickName();
+        return data;
+    } catch (error) {
+        throw error;
+    }
+}
+
 const guestService = {
     login,
     ownerLogin,
     checkSameId,
     submitRegister,
     submitOwnerRegister,
-    submitStudentCard
+    submitStudentCard,
+    getNickName
 }
 
 export default guestService;
