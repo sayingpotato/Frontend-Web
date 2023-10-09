@@ -3,6 +3,7 @@ import { Wholediv, ReviewWholeDiv, ReviewButtonDiv, ReviewResetButton, ReviewCon
 import { useRecoilState } from "recoil";
 
 import { ReviewData } from "@utils/recoil/atom";
+import useSubmitReview from "@hooks/useSubmitReview";
 
 const Review = (props) => {
   const type = props.type;
@@ -10,7 +11,8 @@ const Review = (props) => {
   const reviewsDetail = props.reviews;
 
   const [clickedIndex, setClickedIndex] = useState([]);
-  // const [submitReviewData, setSubmitReviewData] = useRecoilState(ReviewData);
+  const [submitReview, setSubmitReview] = useRecoilState(ReviewData);
+  const submit = useSubmitReview();
   
   const cafeReviewArr = [
     { id: 0, name: reviewsDetail.greatCoffeeContent, state: reviewsDetail.greatCoffee}, // 커피가 맛있어요
@@ -50,8 +52,15 @@ const Review = (props) => {
   }
 
   const confirmButtonClick = () => {
-    console.log("확인- 차후 처리")
-  }
+  const selectedReviews = reviewArr.filter((review) => clickedIndex.includes(review.id));
+  const selectedReviewNames = selectedReviews.map((review) => review.name);
+  setSubmitReview({
+    "reviewId": reviewsDetail.id,
+    "reviewContents": selectedReviewNames
+  })
+
+  submit();
+}
 
   const resetButtonClick = () => {
     setClickedIndex([-1])
