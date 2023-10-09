@@ -47,7 +47,7 @@ const submitOrder = async(form) => {
 
 const submitReview = async(review) => {
     try {
-        const data = await storeApi.submitOrder(review);
+        const data = await storeApi.submitReview(review);
         return data;
     } catch (error) {
         throw error;
