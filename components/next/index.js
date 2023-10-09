@@ -59,13 +59,13 @@ export default function Next({ state, input, nextView}){
                                  router.push(`/login`)
                                  break;
                 case "owner" : 
-                    setRegisterOwnerInfo({...registerInfo, nickname : input})
-                    router.push(`/ownerlogin`)
+                    setRegisterOwnerInfo({...registerOwnerInfo, nickname : input})
+                    router.push(`/register/info/${nextView}`)
                     break;
                 case "ownerlogin" :
-                    setRegisterOwnerInfo({...registerInfo, ownerBusinessNumber : input})
+                    setRegisterOwnerInfo({...registerOwnerInfo, ownerBusinessNumber : String(input)})
                     setOwnerPost(ownerPost + 1);
-                    router.push(`/ownerlogin`)
+                    // router.push(`/map`)
                     break;
                 case "login" :  
                     setRegisterInfo({...registerInfo, customerNumber : input[0], customerDept : input[1], customerCollege : input[2]})
