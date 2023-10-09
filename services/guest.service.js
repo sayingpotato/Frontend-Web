@@ -9,6 +9,15 @@ const login = async (form) => {
     }
 }
 
+const ownerLogin = async (form) => {
+    try {
+        const data = await guestApi.login(form);
+        return data;
+    } catch (error) {
+        throw error;
+    }
+}
+
 const checkSameId = () => {
     
 }
@@ -33,6 +42,7 @@ const submitStudentCard = async(form) => {
 
 const guestService = {
     login,
+    ownerLogin,
     checkSameId,
     submitRegister,
     submitStudentCard
