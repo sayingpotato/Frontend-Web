@@ -19,7 +19,6 @@ import Text from '@components/atoms/text'
 
 const OrderedContent = (props) => {
   const value = props.data;
-  console.log(value)
   const type = props.type
 
   const [open, setOpen] = useState(false)
@@ -64,7 +63,7 @@ const OrderedContent = (props) => {
           {open ? '▲ 접기' : '▼ 리뷰하기'}
         </ReviewButton>
         <ReviewContent state={open}>
-          <Review type={value.storeInfo.category} reviewStatus={value.orderDetailReview.reviewStatus} reviews={value.orderDetailReview} />
+          <Review type={value.storeInfo.category} reviews={value.orderDetailReview} />
         </ReviewContent>
       </ReviewDiv>
       
