@@ -177,6 +177,18 @@ const StyledText = styled.p`
     text-align : center;
   }
 
+  &.mystoreName {
+    font-size : 25px;
+    font-weight : 800;
+    text-align : center;
+  }
+
+  &.mystoreDes {
+    font-size : 15px;
+    text-align : center;
+    color : #747474;
+  }
+
 `
 
 export { StyledText };
