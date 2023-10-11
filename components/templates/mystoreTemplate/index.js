@@ -1,14 +1,16 @@
-import { useRouter } from 'next/router';
+import Router, { useRouter } from 'next/router';
 
 import Text from '@components/atoms/text';
 import Image from '@components/atoms/image';
 import { WholeDiv } from './style';
 
 const MystoreTemplate = ({data}) => {
-    const router = useRouter();
 
     const mystoreDetailButton = () => {
-        router.push('');
+        Router.push({
+            pathname: '/orderdetail',
+            query: { id: data.id, storeName: data.title },
+        })
     }
     
     return (
