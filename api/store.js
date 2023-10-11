@@ -80,6 +80,14 @@ const getDiscountTotal = async() => {
     return data.data;
 }
 
+const getOwnerStoreList = async() => {
+    const {data} = await fetcher.get(
+        `/api/v1/owner/store`
+    );
+
+    return data.data;
+}
+
 const store = {
     getDailyDiscountStore,
     getMapStoreList,
@@ -89,7 +97,8 @@ const store = {
     submitReview,
     getOrder,
     getSearchList,
-    getDiscountTotal
+    getDiscountTotal,
+    getOwnerStoreList
 }
 
 export default store;
