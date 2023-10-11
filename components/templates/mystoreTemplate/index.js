@@ -15,9 +15,9 @@ const MystoreTemplate = ({data}) => {
     
     return (
         <WholeDiv key={data.id} onClick={mystoreDetailButton}>
-            <Text className="mystoreName" text={data.title} />
-            <Text className="mystoreDes" text={data.comment} />
-            <Image className="mystoreImage" src={data.image} />
+            <Text className="mystoreName" text={data.name} />
+            <Text className="mystoreDes" text={data.description} />
+            <Image className="mystoreImage" src={data.thumbnail} />
         </WholeDiv>
   );
 };
