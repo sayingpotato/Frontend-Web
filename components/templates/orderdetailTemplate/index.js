@@ -49,12 +49,11 @@ const OrderdetailTemplate = ({data}) => {
           <MenuDiv>{menuData()}</MenuDiv>
           <MoreButton>주문 상세</MoreButton>
         </StoreDiv>
+        <ButtonDiv>
+          {data.orderStatus === "ORDER" ? <Button text="거절" className="cancelOrderButton" onClick /> : null}
+          {data.orderStatus === "ORDER" ? <Button text="확인" className="approvalOrderButton" onClick={approvalButtonClick} /> : null}
+        </ButtonDiv>
       </ContentDiv>
-      <div>
-        {data.reviewStatus !== "EXPIRED" ? <button onClick={resetButtonClick}>초기화</button> : null}
-        {data.reviewStatus !== "EXPIRED" ? <button onClick={confirmButtonClick}>확인</button> : null}
-      </div>
-      
     </Div>
   )
 }
