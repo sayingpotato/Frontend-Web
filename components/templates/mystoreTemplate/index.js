@@ -6,15 +6,17 @@ import { WholeDiv } from './style';
 
 const MystoreTemplate = ({data}) => {
 
+    console.log(data)
+
     const mystoreDetailButton = () => {
         Router.push({
             pathname: '/orderdetail',
-            query: { id: data.id, storeName: data.title },
+            query: { id: data.storeId, storeName: data.name },
         })
     }
     
     return (
-        <WholeDiv key={data.id} onClick={mystoreDetailButton}>
+        <WholeDiv key={data.storeId} onClick={mystoreDetailButton}>
             <Text className="mystoreName" text={data.name} />
             <Text className="mystoreDes" text={data.description} />
             <Image className="mystoreImage" src={data.thumbnail} />
