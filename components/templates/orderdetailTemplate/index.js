@@ -2,58 +2,76 @@ import { useEffect, useState, useRef } from 'react'
 
 import {
   Div,
+  TimeDiv,
+  Header,
   ContentDiv,
-  StoreDiv,
-  PName,
   MenuDiv,
-  PMenu,
-  MoreButton,
-  StyledImage,
-  ReviewDiv,
-  ReviewButton,
-  ReviewContent,
+  PriceDiv,
+  ButtonDiv,
+  SummaryDiv,
+  SummaryPriceDiv,
+  SummaryPeopleDiv,
 } from './style'
 
-import Review from '@components/reviewContent'
 import Text from '@components/atoms/text'
+import Button from '@components/atoms/button'
+import Line from '@components/atoms/line'
 
 const OrderdetailTemplate = ({data}) => {
 
-    console.log(data)
+  const approvalButtonClick = () => {
+    const selectedReviews = reviewArr.filter((review) => clickedIndex.includes(review.id));
+    const selectedReviewNames = selectedReviews.map((review) => review.name);
+    setSubmitReview({
+      "reviewId": reviewsDetail.id,
+      "reviewContents": selectedReviewNames
+    })
 
-  const menuData = () => {
-    const result = []
-    if (value.orderDetailOrderItems.length <= 5) {
-      for (let i = 0; i < value.orderDetailOrderItems.length; i++) {
-        result.push(<PMenu key={i}>{value.orderDetailOrderItems[i].itemName}</PMenu>)
-      }
-    }
-    else {
-      for (let i = 0; i < 5; i++) {
-        result.push(<PMenu key={i}>{value.orderDetailOrderItems[i].itemName}</PMenu>)
-      }
-      result.push(<PMenu key={5}>...</PMenu>)
-    }
-
-    return result
+    submit();
   }
 
   return (
     <Div>
-      <Text className={data.orderStatus === "ORDER" ? "orderStart" : "orderFinish"} text={data.orderStatus === "ORDER" ? "대기 중" : "계산 완료"}></Text>
+      <TimeDiv>
+        <Text text="주문 시각" className="orderDetailTitle"></Text>
+        <Text text={data.orderTime} className="orderDetailContent"></Text>
+        <Text className={data.orderStatus === "ORDER" ? "orderStart" : "orderFinish"} text={data.orderStatus === "ORDER" ? "대기 중" : "계산 완료"}></Text>
+      </TimeDiv>
+
+      <Header>
+        <Text text="주문 내역" className="orderDetailTitle"></Text>
+        <Text text="항목 가격" className="orderDetailTitle"></Text>
+      </Header>
+
       <ContentDiv>
-        <StyledImage src={data.storeInfo.thumbnail} alt="logo" />
-        
-        <StoreDiv>
-          <PName>{data.storeInfo.storeName}</PName>
-          <MenuDiv>{menuData()}</MenuDiv>
-          <MoreButton>주문 상세</MoreButton>
-        </StoreDiv>
+        <MenuDiv>
+          {data.orderOwnerItems.map((item, index) => (
+            <Text key={index} text={item.itemName} className="orderDetailContent"/>
+          ))}
+        </MenuDiv>
+        <PriceDiv>
+          {data.orderOwnerItems.map((item, index) => (
+            <Text key={index} text={item.price} className="orderDetailContent" />
+          ))}
+        </PriceDiv>
         <ButtonDiv>
           {data.orderStatus === "ORDER" ? <Button text="거절" className="cancelOrderButton" onClick /> : null}
           {data.orderStatus === "ORDER" ? <Button text="확인" className="approvalOrderButton" onClick={approvalButtonClick} /> : null}
         </ButtonDiv>
       </ContentDiv>
+
+      <SummaryDiv>
+        <SummaryPriceDiv>
+          <Text text={"총 금액"} className="orderDetailTitle"/>
+          <Text text={data.totalPrice} className="orderDetailContent"/>
+        </SummaryPriceDiv>
+        <SummaryPeopleDiv>
+          <Text text={"총 인원"} className="orderDetailTitle"/>
+          <Text text={data.totalPeople} className="orderDetailContent"/>
+        </SummaryPeopleDiv>
+      </SummaryDiv>        
+
+      <Line />
     </Div>
   )
 }
