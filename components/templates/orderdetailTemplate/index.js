@@ -21,7 +21,7 @@ import Button from '@components/atoms/button'
 import Line from '@components/atoms/line'
 
 import useSubmitAcceptOrder from '@hooks/useSubmitAcceptOrder';
-import useSubmitRejectOrder from '@hooks/useSubmitRejectAcceptOrder';
+import useSubmitRejectOrder from '@hooks/useSubmitRejectOrder';
 
 const OrderdetailTemplate = ({data}) => {
 
