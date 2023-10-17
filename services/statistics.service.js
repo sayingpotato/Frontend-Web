@@ -18,9 +18,19 @@ const getDailyRevenue = async(id) => {
     }
 }
 
+const getMonthlyProfit = async(id) => {
+    try {
+        const data = await statisticsApi.getMonthlyProfit(id);
+        return data;
+    } catch (error) {
+        throw error;
+    }
+}
+
 const statisticsService = {
     getDailyProfit,
-    getDailyRevenue
+    getDailyRevenue,
+    getMonthlyProfit
 }
 
 export default statisticsService;
