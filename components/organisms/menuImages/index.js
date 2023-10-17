@@ -69,7 +69,7 @@ const MenuImages = ({menuData}) => {
         })
 
         submitOrderForm();
-        router.push("/order");
+        router.push("/map");
         
     }
 
