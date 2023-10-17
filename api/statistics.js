@@ -14,9 +14,17 @@ const getDailyRevenue = async(id) => {
     return data.data;
 }
 
+const getMonthlyProfit = async(id) => {
+    const {data} = await fetcher.get(
+        `/api/v1/statistics/monthly/profit?storeId=${id}`
+    );
+    return data.data;
+}
+
 const statistics = {
     getDailyProfit,
-    getDailyRevenue
+    getDailyRevenue,
+    getMonthlyProfit
 }
 
 export default statistics;
