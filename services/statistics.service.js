@@ -27,10 +27,20 @@ const getMonthlyProfit = async(id) => {
     }
 }
 
+const getWeekItem = async(id) => {
+    try {
+        const data = await statisticsApi.getWeekItem(id);
+        return data;
+    } catch (error) {
+        throw error;
+    }
+}
+
 const statisticsService = {
     getDailyProfit,
     getDailyRevenue,
-    getMonthlyProfit
+    getMonthlyProfit,
+    getWeekItem
 }
 
 export default statisticsService;
