@@ -66,7 +66,7 @@ const DailyRevenue = (props) => {
         datasets: [
             {
                 type: 'line',
-                label: '해당 상품으로 판매된 수익',
+                label: '요일별 총 개수',
                 data: orderCountsByDay,
                 // backgroundColor: 'rgba(53, 162, 235, 0.5)',
                 backgroundColor: 'rgba(53, 162, 235, 0.5)',
