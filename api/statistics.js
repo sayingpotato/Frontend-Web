@@ -21,10 +21,18 @@ const getMonthlyProfit = async(id) => {
     return data.data;
 }
 
+const getWeekItem = async(id) => {
+    const {data} = await fetcher.get(
+        `/api/v1/statistics/week/item?storeId=${id}`
+    );
+    return data.data;
+}
+
 const statistics = {
     getDailyProfit,
     getDailyRevenue,
-    getMonthlyProfit
+    getMonthlyProfit,
+    getWeekItem
 }
 
 export default statistics;
