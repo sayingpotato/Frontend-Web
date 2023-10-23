@@ -37,7 +37,6 @@ const MystoreTemplate = ({data}) => {
 
     const meatballClick = () => {
         setMeatBallOpen(!meatballOpen)
-        console.log(111)
     }
     
     return (
