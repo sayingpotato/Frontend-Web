@@ -2,7 +2,7 @@ import {predictionApi} from "api"
 
 const getDailyItem = async(id) => {
     try {
-        const data = await predictionApi.getWeekItem(id);
+        const data = await predictionApi.getDailyItem(id);
         return data;
     } catch (error) {
         throw error;
