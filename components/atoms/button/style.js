@@ -119,6 +119,26 @@ const StyledButton = styled.button`
     font-weight: 400;
     background-color : white;
   }
+
+  &.typeTodayPrediction {
+    width: 50px;
+    font-size: 10px;
+    height: 20px;
+    background-color: ${(props) => (props.state === 'todayPrediction' ? 'black' : 'white')};
+    color: ${(props) => (props.state === 'todayPrediction' ? 'white' : 'black')};
+    border: 0px solid ${(props) => (props.state === 'todayPrediction' ? 'black' : 'white')};
+    border-radius: 3px;
+  }
+
+  &.typeTommorowPrediction {
+    width: 50px;
+    font-size: 10px;
+    height: 20px;
+    background-color: ${(props) => (props.state === 'tommorowPrediction' ? 'black' : 'white')};
+    color: ${(props) => (props.state === 'tommorowPrediction' ? 'white' : 'black')};
+    border: 0px solid ${(props) => (props.state === 'tommorowPrediction' ? 'black' : 'white')};
+    border-radius: 3px;
+  }
   
 `
 
