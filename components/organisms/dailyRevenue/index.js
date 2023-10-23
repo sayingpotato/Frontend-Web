@@ -43,9 +43,9 @@ const DailyRevenue = (props) => {
     const daysOfWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
     const orderCountsByDay = daysOfWeek.map(day => {
-    const dayData = data && data.filter(dataPoint => dataPoint.day === day);
-    const orderCountSum = dayData && dayData.reduce((total, dataPoint) => total + dataPoint.orderCount, 0);
-    return orderCountSum;
+        const dayData = data && data.filter(dataPoint => dataPoint.day === day);
+        const orderCountSum = dayData && dayData.reduce((total, dataPoint) => total + dataPoint.orderCount, 0);
+        return orderCountSum;
     });
 
     const options = {
@@ -66,7 +66,7 @@ const DailyRevenue = (props) => {
         datasets: [
             {
                 type: 'line',
-                label: '요일별 총 개수',
+                label: '요일별 총 판매 개수',
                 data: orderCountsByDay,
                 // backgroundColor: 'rgba(53, 162, 235, 0.5)',
                 backgroundColor: 'rgba(53, 162, 235, 0.5)',
