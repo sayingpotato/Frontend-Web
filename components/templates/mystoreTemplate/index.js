@@ -34,6 +34,11 @@ const MystoreTemplate = ({data}) => {
     return (
         <WholeDiv key={data.storeId}>
             <div onClick={mystoreDetailButton}>
+            <MeatBallDiv onClick={meatballClick}>
+                <MeatBallLine />
+                <MeatBallLine />
+                <MeatBallLine />
+            </MeatBallDiv>
                 <Text className="mystoreName" text={data.name} />
                 <Text className="mystoreDes" text={data.description} />
                 <Image className="mystoreImage" src={data.thumbnail} />
