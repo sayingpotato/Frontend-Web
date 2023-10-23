@@ -30,7 +30,7 @@ const Prediction = () => {
     return (
         <>
             <Title text={titleText} />
-            <InlineButton textOne="식당" textTwo="카페" 
+            <InlineButton textOne="오늘" textTwo="내일" 
                 textOneClassName="typeTodayPrediction" textTwoClassName="typeTommorowPrediction"
                 textOneOnClick={todayPredictionClick} textTwoOnClick={tommorowPredictionClick}
                 state={type}
