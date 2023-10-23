@@ -113,6 +113,12 @@ const StyledButton = styled.button`
     width : 20vw;
     height : 5vh;
   }
+
+  &.infoButton {
+    font-size: 12px;
+    font-weight: 400;
+    background-color : white;
+  }
   
 `
 
