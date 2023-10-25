@@ -41,7 +41,7 @@ const MoreButton = styled.button`
   border: 1px solid black;
   background-color: white;
   border-radius: 8px;
-  font-size: 3px;
+  font-size: 8px;
   font-weight: 400;
   width: 20vw;
   height: 4vh;
