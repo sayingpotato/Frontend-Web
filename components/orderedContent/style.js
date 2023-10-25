@@ -2,8 +2,6 @@ import styled from 'styled-components'
 
 const Div = styled.div`
   background-color: white;
-  margin-top: 20px;
-  margin-bottom: 20px;
   padding: 2%;
   height: ${(props) => (props.state === true ? '35vh' : '20vh')};
 `
