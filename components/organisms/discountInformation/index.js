@@ -6,10 +6,6 @@ import ImageText from '@molecules/imageText';
 
 const DiscountInformation = ({discountData}) => {
 
-    console.log(discountData)
-    const daysOfWeek = [["일요일", "SUN"], ["월요일", "MON"], ["화요일", "TUE"], ["수요일", "WED"], ["목요일", "THU"], ["금요일", "FRI"], ["토요일", "SAT"]];
-    
-
     return (
         <>
             <Text text="어메이징한 할인 이벤트" className="discountInfoTitle" />
