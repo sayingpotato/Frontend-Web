@@ -48,13 +48,7 @@ const Search = () => {
         setRealKeyword(keyword);
     }
 
-    console.log("keyword", keyword)
-    console.log("setRealKeyword", realKeyword)
-    console.log(getSearchList)
-
     useEffect(() => {
-        console.log("useE")
-        // console.log(getSearchList)
         const storeResult = getSearchList && getSearchList.filter(item => item.findByStore === true);
         setStoreArray(storeResult);
         const menuResult = getSearchList && getSearchList.filter(item => item.findByStore === false);
