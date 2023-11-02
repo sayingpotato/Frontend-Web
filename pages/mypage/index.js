@@ -44,10 +44,10 @@ const Mypage = () => {
       {
         whoStatus === "customer" ?
         (
-          <MypageContentInfoTemplate name={userInfo.nickname} discountData={discountInfo} discountDataDetail={discountDetail} />
+          <MypageContentInfoTemplate info={userInfo} discountData={discountInfo} discountDataDetail={discountDetail} />
         ) :
         (
-          <MypageContentInfoTemplate name={userInfo.nickname} discountData={0} discountDataDetail={0} />
+          <MypageContentInfoTemplate info={userInfo} discountData={0} discountDataDetail={0} />
         )
       }
       
