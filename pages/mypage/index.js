@@ -5,7 +5,8 @@ import { WhoStatus } from "@utils/recoil/atom";
 
 import Title from '@molecules/title';
 import MypageContentInfoTemplate from '@components/templates/mypageContentInfoTemplate';
-import useGetNickName from '@hooks/useGetNickName';
+import useGetInfo from '@hooks/useGetInfo';
+import useGetOwnerInfo from '@hooks/useGetOwnerInfo';
 import useGetDiscountTotal from '@hooks/useGetDiscountTotal';
 import useGetDiscountDetail from '@hooks/useGetDiscountDetail';
 
@@ -17,28 +18,39 @@ const Mypage = () => {
   const [discountInfo, setDiscountInfo] = useState("");
   const [discountDetail, setDiscountDetail] = useState("");
 
-  const getNickName = useGetNickName();
+  const getInfo = useGetInfo();
   const getDiscountTotal = useGetDiscountTotal();
   const getDiscountDetail = useGetDiscountDetail();
 
+  const getOwnerInfo = useGetOwnerInfo();
+
   useEffect(() => { 
     if (whoStatus === "customer") {
-      setUserInfo(getNickName); 
+      setUserInfo(getInfo); 
       setDiscountInfo(getDiscountTotal);
       setDiscountDetail(getDiscountDetail)
     } else {
-      setUserInfo(""); 
-      setDiscountInfo("");
-      setDiscountDetail("")
+      setUserInfo(getOwnerInfo); 
+      // setDiscountInfo("");
+      // setDiscountDetail("")
     }
     
 
-  },[getNickName, getDiscountTotal, getDiscountDetail]);
+  },[getInfo, getDiscountTotal, getDiscountDetail, getOwnerInfo]);
 
   return (
     <>
       <Title text="마이페이지" />
-      <MypageContentInfoTemplate name={userInfo.nickname} discountData={discountInfo} discountDataDetail={discountDetail} />
+      {
+        whoStatus === "customer" ?
+        (
+          <MypageContentInfoTemplate name={userInfo.nickname} discountData={discountInfo} discountDataDetail={discountDetail} />
+        ) :
+        (
+          <MypageContentInfoTemplate name={userInfo.nickname} discountData={0} discountDataDetail={0} />
+        )
+      }
+      
     </>
   )
 }
