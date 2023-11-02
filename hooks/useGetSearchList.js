@@ -14,9 +14,6 @@ const useGetSearchList = (searchKeyword) => {
 
         getSearchList();
     }, [searchKeyword]);
-
-
-    console.log(data)
     
     return data;
 }
