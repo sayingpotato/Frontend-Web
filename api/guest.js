@@ -52,13 +52,22 @@ const getNickName = async() => {
     return data.data;
 }
 
+const getDiscountDetail = async() => {
+    const {data} = await fetcher.get(
+        `/api/v1/discount/detail`
+    );
+
+    return data.data;
+}
+
 const guest = {
     submitRegister,
     submitOwnerRegister,
     login,
     ownerLogin,
     submitStudentCard,
-    getNickName
+    getNickName,
+    getDiscountDetail
 }
 
 export default guest;
