@@ -5,11 +5,11 @@ import Text from '@atoms/text';
 import ImageText from '@molecules/imageText'
 
 const ImageLists = [
-    { image: 'images/modify.svg', title: '프로필 수정', path: 'modify' },
-    { image: 'images/notice.svg', title: '공지사항', path: 'notice' },
-    { image: 'images/medal.svg', title: '내 랭킹 보기', path: 'myrank' },
-    { image: 'images/chart.svg', title: '통계 보기', path: 'mychart' },
-    { image: 'images/call.svg', title: '고객센터', path: 'service' }
+    // { image: 'images/modify.svg', title: '프로필 수정', path: 'modify' },
+    // { image: 'images/notice.svg', title: '공지사항', path: 'notice' },
+    // { image: 'images/medal.svg', title: '내 랭킹 보기', path: 'myrank' },
+    // { image: 'images/chart.svg', title: '통계 보기', path: 'mychart' },
+    { image: 'images/call.svg', title: '고객센터', path: 'customerservice' }
 ]
 
 const MypageLinkButtons = () => {
