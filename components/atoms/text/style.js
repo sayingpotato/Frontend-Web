@@ -255,6 +255,17 @@ const StyledText = styled.p`
   &.customerServiceContent {
     font-size : 13px;
   }
+
+  &.infoFormTitle {
+    font-size : 25px;
+    font-weight : 900;
+    color : #28469C;
+  }
+
+  &.infoFormContent {
+    font-size : 13px;
+    font-weight : 400;
+  }
 `
 
 export { StyledText };
