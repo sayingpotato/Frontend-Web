@@ -4,13 +4,13 @@ import MypageDiscountInfo from "@organisms/mypageDiscountInfo"
 import MypageUserInfo from '@templates/mypageUserInfoTemplates';
 import MypageLinkButtons from '@organisms/mypageLinkButtons';
 
-const MypageContentInfoTemplate = ({name, discountData}) => {
+const MypageContentInfoTemplate = ({name, discountData, discountDataDetail}) => {
     
   return (
     <>
       <MypageUserInfo name={name} totalMoney={discountData.totalDiscountPrice}/>
       <MypageContentInfoTemplateDiv>
-          <MypageDiscountInfo discountData={discountData} />
+          <MypageDiscountInfo discountDataDetail={discountDataDetail} />
           <MypageLinkButtons />
       </MypageContentInfoTemplateDiv>
     </>

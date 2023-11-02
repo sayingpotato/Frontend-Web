@@ -58,6 +58,15 @@ const getNickName = async() => {
     }
 }
 
+const getDiscountDetail = async() => {
+    try {
+        const data = await guestApi.getDiscountDetail();
+        return data;
+    } catch (error) {
+        throw error;
+    }
+}
+
 const guestService = {
     login,
     ownerLogin,
@@ -65,7 +74,8 @@ const guestService = {
     submitRegister,
     submitOwnerRegister,
     submitStudentCard,
-    getNickName
+    getNickName,
+    getDiscountDetail
 }
 
 export default guestService;
