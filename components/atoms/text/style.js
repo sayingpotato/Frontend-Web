@@ -239,7 +239,12 @@ const StyledText = styled.p`
     background-color: #ff2e2e;
   }
 
-  
+  &.confirmOrderTitle{
+    width : 100px;
+    font-size : 13px;
+    font-weight : 900;
+    margin : 0;
+  }
 
 `
 
