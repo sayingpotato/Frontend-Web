@@ -246,6 +246,15 @@ const StyledText = styled.p`
     margin : 0;
   }
 
+  &.customerServiceTitle {
+    font-size : 15px;
+    font-weight : 900;
+    color : #28469C;
+  }
+
+  &.customerServiceContent {
+    font-size : 13px;
+  }
 `
 
 export { StyledText };
