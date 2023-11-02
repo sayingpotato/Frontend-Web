@@ -12,7 +12,7 @@ const MypageUserInfoTemplates = ({name, totalMoney}) => {
             <Title text={userName} className="mypageName" />
             <div>
                 <Text text="할인 금액" className="mypageMoneyTitle" />
-                <ImageText imageClassName="mypageMoneyIcon" divClassName="basic" text={totalMoney} src="images/coin.svg" alt="images/coin.svg" textClassName="mypageMoneyTotal" />
+                <ImageText imageClassName="mypageMoneyIcon" divClassName="basic" text={totalMoney.toLocaleString()} src="images/coin.svg" alt="images/coin.svg" textClassName="mypageMoneyTotal" />
             </div>
         </MypageUserInfoDiv>
     );
