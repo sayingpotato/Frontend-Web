@@ -52,16 +52,18 @@ const MenuImages = ({menuData, discountData}) => {
     const ConfirmOrderData = () => {
         return (
             <>
-                <ConfirmOrderDiv>
+                {totalPrice && discountPrice && <ConfirmOrderDiv>
                     <ConfirmOrderContentDiv>
-                        {totalPrice && <Text text="총 주문 금액" className="confirmOrderTitle" />}
+                        <Text text="총 주문 금액" className="confirmOrderTitle" />
                         <Text text={totalPrice.toLocaleString() + "원"} />
                     </ConfirmOrderContentDiv>
                     <ConfirmOrderContentDiv>
-                        {discountPrice && <Text text="총 할인 금액" className="confirmOrderTitle" />}
+                        <Text text="총 할인 금액" className="confirmOrderTitle" />
                         <Text text={discountPrice.toLocaleString() + "원"} />
                     </ConfirmOrderContentDiv>
                 </ConfirmOrderDiv>
+                }
+                
                 
                 {totalPrice && <Button className="orderButton" onClick={submitOrderMenu}>주문 하기</Button>}
             </>
