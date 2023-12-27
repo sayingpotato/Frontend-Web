@@ -10,6 +10,23 @@ const StyledInput = styled.input`
     font-size : 13px;
     text-align: center;
   }
+
+  &.memberInput {
+    width: 264px;
+    border-radius: 16px;
+    padding: 20px;
+    border: none;
+    background-color: #F4F4F4;
+
+    :focus {
+        outline: none;
+    }
+
+    ::placeholder {
+        font-family: 'Pretendard Variable';
+        font-weight: 600;
+    }
+  }
 `
 
 export { StyledInput };
