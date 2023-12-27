@@ -266,6 +266,33 @@ const StyledText = styled.p`
     font-size : 13px;
     font-weight : 400;
   }
+
+  &.description {
+    font-size: 16px;
+    font-weight: 300;
+  }
+
+  &.logo {
+    margin-left: auto;
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  &.membertitle {
+    margin-top : 5px;
+    margin-bottom : 5px;
+    font-size: 40px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: white;
+    padding-left : 20px;
+  }
+
+  &.checkMemberText {
+    color: #7B7B7B;
+    font-weight: 500;
+    margin:8px;
+  }
 `
 
 export { StyledText };
