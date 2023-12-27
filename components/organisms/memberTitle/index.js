@@ -1,17 +1,16 @@
-import { MemberTitleDiv, TitleTop, TitleUnder } from './style';
+import { MemberTitleDiv, TitleUnder } from './style';
 
 import Text from "@atoms/text"
+import ImageTitle from '@molecules/imageTitle';
 
 const MemberTitle = ( {title, subTitle} ) => {
     return (
         <>
             <MemberTitleDiv>
-                <TitleTop>
-                    <Text className='membertitle' text={title} />
-                </TitleTop>
+                <Text className='membertitle' text={title} />
                 <TitleUnder>
                     <Text className='description' text={subTitle} />
-                    <Text className='logo' text="감자입니다" />
+                    <ImageTitle imageClassName="logoImage" textClassName="logo" src="images/potato.svg" alt="로고" text="감자입니다" />
                 </TitleUnder>
             </MemberTitleDiv>
         </>
