@@ -49,6 +49,10 @@ const StyledImage = styled.img`
     display: block;
     margin: auto;
   }
+  &.logoImage {
+    width : 30px;
+    height : 30px;
+  }
 `
 
 export { StyledImage };
