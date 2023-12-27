@@ -154,6 +154,37 @@ const StyledButton = styled.button`
     font-weight: 600;
     font-family: "Pretendard Variable";
   }
+
+  &.loginButton {
+    width: 264px;
+    border-radius: 16px;
+    padding: 20px;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 12px;
+    border: none;
+    background-color: ${props => props.state ? '#28469C':'#B0B0B0'};
+    color: white;
+    box-sizing: content-box;
+  }
+
+  &.findButton {
+    border: none;
+    background-color : white;
+  }
+
+  &.checkMemberButton {
+    background-color: white;
+    color: #747474;
+    border: 1px solid #7B7B7B;
+    width: 264px;
+    border-radius: 16px;
+    padding: 20px;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 12px;
+    box-sizing: content-box;
+  }
   
 `
 
