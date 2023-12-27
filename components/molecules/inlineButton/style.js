@@ -10,6 +10,14 @@ const StyledInlineButtontDiv = styled.div`
   &.center {
     justify-content: center;
   }
+
+  &.find {
+    display: flex;
+    justify-content: space-evenly;
+    color: #7B7B7B;
+    margin-bottom: 24px;
+    font-size: 14px;
+  }
 `
 
 export { StyledInlineButtontDiv };
