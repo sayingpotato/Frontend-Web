@@ -19,8 +19,8 @@ const MemberContent = ({ state, onChangeId, onChangePw, onClickLoginButton }) =>
                     placeholder='PW'
                     className="memberInput"
                     />
-                <Button state={state} onClick={onClickLoginButton} text="로그인" style="loginButton" />
-                <InlineButton textOne="아이디 찾기" textTwo="비밀번호 찾기" divClassName="find" />
+                <Button state={state} onClick={onClickLoginButton} text="로그인" className="loginButton" />
+                <InlineButton textOne="아이디 찾기" textTwo="비밀번호 찾기" divClassName="find" textOneClassName="findButton" textTwoClassName="findButton" />
             </Main>
         </>
     )
