@@ -59,7 +59,7 @@ const OwnerNickName = () => {
         inputValue={inputValue}
         onValidityChange={handleColorChange}
       />
-      <Next state={state} input={inputValue} nextView={'ownerlogin'} />
+      <Next state={state} input={inputValue} nextView={'owner'} />
     </Register>
   )
 }
