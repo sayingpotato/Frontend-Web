@@ -1,31 +1,26 @@
 import { useEffect, useState } from 'react'
-import Image from 'next/image'
 import Register from '@pages/register'
-import { InfoComponent, InputSpace, RegexComponent } from '../../../../styles/register/info/id/style'
-import Regex from '@components/regex'
-import Next from '@components/next'
-import wrong from '@public/images/close.svg'
-import right from '@public/images/checkCircle.svg'
-import empty from '@public/images/emptyBlock.svg'
+import Next from '@molecules/next'
 import { RegisterLevel } from '@utils/recoil/atom.js'
 import { useSetRecoilState } from 'recoil'
-import Label from '@components/label/index'
+import RegisterContentInfo from '@organisms/registerContentInfo'
+import { CutomerNumber_REGEX_ACTION, CustomerDept_REGEX_ACTION, CustomerCollege_REGEX_ACTION } from '@constants/register.js'
 
 const College = () => {
-  const [inputCustomerNumberValue, setInputCustomerNumberValue] = useState('')
-  const [inputCustomerDeptValue, setInputCustomerDeptValue] = useState('')
-  const [inputCustomerCollegeValue, setInputCustomerCollegeValue] = useState('')
-
-  const [isMoreThanTwo, setIsMoreThanTwo] = useState(false)
-  const [isKoreanEnglishDept, setIsKoreanEnglishDept] = useState(false)
-  const [isKoreanEnglishCollege, setIsKoreanEnglishCollege] = useState(false)
-
   const setRegisterLevel = useSetRecoilState(RegisterLevel)
-  const [state, setState] = useState(0)
 
-  const actionCustomerNumber = ['Number']
-  const actionCustomerDept = ['KoreanEnglish']
-  const actionCustomerCollege = ['KoreanEnglish']
+  const [inputCustomerNumberValue, setInputCustomerNumberValue] = useState('') // 입력한 학번
+  const [inputCustomerDeptValue, setInputCustomerDeptValue] = useState('') // 입력한 학과명
+  const [inputCustomerCollegeValue, setInputCustomerCollegeValue] = useState('') // 입력한 대학명
+
+  const [isNumber, setIsNumber] = useState(false) // 학번 REGEX 상태
+  const [isKoreanEnglishDept, setIsKoreanEnglishDept] = useState(false) // 학과명 REGEX 상태
+  const [isKoreanEnglishCollege, setIsKoreanEnglishCollege] = useState(false) // 대학명 REGEX 상태
+ 
+  const [customerNumberState, setCustomerNumberState] = useState(0) // 입력한 학번 상태 값
+  const [customerDeptState, setCustomerDeptState] = useState(0) // 입력한 학과명 상태 값
+  const [customerCollegeState, setCustomerCollegeState] = useState(0) // 입력한 대학명 상태 값
+  const [totalState, setTotalState] = useState(0) // 학번 & 학과명 & 대학명 전체 상태 값
 
   const onChangeCustomerNumberInput = (e) => {
     setInputCustomerNumberValue(e.target.value)
@@ -44,26 +39,74 @@ const College = () => {
   }, [])
 
   useEffect(() => {
-    if (!inputCustomerNumberValue || !inputCustomerDeptValue|| !inputCustomerCollegeValue) {
-      setState(0)
+    if (!inputCustomerNumberValue) {
+      setCustomerNumberState(0)
       return
     }
 
-    if (isMoreThanTwo && isKoreanEnglishDept && isKoreanEnglishCollege) {
-      setState(2)
+    if (isNumber) {
+      setCustomerNumberState(2)
       return
     }
 
-    setState(1)
-  }, [inputCustomerNumberValue, inputCustomerDeptValue, inputCustomerCollegeValue, isMoreThanTwo, isKoreanEnglishDept, isKoreanEnglishCollege])
+    setCustomerNumberState(1)
+  }, [inputCustomerNumberValue, isNumber])
 
-  const handleColorChange = (action, isValid) => {
+  useEffect(() => {
+    if (!inputCustomerDeptValue) {
+      setCustomerDeptState(0)
+      return
+    }
+
+    if (isKoreanEnglishDept) {
+      setCustomerDeptState(2)
+      return
+    }
+
+    setCustomerDeptState(1)
+  }, [inputCustomerDeptValue, isKoreanEnglishDept])
+
+  useEffect(() => {
+    if (!inputCustomerCollegeValue) {
+      setCustomerCollegeState(0)
+      return
+    }
+
+    if (isKoreanEnglishCollege) {
+      setCustomerCollegeState(2)
+      return
+    }
+
+    setCustomerCollegeState(1)
+  }, [inputCustomerCollegeValue, isKoreanEnglishCollege])
+
+  useEffect(() => {
+    if (customerNumberState === 2 && customerDeptState === 2 && customerCollegeState === 2) {
+      setTotalState(2)
+      return
+    }
+    setTotalState(1)
+  })
+
+  const handleCustomerNumberColorChange = (action, isValid) => {
     switch (action) {
       case 'Number':
-        setIsMoreThanTwo(isValid)
+        setIsNumber(isValid)
         break
+    }
+  }
+
+  const handleCustomerDeptColorChange = (action, isValid) => {
+    switch (action) {
       case 'KoreanEnglish':
         setIsKoreanEnglishDept(isValid)
+        break
+    }
+  }
+
+  const handleCustomerCollegeColorChange = (action, isValid) => {
+    switch (action) {
+      case 'KoreanEnglish':
         setIsKoreanEnglishCollege(isValid)
         break
     }
@@ -71,58 +114,32 @@ const College = () => {
 
   return (
     <Register>
-        <InfoComponent>
-            <Label htmlfor="CustomerNumber" title={'학번 입력'} />
-            <InputSpace id="CustomerNumber" onChange={onChangeCustomerNumberInput} state={state} />
-            <RegexComponent>
-                {actionCustomerNumber.map((item, index) => {
-                return (
-                    <Regex
-                        action={item}
-                        key={index}
-                        input={inputCustomerNumberValue}
-                        onValidityChange={handleColorChange}
-                    />
-                )
-                })}
-            </RegexComponent>
-        </InfoComponent>
+      <RegisterContentInfo
+        text="학번 입력"
+        inputOnChange={onChangeCustomerNumberInput}
+        state={customerNumberState}
+        regexData={CutomerNumber_REGEX_ACTION}
+        inputValue={inputCustomerNumberValue}
+        onValidityChange={handleCustomerNumberColorChange}
+      />
+      <RegisterContentInfo
+        text="학과명 입력"
+        inputOnChange={onChangeCustomerDeptInput}
+        state={customerDeptState}
+        regexData={CustomerDept_REGEX_ACTION}
+        inputValue={inputCustomerDeptValue}
+        onValidityChange={handleCustomerDeptColorChange}
+      />
+      <RegisterContentInfo
+        text="대학교명 입력"
+        inputOnChange={onChangeCustomerCollegeInput}
+        state={customerCollegeState}
+        regexData={CustomerCollege_REGEX_ACTION}
+        inputValue={inputCustomerCollegeValue}
+        onValidityChange={handleCustomerCollegeColorChange}
+      />
 
-        <InfoComponent>
-            <Label htmlfor="CustomerDept" title={'학과명 입력'} />
-            <InputSpace id="CustomerDept" onChange={onChangeCustomerDeptInput} state={state} />
-            <RegexComponent>
-                {actionCustomerDept.map((item, index) => {
-                return (
-                    <Regex
-                        action={item}
-                        key={index}
-                        input={inputCustomerDeptValue}
-                        onValidityChange={handleColorChange}
-                    />
-                    )
-                })}
-            </RegexComponent>
-        </InfoComponent>
-
-        <InfoComponent>
-            <Label htmlfor="CustomerCollege" title={'대학교명 입력'} />
-            <InputSpace id="CustomerCollege" onChange={onChangeCustomerCollegeInput} state={state} />
-            <RegexComponent>
-                {actionCustomerCollege.map((item, index) => {
-                return (
-                    <Regex
-                        action={item}
-                        key={index}
-                        input={inputCustomerCollegeValue}
-                        onValidityChange={handleColorChange}
-                    />
-                    )
-                })}
-            </RegexComponent>
-        </InfoComponent>
-
-        <Next state={state} input={[inputCustomerNumberValue, inputCustomerDeptValue, inputCustomerCollegeValue]} nextView={'login'} />
+        <Next state={totalState} input={[inputCustomerNumberValue, inputCustomerDeptValue, inputCustomerCollegeValue]} nextView={'login'} />
     </Register>
   )
 }
