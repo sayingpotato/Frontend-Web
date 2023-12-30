@@ -293,6 +293,20 @@ const StyledText = styled.p`
     font-weight: 500;
     margin:8px;
   }
+
+  &.registerTitle {
+    margin-top : 0px;
+    margin-bottom : 0px;
+    font-size: 20px;
+    font-weight: 800;
+    display: block ;
+  }
+
+  &.regexText {
+    font-size: 14px;
+    font-weight: 600;
+    color: ${props => props.state ? '#28469C' : '#B8B8BA'};
+  }
 `
 
 export { StyledText };
