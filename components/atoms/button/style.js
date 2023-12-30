@@ -185,6 +185,42 @@ const StyledButton = styled.button`
     margin-top: 12px;
     box-sizing: content-box;
   }
+
+  &.authButton {
+    padding: 12px 88px 12px 88px;
+    margin-top: 16px;
+    border-radius: 6px;
+    border: none;
+    background-color: #28469C;
+    color: white;
+    font-size: 13px;
+    font-weight: 600;
+    font-family: "Pretendard Variable";
+  }
+
+  &.next {
+    border: none;
+    position: absolute;
+    text-align: center;
+    margin-top: 4px;
+    bottom: 0;
+    height: 40px;
+    width: 100vw;
+    font-weight: 700;
+    color: white;
+    background-color: ${props => props.state === 2? '#28469C' : '#B0B0B0'};
+  }
+
+  &.agreeButton {
+    font-size: 16px;
+    font-weight: 800;
+    color: ${props => props.state ? '#28469C' : 'gray'};
+    display: flex;
+    align-items: center;
+    padding: 8px 0 8px 0;
+    border : none;
+    background-color: white;
+  }
   
 `
 
