@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
+import { useSetRecoilState} from "recoil"
+import { RegisterLevel } from "@utils/recoil/atom.js"
 import Register from '@pages/register'
 import AgreeInfo from "@organisms/AgreeInfo";
 import Next from "@molecules/next";
-import { RegisterLevel } from "@utils/recoil/atom.js"
-import { useSetRecoilState} from "recoil"
 
 const Agree = () => {
    const setRegisterLevel = useSetRecoilState(RegisterLevel);
@@ -59,6 +59,6 @@ Agree.Layout = ({ children }) => {
    );
  };
  
- Agree.Layout.displayName = 'RegisterLayout';
+Agree.Layout.displayName = 'RegisterLayout';
 
 export default Agree
