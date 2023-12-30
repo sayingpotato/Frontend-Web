@@ -1,18 +1,12 @@
 import { useEffect, useState } from "react";
-import Back from "@components/back";
-import SignUp from "@components/signUp";
 import Router from "next/router";
-import { 
-    Input,
-    Main,
-    LoginComponent,
-    LoginButton,
-    RegisterButton,
-    Find,
-    RegisterComponent,
-TotalLogin } from "../../styles/login/style";
-import Line from "@components/line";
+import { TotalLogin } from "@styles/login/style";
 import useLogin from "@hooks/useLogin";
+import Line from "@atoms/line";
+import Image from "@atoms/image";
+import MemberTitle from "@organisms/memberTitle";
+import MemberContent from "@organisms/memberContent";
+import CheckMember from "@organisms/checkMember";
 
 const Login = () => {
     const [state, setState] = useState(false);
@@ -33,7 +27,7 @@ const Login = () => {
         }
         setState(false);
     },[inputId, inputPw])
-    
+
     const onChangeId = (e) => {
         setInputId(e.target.value);
     }
@@ -49,39 +43,20 @@ const Login = () => {
     const onClickRegisterButton = () => {
         Router.push('/register/auth/self');
     }
+
+    const onClickBack = () => {
+        Router.back();
+    }
     
     return (
         <TotalLogin>
-            <Back/>
-            <SignUp 
+            <Image src="images/back.svg" alt="뒤로 가기" className="backArrowImage" onClick={onClickBack} width={42} height={42} />
+            <MemberTitle 
                 title={'LOG IN'}
-                subTitle={'로그인이 필요한 서비스입니다'}/>
-            <LoginComponent>
-                <Main>
-                    <Input
-                        onChange={onChangeId}
-                        placeholder='ID'/>
-                    <Input
-                        onChange={onChangePw}
-                        type='password'
-                        placeholder='PW'/>
-                    <LoginButton 
-                        state={state}
-                        onClick={onClickLoginButton}>
-                        로그인
-                    </LoginButton>
-                    <Find>
-                        <p>아이디 찾기</p>
-                        <p>비밀번호 찾기</p>
-                    </Find>
-                </Main>
-            </LoginComponent>
-            <Line/>
-            <RegisterComponent>
-                <p>회원이 아니신가요?</p>
-                <RegisterButton 
-                    onClick={onClickRegisterButton}>회원가입</RegisterButton>
-            </RegisterComponent>
+                subTitle={'로그인이 필요한 서비스입니다'} />
+            <MemberContent state={state} onChangeId={onChangeId} onChangePw={onChangePw} onClickLoginButton={onClickLoginButton} />
+            <Line className="memberLine" />
+            <CheckMember onClickRegisterButton={onClickRegisterButton} />
         </TotalLogin>
     )
 }
