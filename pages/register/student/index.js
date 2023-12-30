@@ -1,14 +1,11 @@
 import { useState, useRef, useEffect } from "react";
-import Register from "@pages/register";
-import {RegisterLevel, StudentCard} from "@utils/recoil/atom";
+import { RegisterLevel, StudentCard } from "@utils/recoil/atom";
 import { useRecoilState, useSetRecoilState} from "recoil";
-import Label from "@components/label";
-import { InfoComponent } from '@styles/register/info/id/style';
-import Image from "next/image";
-import preview from '@public/images/studentPreview.svg'
-import Next from "@components/molecules/next";
+import Register from "@pages/register";
+import Next from "@molecules/next";
+import RegisterStudentCard from "@organisms/registerStudentCard";
 
-export default function College(){
+export default function Student(){
     const setRegisterLevel = useSetRecoilState(RegisterLevel);
     const [state, setState] = useState(0);
     const [imageSource, setImageSource] = useRecoilState(StudentCard);
@@ -28,7 +25,7 @@ export default function College(){
     },[imageSource])
 
     const onClickImage = () => {
-        inputRef.current.click();
+        inputRef.current.handleClick();
     }   
 
     const onChangeFile = (e) => {
@@ -40,32 +37,21 @@ export default function College(){
 
     return (
         <Register>
-            <InfoComponent>
-                <Label 
-                    title={'학생증 인증'}/>
-                    <input  
-                        type='file'
-                        onChange={onChangeFile}
-                        style={{display : 'none'}}
-                        ref={inputRef}/>
-                <Image 
-                    width={40}
-                    height={40}
-                    onClick={onClickImage}
-                    className="imagePreview"
-                    src={alterImage?alterImage:preview}
-                    alt='이미지 미리보기'/>    
-            </InfoComponent>
-            <Next
-                input = {imageSource}
-                state = {state}
-                nextView={"student"}/>
+            <RegisterStudentCard
+                text="학생증 인증"
+                type="file"
+                inputOnChange={onChangeFile}
+                imageOnClick={onClickImage}
+                src={alterImage ? alterImage: "/images/studentPreview.svg"}
+                ref={inputRef}
+            />
+            <Next state={state} input={imageSource} nextView={'student'} />
         </Register>
     )
     
 }
 
-College.Layout = ({ children }) => {
+Student.Layout = ({ children }) => {
     return (
        <div>
         {children}
@@ -73,4 +59,4 @@ College.Layout = ({ children }) => {
     );
 };
   
-College.Layout.displayName = 'RegisterLayout';
+Student.Layout.displayName = 'RegisterLayout';

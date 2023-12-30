@@ -9,3 +9,4 @@ export const NickName_REGEX_ACTION = ['Two', 'KoreanEnglish']
 export const CutomerNumber_REGEX_ACTION = ['Number'];
 export const CustomerDept_REGEX_ACTION = ['KoreanEnglish'];
 export const CustomerCollege_REGEX_ACTION = ['KoreanEnglish'];
+export const BussinessNumber_REGEX_ACTION = ['Number'];
