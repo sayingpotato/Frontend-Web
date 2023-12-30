@@ -1,7 +1,9 @@
+import { StyledHr } from './style';
+
 const Line = ({ className }) => {
 
     return (
-        <hr />
+        <StyledHr className={className} />
     );
 };
 

@@ -6,7 +6,7 @@ import Label from "@components/label";
 import { InfoComponent } from '@styles/register/info/id/style';
 import Image from "next/image";
 import preview from '@public/images/studentPreview.svg'
-import Next from "@components/next";
+import Next from "@components/molecules/next";
 
 export default function College(){
     const setRegisterLevel = useSetRecoilState(RegisterLevel);

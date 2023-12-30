@@ -49,6 +49,17 @@ const StyledImage = styled.img`
     display: block;
     margin: auto;
   }
+  &.logoImage {
+    width : 30px;
+    height : 30px;
+  }
+  &.right {
+    padding-top: 8px;
+    margin-left: auto;
+  }
+  &.agreeIcon {
+    margin-right: 12px;
+  }
 `
 
 export { StyledImage };

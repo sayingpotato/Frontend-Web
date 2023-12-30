@@ -1,13 +1,9 @@
 import { useState, useEffect } from "react";
-import Register from '@pages/register'
-import right from '@public/images/checkCircleTrue.svg'
-import wrong from '@public/images/checkCircleFalse.svg'
-import Image from 'next/image'
-import Next from "@components/next";
-import Label from "@components/label";
-import {AgreeComponent, OneAgree} from "../../../../styles/register/auth/agree/style"
-import { RegisterLevel } from "@utils/recoil/atom.js"
 import { useSetRecoilState} from "recoil"
+import { RegisterLevel } from "@utils/recoil/atom.js"
+import Register from '@pages/register'
+import AgreeInfo from "@organisms/AgreeInfo";
+import Next from "@molecules/next";
 
 const OwnerAgree = () => {
    const setRegisterLevel = useSetRecoilState(RegisterLevel);
@@ -18,7 +14,7 @@ const OwnerAgree = () => {
    const [allAgree, setAllAgree] = useState(false);
 
    useEffect(() => {
-      if (useAgree && infoAgree&& locateAgree) {
+      if (useAgree && infoAgree && locateAgree) {
          setState(2);
          return ;
       }
@@ -35,9 +31,9 @@ const OwnerAgree = () => {
       setUseAgree(false);
       setInfoAgree(false);
       setLocateAgree(false);
-   },[allAgree]);
+   }, [allAgree]);
 
-   const sample = [
+   const agreeContent = [
       {title : '이용약관 동의', state : useAgree, setState : setUseAgree},
       {title : '개인정보 수집 및 이용 동의', state : infoAgree, setState : setInfoAgree},
       {title : '위치기반서비스 이용약관 동의', state : locateAgree, setState : setLocateAgree},
@@ -50,31 +46,8 @@ const OwnerAgree = () => {
 
   return (
       <Register>
-         <AgreeComponent>
-            <Label
-               title={'동의 여부'}
-               />
-            {sample.map((item, index) => {
-               return (
-                  <OneAgree
-                     onClick = {() => item.setState(item.state ? false : true)} 
-                     key = {index}
-                     state = {item.state}>
-                     <Image 
-                        width={30}
-                        height={30}
-                        src={item.state ? right : wrong}
-                        className="agreeIcon"
-                        alt="agreeIcon"/>
-                     {item.title}
-                  </OneAgree>
-               )
-            })}
-            
-         </AgreeComponent>
-         <Next 
-            state = {state}
-            nextView={'ownerid'}/>
+         <AgreeInfo data={agreeContent} />
+         <Next state={state} nextView={'ownerid'} />
      </Register>
   )
 }

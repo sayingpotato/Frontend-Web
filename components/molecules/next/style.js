@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const NextComponent = styled.div`
-    position: absolute;
+    position: sticky;
     text-align: center;
     padding: 16px 0 0 0;
     margin-top: 4px;

@@ -1,7 +1,6 @@
-import { 
-    RegexComponent, 
-    RegexTitle, 
-    RegexView } from "./style"
+import { RegexComponent, RegexView } from "./style"
+
+import Text from "@atoms/text";
 import { 
     isEnglish, 
     isNumber, 
@@ -17,7 +16,7 @@ import {
 export default function Regex(props){
     const [isValid, setIsValid] = useState(false);
     
-    const sample = {
+    const regexCheckdata = {
         'English' : {title : '영어', state : isValid},
         'Number' : {title : '숫자', state : isValid},
         'Eight' : {title : '8자 이상', state : isValid},
@@ -45,10 +44,8 @@ export default function Regex(props){
     
     return (
         <RegexComponent>
-            <RegexView state={sample[props.action].state}/>
-            <RegexTitle 
-                state={sample[props.action].state}>
-                {sample[props.action].title}</RegexTitle>
+            <RegexView state={regexCheckdata[props.action].state}/>
+            <Text state={regexCheckdata[props.action].state} text={regexCheckdata[props.action].title} className="regexText" />
         </RegexComponent>
     )
 }

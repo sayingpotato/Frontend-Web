@@ -1,14 +1,18 @@
+import { useEffect, useState } from "react";
+
 import { NextComponent } from "./style"
 import router from "next/router";
 import { useRecoilState } from "recoil";
+
 import {RegisterInfo, RegisterOwnerInfo, StudentCard} from "@utils/recoil/atom";
 import useSubmitRegister from "@hooks/useSubmitRegister";
 import useSubmitOwnerRegister from "@hooks/useSubmitOwnerRegister";
-import { useEffect, useState } from "react";
 import useSubmitStudentCard from "@hooks/useSubmitStudentCard";
+import Button from "@atoms/button";
 
 
-export default function Next({ state, input, nextView}){
+export default function Next({ state, input, nextView }) {
+
     const [registerInfo, setRegisterInfo] = useRecoilState(RegisterInfo);
     const [registerOwnerInfo, setRegisterOwnerInfo] = useRecoilState(RegisterOwnerInfo);
     const [imageSource, setImageSource] = useRecoilState(StudentCard);
@@ -75,11 +79,8 @@ export default function Next({ state, input, nextView}){
             }
         }
     }
+    
     return (    
-        <NextComponent 
-            onClick={onClickNextButton}
-            state={state}>
-            다음 단계
-        </NextComponent>
+        <Button onClick={onClickNextButton} state={state} className="next" text="다음 단계" />
     )
 }

@@ -1,25 +1,24 @@
 import { useEffect, useState } from 'react'
-import Image from 'next/image'
-import Register from '@pages/register'
-import { InfoComponent, InputSpace, RegexComponent } from '../../../../styles/register/info/id/style'
-import { isSpecialCharacter } from '@hooks/regex'
-import Regex from '@components/regex'
-import Next from '@components/next'
-import wrong from '@public/images/close.svg'
-import right from '@public/images/checkCircle.svg'
-import empty from '@public/images/emptyBlock.svg'
-import { RegisterLevel } from '@utils/recoil/atom.js'
 import { useSetRecoilState } from 'recoil'
-import Label from '@components/label/index'
+import { RegisterLevel } from '@utils/recoil/atom.js'
+import Register from '@pages/register'
 import { useDebounce } from '@hooks/debounce'
+import { isSpecialCharacter } from '@hooks/regex'
+import { ID_REGEX_ACTION } from '@constants/register.js'
+import Next from '@molecules/next'
+import RegisterContentInfo from '@organisms/registerContentInfo'
 
-const OwnerInfo = () => {
-  const [inputValue, setInputValue] = useState('')
+const ID = () => {
+
+  const [inputValue, setInputValue] = useState('') // 입력한 아이디
+
+  // 아이디 REGEX 상태
   const [isNumber, setIsNUmber] = useState(false)
   const [isEnglish, setIsEnglish] = useState(false)
   const [isMoreThanSix, setIsMoreThanSix] = useState(false)
-  const [state, setState] = useState(0)
-  const action = ['English', 'Number', 'Six']
+
+  const [state, setState] = useState(0) // 입력한 아이디 상태 값
+  
   const setRegisterLevel = useSetRecoilState(RegisterLevel)
   const debouncedSetInputValue = useDebounce(setInputValue, 500)
 
@@ -63,47 +62,25 @@ const OwnerInfo = () => {
     }
   }
 
-  const chooseImage = () => {
-    switch (state) {
-      case 0:
-        return empty
-      case 1:
-        return wrong
-      case 2:
-        return right
-    }
-  }
-
   return (
     <Register>
-      <InfoComponent>
-        <Label title={'아이디 입력'} htmlfor="Id" />
-        <InputSpace id="Id" onChange={onChangeInput} state={state} />
-        <Image className="close" src={chooseImage()} alt="close" />
-        <RegexComponent>
-          {action.map((item, index) => {
-            return (
-              <Regex
-                action={item}
-                key={index}
-                input={inputValue}
-                onValidityChange={handleColorChange}
-              />
-            )
-          })}
-        </RegexComponent>
-      </InfoComponent>
-      <Next state={state} input={inputValue} nextView={'ownerpw'}>
-        다음단계
-      </Next>
+      <RegisterContentInfo
+        text="아이디 입력"
+        inputOnChange={onChangeInput}
+        state={state}
+        regexData={ID_REGEX_ACTION}
+        inputValue={inputValue}
+        onValidityChange={handleColorChange}
+      />
+      <Next state={state} input={inputValue} nextView={'ownerpw'} />
     </Register>
   )
 }
 
-OwnerInfo.Layout = ({ children }) => {
+ID.Layout = ({ children }) => {
   return <div>{children}</div>
 }
 
-OwnerInfo.Layout.displayName = 'RegisterLayout'
+ID.Layout.displayName = 'RegisterLayout'
 
-export default OwnerInfo
+export default ID
