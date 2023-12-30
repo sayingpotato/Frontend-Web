@@ -6,11 +6,6 @@ const InfoDiv = styled.div`
     position: relative;
 `
 
-const AuthDiv = styled.div`
-    display: flex ;
-    align-items: center;
-`;
-
 const RegexDiv = styled.div`
     display: flex;
     flex-wrap: wrap;
@@ -18,4 +13,4 @@ const RegexDiv = styled.div`
 `;
 
 
-export { InfoDiv, AuthDiv, RegexDiv }
+export { InfoDiv, RegexDiv }
