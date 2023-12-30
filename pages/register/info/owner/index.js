@@ -1,28 +1,21 @@
 import { useEffect, useState } from 'react'
-import Image from 'next/image'
-import Register from '@pages/register'
-import { InfoComponent, InputSpace, RegexComponent } from '../../../../styles/register/info/id/style'
-import { isSpecialCharacter } from '@hooks/regex'
-import Regex from '@components/organisms/regex'
-import Next from '@components/molecules/next'
-import wrong from '@public/images/close.svg'
-import right from '@public/images/checkCircle.svg'
-import empty from '@public/images/emptyBlock.svg'
-import { RegisterLevel } from '@utils/recoil/atom.js'
 import { useSetRecoilState } from 'recoil'
-import Label from '@components/label/index'
-import { useDebounce } from '@hooks/debounce'
+import { RegisterLevel } from '@utils/recoil/atom.js'
+import Register from '@pages/register'
+import Next from '@molecules/next'
+import RegisterContentInfo from '@organisms/registerContentInfo'
+import { BussinessNumber_REGEX_ACTION } from '@constants/register.js'
+
 
 const Owner = () => {
-  const [inputValue, setInputValue] = useState('')
-  const [isNumber, setIsNUmber] = useState(false)
-  const [state, setState] = useState(0)
-  const action = ['Number']
+  const [inputValue, setInputValue] = useState('') // 입력한 사업자등록번호
+
+  const [isNumber, setIsNumber] = useState(false) // 사업자등록번호 REGEX 상태
+  const [state, setState] = useState(0) // 입력한 사업자등록번호 상태 값
   const setRegisterLevel = useSetRecoilState(RegisterLevel)
-  const debouncedSetInputValue = useDebounce(setInputValue, 500)
 
   const onChangeInput = (e) => {
-    debouncedSetInputValue(e.target.value)
+    setInputValue(e.target.value)
   }
 
   useEffect(() => {
@@ -35,59 +28,34 @@ const Owner = () => {
       return
     }
 
-    if (isSpecialCharacter(inputValue)) {
-      setState(1)
-      return
-    }
-
     if (isNumber) {
       setState(2)
-    } else {
-      setState(1)
-    }
+      return
+    } 
+
+    setState(1)
+  
   }, [isNumber, inputValue])
 
   const handleColorChange = (action, isValid) => {
     switch (action) {
       case 'Number':
-        setIsNUmber(isValid)
+        setIsNumber(isValid)
         break
-    }
-  }
-
-  const chooseImage = () => {
-    switch (state) {
-      case 0:
-        return empty
-      case 1:
-        return wrong
-      case 2:
-        return right
     }
   }
 
   return (
     <Register>
-      <InfoComponent>
-        <Label title={'사업자 등록 번호 입력'} htmlfor="BussinessNumber" />
-        <InputSpace id="BussinessNumber" onChange={onChangeInput} state={state} />
-        <Image className="close" src={chooseImage()} alt="close" />
-        <RegexComponent>
-          {action.map((item, index) => {
-            return (
-              <Regex
-                action={item}
-                key={index}
-                input={inputValue}
-                onValidityChange={handleColorChange}
-              />
-            )
-          })}
-        </RegexComponent>
-      </InfoComponent>
-      <Next state={state} input={inputValue} nextView={'ownerlogin'}>
-        다음단계
-      </Next>
+      <RegisterContentInfo
+        text="사업자등록번호 입력"
+        inputOnChange={onChangeInput}
+        state={state}
+        regexData={BussinessNumber_REGEX_ACTION}
+        inputValue={inputValue}
+        onValidityChange={handleColorChange}
+      />
+      <Next state={state} input={inputValue} nextView={'ownerlogin'} />
     </Register>
   )
 }
