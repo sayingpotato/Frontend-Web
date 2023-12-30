@@ -53,6 +53,13 @@ const StyledImage = styled.img`
     width : 30px;
     height : 30px;
   }
+  &.right {
+    padding-top: 8px;
+    margin-left: auto;
+  }
+  &.agreeIcon {
+    margin-right: 12px;
+  }
 `
 
 export { StyledImage };
