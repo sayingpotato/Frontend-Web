@@ -1,14 +1,9 @@
 import { useState, useEffect } from 'react'
-import Register from '../../index'
-import { InfoComponent } from '@styles/register/info/id/style'
-import { Authdiv } from '../../../../styles/register/auth/self/style'
-import AuthButton from '@components/authButton/index'
-import right from '@public/images/checkCircle.svg'
-import Image from 'next/image'
-import Next from '@components/next'
-import { RegisterLevel } from '@utils/recoil/atom.js'
 import { useSetRecoilState } from 'recoil'
-import Label from '@components/label'
+import { RegisterLevel } from '@utils/recoil/atom.js'
+import Register from '@pages/register'
+import RegisterSelfInfo from '@organisms/registerSelfInfo'
+import Next from '@molecules/next'
 
 const OwnerAuth = () => {
   const [state, setState] = useState(0)
@@ -28,17 +23,11 @@ const OwnerAuth = () => {
 
   return (
     <Register>
-      <InfoComponent>
-        <Label title={'휴대폰 인증'} />
-        <Authdiv>
-          <AuthButton onClick={onClickAuthButton} title="인증하기" />
-          {state === 2 && <Image src={right} alt="right" className="right" />}
-        </Authdiv>
-      </InfoComponent>
+      <RegisterSelfInfo buttonClick={onClickAuthButton} state={state} />
       <Next state={state} nextView={'owneragree'} />
     </Register>
   )
-}
+}                           
 
 OwnerAuth.Layout = ({ children }) => {
   return <div>{children}</div>
