@@ -4,7 +4,7 @@ import { useRecoilState } from "recoil";
 
 import { Div, WholeDiv, TelDiv } from '../../styles/customerservice/style'
 
-import Back from "@components/back";
+import Back from "@components/molecules/back";
 import Line from "@components/line";
 
 import Text from "@components/atoms/text";
