@@ -7,7 +7,7 @@ import { WhoStatus } from "@utils/recoil/atom";
 
 import { useRouter } from 'next/router';
 
-import Back from "@components/back";
+import Back from "@molecules/back";
 import Line from "@components/line";
 
 import CustomerInfoForm from "@components/organisms/customerInfoForm";
