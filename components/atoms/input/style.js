@@ -27,6 +27,18 @@ const StyledInput = styled.input`
         font-weight: 600;
     }
   }
+
+  &.registerInput {
+    border: 0px solid #D9D9D9;
+    border-bottom: 2px solid ${props => props.state === 2? '#387D04' : props.state === 1 ? '#FF0000' : '#D9D9D9'};
+    width: 70%;
+
+    :focus-visible {
+        font-family: 'Pretendard Variable';
+        outline : none;
+        font-weight: 600;
+    }
+  }
 `
 
 export { StyledInput };
