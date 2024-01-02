@@ -9,6 +9,7 @@ const NavbarComponent = styled.div`
   right: 0;
   align-items: center;
   height: 80px;
+  padding: 0 9px;
 
   a {
     text-decoration: none;
