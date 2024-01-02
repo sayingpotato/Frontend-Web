@@ -307,6 +307,13 @@ const StyledText = styled.p`
     font-weight: 600;
     color: ${props => props.state ? '#28469C' : '#B8B8BA'};
   }
+
+  &.navbarText {
+    font-size: 11px;
+    font-family: 'Pretendard Variable';
+    color: #575656;
+    font-weight: 600;
+  }
 `
 
 export { StyledText };
